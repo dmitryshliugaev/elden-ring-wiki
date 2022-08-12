@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  EldenRingWiki
+
+  Created by Dmitrii Shliugaev on 12/08/2022.
+  
+*/
+
+"NetworkError.NoInternet" = "No Internet";
+"NetworkError.InvalidResponse" = "Invalid response";
+"NetworkError.UnauthenticatedUser" = "Unauthenticated User";
+"NetworkError.ParsingError" = "Parsing error:";
+"NetworkError.UnknownError" = "Unknown error:";
