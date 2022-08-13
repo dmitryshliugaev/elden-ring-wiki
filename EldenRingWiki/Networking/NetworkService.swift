@@ -42,6 +42,8 @@ class NetworkService {
             return try decoder.decode(T.self, from: data)
             
         } catch {
+            print(error)
+            
             if let error = error as? NetworkError { throw error }
             
             let error = error as NSError

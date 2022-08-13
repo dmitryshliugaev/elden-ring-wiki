@@ -13,13 +13,13 @@ struct WeaponsData: Decodable {
     /// Name of the Weapon
     let name: String
     /// Image URL of the Weapon
-    let image: String
+    let image: String?
     /// Short description of the Weapon
-    let description: String
+    let description: String?
     /// What category of Weapons. Example: Axe, Sword, etc.
-    let category: String
+    let category: String?
     /// How much the Weapon weights when equipped
-    let weight: Double
+    let weight: Double?
     /// How much damage the Weapon does when used as a weapon
     let attack: [Attack]
     /// How much damage the Weapon blocks when used to defend an attack

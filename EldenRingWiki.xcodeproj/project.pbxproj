@@ -28,6 +28,18 @@
 		723823E628A6C9E800B76087 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C828A6685D00B76087 /* Weapons.swift */; };
 		723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C928A6685D00B76087 /* ScalesWith.swift */; };
 		723823E828A6C9E800B76087 /* Defence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C428A6685D00B76087 /* Defence.swift */; };
+		723823EE28A7DC9300B76087 /* Ammos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823ED28A7DC9300B76087 /* Ammos.swift */; };
+		723823F028A7DCA100B76087 /* Ammo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823EF28A7DCA100B76087 /* Ammo.swift */; };
+		723823F228A7DCE000B76087 /* AmmoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823F128A7DCE000B76087 /* AmmoData.swift */; };
+		723823F428A7DD4000B76087 /* AttackPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823F328A7DD4000B76087 /* AttackPower.swift */; };
+		723823F628A7DDD300B76087 /* Shields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823F528A7DDD300B76087 /* Shields.swift */; };
+		723823F828A7DDDD00B76087 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823F728A7DDDD00B76087 /* Shield.swift */; };
+		723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823F928A7DDE600B76087 /* ShieldData.swift */; };
+		723823FD28A7DEED00B76087 /* Armors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823FC28A7DEED00B76087 /* Armors.swift */; };
+		723823FF28A7DEF400B76087 /* Armor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823FE28A7DEF400B76087 /* Armor.swift */; };
+		7238240128A7DF0100B76087 /* ArmorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240028A7DF0100B76087 /* ArmorData.swift */; };
+		7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240228A7DF7B00B76087 /* DmgNegation.swift */; };
+		7238240528A7DFA000B76087 /* Resistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240428A7DFA000B76087 /* Resistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +84,18 @@
 		723823D828A69F1800B76087 /* HTTPURLResponse+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+.swift"; sourceTree = "<group>"; };
 		723823DB28A69F7000B76087 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		723823DD28A69F8100B76087 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		723823ED28A7DC9300B76087 /* Ammos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ammos.swift; sourceTree = "<group>"; };
+		723823EF28A7DCA100B76087 /* Ammo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ammo.swift; sourceTree = "<group>"; };
+		723823F128A7DCE000B76087 /* AmmoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoData.swift; sourceTree = "<group>"; };
+		723823F328A7DD4000B76087 /* AttackPower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackPower.swift; sourceTree = "<group>"; };
+		723823F528A7DDD300B76087 /* Shields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shields.swift; sourceTree = "<group>"; };
+		723823F728A7DDDD00B76087 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
+		723823F928A7DDE600B76087 /* ShieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldData.swift; sourceTree = "<group>"; };
+		723823FC28A7DEED00B76087 /* Armors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armors.swift; sourceTree = "<group>"; };
+		723823FE28A7DEF400B76087 /* Armor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armor.swift; sourceTree = "<group>"; };
+		7238240028A7DF0100B76087 /* ArmorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorData.swift; sourceTree = "<group>"; };
+		7238240228A7DF7B00B76087 /* DmgNegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmgNegation.swift; sourceTree = "<group>"; };
+		7238240428A7DFA000B76087 /* Resistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +183,7 @@
 		723823C228A6685D00B76087 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				723823C328A6685D00B76087 /* Weapons */,
+				723823EC28A7D9E100B76087 /* Equipment */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -167,12 +191,8 @@
 		723823C328A6685D00B76087 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
-				723823C428A6685D00B76087 /* Defence.swift */,
-				723823C528A6685D00B76087 /* RequiredAttributes.swift */,
 				723823C628A6685D00B76087 /* Weapon.swift */,
-				723823C728A6685D00B76087 /* Attack.swift */,
 				723823C828A6685D00B76087 /* Weapons.swift */,
-				723823C928A6685D00B76087 /* ScalesWith.swift */,
 				723823CA28A6685D00B76087 /* WeaponsData.swift */,
 			);
 			path = Weapons;
@@ -215,6 +235,62 @@
 				723823D828A69F1800B76087 /* HTTPURLResponse+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		723823E928A7D99400B76087 /* Armors */ = {
+			isa = PBXGroup;
+			children = (
+				723823FC28A7DEED00B76087 /* Armors.swift */,
+				723823FE28A7DEF400B76087 /* Armor.swift */,
+				7238240028A7DF0100B76087 /* ArmorData.swift */,
+				7238240228A7DF7B00B76087 /* DmgNegation.swift */,
+				7238240428A7DFA000B76087 /* Resistance.swift */,
+			);
+			path = Armors;
+			sourceTree = "<group>";
+		};
+		723823EA28A7D99D00B76087 /* Shields */ = {
+			isa = PBXGroup;
+			children = (
+				723823F528A7DDD300B76087 /* Shields.swift */,
+				723823F728A7DDDD00B76087 /* Shield.swift */,
+				723823F928A7DDE600B76087 /* ShieldData.swift */,
+			);
+			path = Shields;
+			sourceTree = "<group>";
+		};
+		723823EB28A7D9AF00B76087 /* Ammos */ = {
+			isa = PBXGroup;
+			children = (
+				723823ED28A7DC9300B76087 /* Ammos.swift */,
+				723823EF28A7DCA100B76087 /* Ammo.swift */,
+				723823F128A7DCE000B76087 /* AmmoData.swift */,
+				723823F328A7DD4000B76087 /* AttackPower.swift */,
+			);
+			path = Ammos;
+			sourceTree = "<group>";
+		};
+		723823EC28A7D9E100B76087 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				723823FB28A7DE8500B76087 /* Common */,
+				723823EB28A7D9AF00B76087 /* Ammos */,
+				723823EA28A7D99D00B76087 /* Shields */,
+				723823E928A7D99400B76087 /* Armors */,
+				723823C328A6685D00B76087 /* Weapons */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		723823FB28A7DE8500B76087 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				723823C728A6685D00B76087 /* Attack.swift */,
+				723823C428A6685D00B76087 /* Defence.swift */,
+				723823C528A6685D00B76087 /* RequiredAttributes.swift */,
+				723823C928A6685D00B76087 /* ScalesWith.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,9 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
+				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
 				7238239528A5343500B76087 /* ContentView.swift in Sources */,
+				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
+				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
+				723823FD28A7DEED00B76087 /* Armors.swift in Sources */,
 				723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */,
 				723823D228A6692900B76087 /* NetworkService.swift in Sources */,
 				723823E828A6C9E800B76087 /* Defence.swift in Sources */,
@@ -359,9 +440,16 @@
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
 				723823E228A6C9E800B76087 /* WeaponsData.swift in Sources */,
 				723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */,
+				723823FF28A7DEF400B76087 /* Armor.swift in Sources */,
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
+				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
+				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
+				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
+				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,
+				723823F028A7DCA100B76087 /* Ammo.swift in Sources */,
+				723823F828A7DDDD00B76087 /* Shield.swift in Sources */,
 				723823E628A6C9E800B76087 /* Weapons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

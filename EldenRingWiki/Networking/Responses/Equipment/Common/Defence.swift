@@ -1,5 +1,5 @@
 //
-//  RequiredAttributes.swift
+//  Defence.swift
 //  
 //
 //  Created by Dmitrii Shliugaev on 12/08/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RequiredAttributes: Decodable {
+struct Defence: Decodable {
     let name: String
-    let amount: Double
+    let amount: Double?
 }

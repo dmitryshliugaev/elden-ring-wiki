@@ -9,5 +9,5 @@ import Foundation
 
 struct Attack: Decodable {
     let name: String
-    let amount: Double
+    let amount: Double?
 }
