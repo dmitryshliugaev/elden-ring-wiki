@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-let networkService = NetworkService()
+let networkService: NetworkServiceProtocol = NetworkService()
 
 @MainActor
-class ContentViewModel: ObservableObject {
+class ContentModel: ObservableObject {
     @Published var weapons: [WeaponsData] = []
     @Published var armors: [ArmorData] = []
     @Published var shields: [ShieldData] = []
@@ -92,79 +92,35 @@ class ContentViewModel: ObservableObject {
 }
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ContentViewModel()
+    @EnvironmentObject private var tabController: TabController
+    @StateObject var model = ContentModel()
     
     var body: some View {
-        TabView {
-            List {
-                ForEach(viewModel.weapons, id: \.id) { weapon in
-                    makeListItem(name: weapon.name, urlString: weapon.image)
-                }
-                
-                if !viewModel.weaponsIsFull {
-                    ProgressView()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .task {
-                            await viewModel.loadWeapons()
-                        }
-                }
-            }
-            .tabItem {
-                Label("weapons", systemImage: "list.dash")
+        List {
+            Button {
+                tabController.open(.map)
+            } label: {
+                Text("Open map")
             }
             
-            List {
-                ForEach(viewModel.armors, id: \.id) { armor in
-                    makeListItem(name: armor.name, urlString: armor.image)
-                }
-                
-                if !viewModel.armorsIsFull {
-                    ProgressView()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .task {
-                            await viewModel.loadArmors()
-                        }
-                }
-            }
-            .tabItem {
-                Label("armors", systemImage: "list.dash")
+            Button {
+                tabController.open(.other)
+            } label: {
+                Text("Open other")
             }
             
-            List {
-                ForEach(viewModel.shields, id: \.id) { shield in
-                    makeListItem(name: shield.name, urlString: shield.image)
-                }
-                
-                if !viewModel.shieldsIsFull {
-                    ProgressView()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .task {
-                            await viewModel.loadShields()
-                        }
-                }
-            }
-            .tabItem {
-                Label("shields", systemImage: "list.dash")
+            ForEach(model.weapons, id: \.id) { weapon in
+                makeListItem(name: weapon.name, urlString: weapon.image)
             }
             
-            List {
-                ForEach(viewModel.ammos, id: \.id) { ammo in
-                    makeListItem(name: ammo.name, urlString: ammo.image)
-                }
-                
-                if !viewModel.ammosIsFull {
-                    ProgressView()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .task {
-                            await viewModel.loadAmmos()
-                        }
-                }
-            }
-            .tabItem {
-                Label("ammos", systemImage: "list.dash")
+            if !model.weaponsIsFull {
+                ProgressView()
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .task {
+                        await model.loadWeapons()
+                    }
             }
         }
-        
     }
     
     func makeListItem(name: String, urlString: String?) -> some View {

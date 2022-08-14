@@ -11,3 +11,7 @@
 "NetworkError.UnauthenticatedUser" = "Unauthenticated User";
 "NetworkError.ParsingError" = "Parsing error:";
 "NetworkError.UnknownError" = "Unknown error:";
+
+"Catalog" = "Catalog";
+"Map" = "Map";
+"Other" = "Other";

@@ -11,7 +11,7 @@ import SwiftUI
 struct EldenRingWikiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

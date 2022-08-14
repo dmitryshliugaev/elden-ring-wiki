@@ -8,10 +8,10 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func load<T>(endpoint: Endpoint) async throws -> T
+    func load<T: Decodable>(endpoint: Endpoint) async throws -> T
 }
 
-class NetworkService {
+class NetworkService: NetworkServiceProtocol {
     private let session: URLSession
     private let decoder: JSONDecoder
     

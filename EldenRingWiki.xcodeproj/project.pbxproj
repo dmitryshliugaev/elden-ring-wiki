@@ -40,6 +40,7 @@
 		7238240128A7DF0100B76087 /* ArmorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240028A7DF0100B76087 /* ArmorData.swift */; };
 		7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240228A7DF7B00B76087 /* DmgNegation.swift */; };
 		7238240528A7DFA000B76087 /* Resistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240428A7DFA000B76087 /* Resistance.swift */; };
+		7238240728A9598A00B76087 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240628A9598A00B76087 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		7238240028A7DF0100B76087 /* ArmorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorData.swift; sourceTree = "<group>"; };
 		7238240228A7DF7B00B76087 /* DmgNegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmgNegation.swift; sourceTree = "<group>"; };
 		7238240428A7DFA000B76087 /* Resistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resistance.swift; sourceTree = "<group>"; };
+		7238240628A9598A00B76087 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				723823DA28A69F6000B76087 /* Resources */,
 				723823D028A6687000B76087 /* Networking */,
 				7238239228A5343500B76087 /* EldenRingWikiApp.swift */,
+				7238240628A9598A00B76087 /* RootView.swift */,
 				7238239428A5343500B76087 /* ContentView.swift */,
 				7238239828A5343600B76087 /* Preview Content */,
 			);
@@ -428,6 +431,7 @@
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
+				7238240728A9598A00B76087 /* RootView.swift in Sources */,
 				7238239528A5343500B76087 /* ContentView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
 				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
