@@ -15,3 +15,29 @@
 "Catalog" = "Catalog";
 "Map" = "Map";
 "Other" = "Other";
+
+"Equipment" = "Equipment";
+"Items" = "Items";
+"Magic" = "Magic";
+"World" = "World";
+"Classes" = "Classes";
+
+"Weapons" = "Weapons";
+"Armors" = "Armors";
+"Shields" = "Shields";
+"Ammos" = "Ammos";
+
+"Items" = "Items";
+"Talismans" = "Talismans";
+
+"Sorcery" = "Sorcery";
+"Spirits" = "Spirits";
+"Incantations" = "Incantations";
+"Ashes" = "Ashes";
+
+"Bosses" = "Bosses";
+"NPCs" = "NPCs";
+"Creatures" = "Creatures";
+"Locations" = "Locations";
+
+"Classes" = "Classes";
