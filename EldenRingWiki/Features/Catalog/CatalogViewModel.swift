@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class CatalogViewModel: ObservableObject {
     
 }

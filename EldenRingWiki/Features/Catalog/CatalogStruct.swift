@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-protocol CatalogProtocol:  Identifiable, CaseIterable {
-    var id: Int { get }
-    var title: String { get }
-}
-
-enum CatalogStruct: Int, CatalogProtocol {
+enum CatalogStruct: Int, Identifiable, CaseIterable {
     case equipment, items, magic, world, classes
     
     var id: Int {
@@ -48,10 +43,45 @@ enum CatalogStruct: Int, CatalogProtocol {
             return "person.3.sequence"
         }
     }
+    
+    var items: [CatalogSubItem] {
+        switch self {
+        case .equipment:
+            return [
+                CatalogSubItem.weapons,
+                CatalogSubItem.armors,
+                CatalogSubItem.shields,
+                CatalogSubItem.ammos,
+            ]
+        case .items:
+            return [
+                CatalogSubItem.items,
+                CatalogSubItem.talismans,
+            ]
+        case .magic:
+            return [
+                CatalogSubItem.sorcery,
+                CatalogSubItem.spirits,
+                CatalogSubItem.incantations,
+                CatalogSubItem.ashes,
+            ]
+        case .world:
+            return [
+                CatalogSubItem.bosses,
+                CatalogSubItem.npcs,
+                CatalogSubItem.creatures,
+                CatalogSubItem.locations,
+            ]
+        case .classes:
+            return [
+                CatalogSubItem.classes,
+            ]
+        }
+    }
 }
 
-enum EquipmentGroup: Int, CatalogProtocol {
-    case weapons, armors, shields, ammos
+enum CatalogSubItem: Int, Identifiable, CaseIterable {
+    case weapons, armors, shields, ammos, items, talismans, sorcery, spirits, incantations, ashes, bosses, npcs, creatures, locations, classes
     
     var id: Int {
         self.rawValue
@@ -67,36 +97,10 @@ enum EquipmentGroup: Int, CatalogProtocol {
             return "Shields".localizedString
         case .ammos:
             return "Ammos".localizedString
-        }
-    }
-}
-
-enum ItemsGroup: Int, CatalogProtocol  {
-    case items, talismans
-    
-    var id: Int {
-        self.rawValue
-    }
-    
-    var title: String {
-        switch self {
         case .items:
             return "Items".localizedString
         case .talismans:
             return "Talismans".localizedString
-        }
-    }
-}
-
-enum MagicGroup: Int, CatalogProtocol {
-    case sorcery, spirits, incantations, ashes
-    
-    var id: Int {
-        self.rawValue
-    }
-    
-    var title: String {
-        switch self {
         case .sorcery:
             return "Sorcery".localizedString
         case .spirits:
@@ -105,19 +109,6 @@ enum MagicGroup: Int, CatalogProtocol {
             return "Incantations".localizedString
         case .ashes:
             return "Ashes".localizedString
-        }
-    }
-}
-
-enum WorldGroup: Int, CatalogProtocol {
-    case bosses, npcs, creatures, locations
-    
-    var id: Int {
-        self.rawValue
-    }
-    
-    var title: String {
-        switch self {
         case .bosses:
             return "Bosses".localizedString
         case .npcs:
@@ -126,21 +117,44 @@ enum WorldGroup: Int, CatalogProtocol {
             return "Creatures".localizedString
         case .locations:
             return "Locations".localizedString
-        }
-    }
-}
-
-enum ClassesGroup: Int, CatalogProtocol {
-    case classes
-    
-    var id: Int {
-        self.rawValue
-    }
-    
-    var title: String {
-        switch self {
         case .classes:
             return "Classes".localizedString
+        }
+    }
+    
+    @ViewBuilder
+    var contentView: some View {
+        switch self {
+        case .weapons:
+            ContentView()
+        case .armors:
+            ContentView()
+        case .shields:
+            ContentView()
+        case .ammos:
+            ContentView()
+        case .items:
+            ContentView()
+        case .talismans:
+            ContentView()
+        case .sorcery:
+            ContentView()
+        case .spirits:
+            ContentView()
+        case .incantations:
+            ContentView()
+        case .ashes:
+            ContentView()
+        case .bosses:
+            ContentView()
+        case .npcs:
+            ContentView()
+        case .creatures:
+            ContentView()
+        case .locations:
+            ContentView()
+        case .classes:
+            ContentView()
         }
     }
 }

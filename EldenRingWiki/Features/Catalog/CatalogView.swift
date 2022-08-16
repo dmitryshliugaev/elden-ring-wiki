@@ -9,21 +9,20 @@ import SwiftUI
 
 struct CatalogView: View {
     var body: some View {
-        List {
-            ForEach(CatalogStruct.allCases) { catalogItem in
-                Section(header: sectionView(title: catalogItem.title,
-                                            iconName: catalogItem.iconName)) {
-                    ForEach(sectionItemsTitles(catalogItem: catalogItem), id: \.self) { title in
-                        Button {
-                            print(title)
-                        } label: {
-                            Text(title)
+        NavigationView {
+            List {
+                ForEach(CatalogStruct.allCases) { catalogSection in
+                    Section(header: sectionView(title: catalogSection.title,
+                                                iconName: catalogSection.iconName)) {
+                        ForEach(catalogSection.items) { item in
+                            NavigationLink(item.title) { item.contentView }
                         }
-                        .accentColor(.black)
                     }
                 }
             }
+            .navigationTitle(Text("Catalog"))
         }
+        
     }
     
     func sectionView(title: String, iconName: String) -> some View {
@@ -32,22 +31,6 @@ struct CatalogView: View {
             Text(title)
         }
         .foregroundColor(.black)
-        
-    }
-    
-    func sectionItemsTitles(catalogItem: CatalogStruct) -> [String] {
-        switch catalogItem {
-        case .equipment:
-            return EquipmentGroup.allCases.map { $0.title }
-        case .items:
-            return ItemsGroup.allCases.map { $0.title }
-        case .magic:
-            return MagicGroup.allCases.map { $0.title }
-        case .world:
-            return WorldGroup.allCases.map { $0.title }
-        case .classes:
-            return ClassesGroup.allCases.map { $0.title }
-        }
     }
 }
 
