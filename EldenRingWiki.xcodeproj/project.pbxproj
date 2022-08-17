@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7238239328A5343500B76087 /* EldenRingWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238239228A5343500B76087 /* EldenRingWikiApp.swift */; };
-		7238239528A5343500B76087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238239428A5343500B76087 /* ContentView.swift */; };
 		7238239728A5343600B76087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238239628A5343600B76087 /* Assets.xcassets */; };
 		7238239A28A5343600B76087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238239928A5343600B76087 /* Preview Assets.xcassets */; };
 		723823A428A5343700B76087 /* EldenRingWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823A328A5343700B76087 /* EldenRingWikiTests.swift */; };
@@ -45,6 +44,11 @@
 		7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240C28AA6FFC00B76087 /* CatalogViewModel.swift */; };
 		7238240F28AA9AE300B76087 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240E28AA9AE300B76087 /* TabController.swift */; };
 		7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241028AAA08000B76087 /* CatalogStruct.swift */; };
+		7238241628AD101600B76087 /* ListItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241528AD101600B76087 /* ListItemsView.swift */; };
+		7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241728AD102600B76087 /* ListItemsViewModel.swift */; };
+		7238241A28AD10A600B76087 /* ListItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241928AD10A600B76087 /* ListItemsModel.swift */; };
+		7238241C28AD130300B76087 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241B28AD130300B76087 /* ListType.swift */; };
+		7238242128AD1ACD00B76087 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242028AD1ACD00B76087 /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +71,6 @@
 /* Begin PBXFileReference section */
 		7238238F28A5343500B76087 /* EldenRingWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EldenRingWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238239228A5343500B76087 /* EldenRingWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EldenRingWikiApp.swift; sourceTree = "<group>"; };
-		7238239428A5343500B76087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7238239628A5343600B76087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7238239928A5343600B76087 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7238239F28A5343700B76087 /* EldenRingWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EldenRingWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +109,11 @@
 		7238240C28AA6FFC00B76087 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		7238240E28AA9AE300B76087 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		7238241028AAA08000B76087 /* CatalogStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStruct.swift; sourceTree = "<group>"; };
+		7238241528AD101600B76087 /* ListItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsView.swift; sourceTree = "<group>"; };
+		7238241728AD102600B76087 /* ListItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsViewModel.swift; sourceTree = "<group>"; };
+		7238241928AD10A600B76087 /* ListItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsModel.swift; sourceTree = "<group>"; };
+		7238241B28AD130300B76087 /* ListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListType.swift; sourceTree = "<group>"; };
+		7238242028AD1ACD00B76087 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +167,7 @@
 				7238240828AA69E900B76087 /* Features */,
 				723823D028A6687000B76087 /* Networking */,
 				7238239228A5343500B76087 /* EldenRingWikiApp.swift */,
-				7238240628A9598A00B76087 /* RootView.swift */,
-				7238240E28AA9AE300B76087 /* TabController.swift */,
-				7238239428A5343500B76087 /* ContentView.swift */,
+				7238242028AD1ACD00B76087 /* Dependencies.swift */,
 				723823DA28A69F6000B76087 /* Resources */,
 				7238239828A5343600B76087 /* Preview Content */,
 			);
@@ -309,6 +315,9 @@
 		7238240828AA69E900B76087 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7238242228AD1BBE00B76087 /* Tabs */,
+				7238241D28AD132200B76087 /* Common */,
+				7238241428AD0ECB00B76087 /* ListItems */,
 				7238240928AA6B5600B76087 /* Catalog */,
 			);
 			path = Features;
@@ -322,6 +331,33 @@
 				7238241028AAA08000B76087 /* CatalogStruct.swift */,
 			);
 			path = Catalog;
+			sourceTree = "<group>";
+		};
+		7238241428AD0ECB00B76087 /* ListItems */ = {
+			isa = PBXGroup;
+			children = (
+				7238241528AD101600B76087 /* ListItemsView.swift */,
+				7238241728AD102600B76087 /* ListItemsViewModel.swift */,
+				7238241928AD10A600B76087 /* ListItemsModel.swift */,
+			);
+			path = ListItems;
+			sourceTree = "<group>";
+		};
+		7238241D28AD132200B76087 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7238241B28AD130300B76087 /* ListType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7238242228AD1BBE00B76087 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				7238240628A9598A00B76087 /* RootView.swift */,
+				7238240E28AA9AE300B76087 /* TabController.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,12 +491,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7238241628AD101600B76087 /* ListItemsView.swift in Sources */,
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
+				7238242128AD1ACD00B76087 /* Dependencies.swift in Sources */,
 				7238240728A9598A00B76087 /* RootView.swift in Sources */,
-				7238239528A5343500B76087 /* ContentView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
 				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
 				7238240F28AA9AE300B76087 /* TabController.swift in Sources */,
@@ -469,8 +506,10 @@
 				723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */,
 				723823D228A6692900B76087 /* NetworkService.swift in Sources */,
 				723823E828A6C9E800B76087 /* Defence.swift in Sources */,
+				7238241C28AD130300B76087 /* ListType.swift in Sources */,
 				7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */,
 				7238239328A5343500B76087 /* EldenRingWikiApp.swift in Sources */,
+				7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */,
 				723823E328A6C9E800B76087 /* Weapon.swift in Sources */,
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
 				723823E228A6C9E800B76087 /* WeaponsData.swift in Sources */,
@@ -480,6 +519,7 @@
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
 				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
 				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
+				7238241A28AD10A600B76087 /* ListItemsModel.swift in Sources */,
 				7238240B28AA6B6600B76087 /* CatalogView.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,

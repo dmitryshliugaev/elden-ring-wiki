@@ -46,7 +46,7 @@ enum Tab: Int, CaseIterable, Identifiable {
         case .map:
             Color.brown
         case .other:
-            ContentView()
+            Color.yellow
         }
     }
 }
