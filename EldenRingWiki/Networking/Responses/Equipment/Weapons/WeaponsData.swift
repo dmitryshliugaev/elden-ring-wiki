@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeaponsData: Decodable {
+struct WeaponsData: ListItemMappable, Decodable {
     /// Id of the Weapon
     let id: String
     /// Name of the Weapon

@@ -24,19 +24,20 @@ class ListItemsViewModel: ObservableObject {
         do {
             var newItems: [ListItemsModel] = []
             let service = Dependencies.shared.networkService
+            
             switch type {
             case .weapons:
                 let weapons: Weapons = try await service.load(endpoint: .weapons(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
-                newItems = weapons.data.map { ListItemsModel(weapon: $0) }
+                newItems = weapons.data.map { ListItemsModel(response: $0) }
             case .armors:
                 let armors: Armors = try await service.load(endpoint: .armors(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
-                newItems = armors.data.map { ListItemsModel(armor: $0) }
+                newItems = armors.data.map { ListItemsModel(response: $0) }
             case .shields:
                 let shields: Shields = try await service.load(endpoint: .shields(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
-                newItems = shields.data.map { ListItemsModel(shield: $0) }
+                newItems = shields.data.map { ListItemsModel(response: $0) }
             case .ammos:
                 let ammos: Ammos = try await service.load(endpoint: .ammos(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
-                newItems = ammos.data.map { ListItemsModel(ammo: $0) }
+                newItems = ammos.data.map { ListItemsModel(response: $0) }
             case .items:
                 break
             case .talismans:
