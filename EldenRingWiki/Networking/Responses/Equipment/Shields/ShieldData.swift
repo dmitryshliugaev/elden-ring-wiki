@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShieldData: ListItemMappable, Decodable {
+struct ShieldData: ItemMappable, Decodable {
     /// Id of the Shield
     let id: String
     /// Name of the Shield

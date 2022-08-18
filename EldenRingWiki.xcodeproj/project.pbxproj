@@ -20,7 +20,7 @@
 		723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823D828A69F1800B76087 /* HTTPURLResponse+.swift */; };
 		723823DC28A69F7000B76087 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823DB28A69F7000B76087 /* Constants.swift */; };
 		723823DE28A69F8100B76087 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 723823DD28A69F8100B76087 /* Localizable.strings */; };
-		723823E228A6C9E800B76087 /* WeaponsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823CA28A6685D00B76087 /* WeaponsData.swift */; };
+		723823E228A6C9E800B76087 /* WeaponData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823CA28A6685D00B76087 /* WeaponData.swift */; };
 		723823E328A6C9E800B76087 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C628A6685D00B76087 /* Weapon.swift */; };
 		723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C528A6685D00B76087 /* RequiredAttributes.swift */; };
 		723823E528A6C9E800B76087 /* Attack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723823C728A6685D00B76087 /* Attack.swift */; };
@@ -49,6 +49,26 @@
 		7238241A28AD10A600B76087 /* ListItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241928AD10A600B76087 /* ListItemsModel.swift */; };
 		7238241C28AD130300B76087 /* ListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241B28AD130300B76087 /* ListType.swift */; };
 		7238242128AD1ACD00B76087 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242028AD1ACD00B76087 /* Dependencies.swift */; };
+		7238242528AE6BA700B76087 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242428AE6BA700B76087 /* Items.swift */; };
+		7238242728AE6BD700B76087 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242628AE6BD700B76087 /* Item.swift */; };
+		7238242928AE6BFE00B76087 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242828AE6BFE00B76087 /* ItemData.swift */; };
+		7238242E28AE6C7700B76087 /* ItemMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238242D28AE6C7700B76087 /* ItemMappable.swift */; };
+		7238243228AE6D1C00B76087 /* Talismans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238243128AE6D1C00B76087 /* Talismans.swift */; };
+		7238243428AE6D2100B76087 /* Talisman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238243328AE6D2100B76087 /* Talisman.swift */; };
+		7238243628AE6D2A00B76087 /* TalismanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238243528AE6D2A00B76087 /* TalismanData.swift */; };
+		7238243D28AE721600B76087 /* Ashes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238243C28AE721600B76087 /* Ashes.swift */; };
+		7238243F28AE722000B76087 /* Ashe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238243E28AE722000B76087 /* Ashe.swift */; };
+		7238244128AE722A00B76087 /* AsheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244028AE722A00B76087 /* AsheData.swift */; };
+		7238244328AE737C00B76087 /* Sorceries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244228AE737C00B76087 /* Sorceries.swift */; };
+		7238244528AE738500B76087 /* Sorcery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244428AE738500B76087 /* Sorcery.swift */; };
+		7238244728AE738D00B76087 /* SorceryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244628AE738D00B76087 /* SorceryData.swift */; };
+		7238244928AE745F00B76087 /* Requires.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244828AE745F00B76087 /* Requires.swift */; };
+		7238244B28AEAB8D00B76087 /* Spirits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244A28AEAB8D00B76087 /* Spirits.swift */; };
+		7238244D28AEAB9500B76087 /* Spirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244C28AEAB9500B76087 /* Spirit.swift */; };
+		7238244F28AEAB9D00B76087 /* SpiritData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238244E28AEAB9D00B76087 /* SpiritData.swift */; };
+		7238245228AEAD7D00B76087 /* Incantations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238245128AEAD7D00B76087 /* Incantations.swift */; };
+		7238245428AEAD8300B76087 /* Incantation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238245328AEAD8300B76087 /* Incantation.swift */; };
+		7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238245528AEAD8A00B76087 /* IncantationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +104,7 @@
 		723823C728A6685D00B76087 /* Attack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attack.swift; sourceTree = "<group>"; };
 		723823C828A6685D00B76087 /* Weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
 		723823C928A6685D00B76087 /* ScalesWith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesWith.swift; sourceTree = "<group>"; };
-		723823CA28A6685D00B76087 /* WeaponsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsData.swift; sourceTree = "<group>"; };
+		723823CA28A6685D00B76087 /* WeaponData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponData.swift; sourceTree = "<group>"; };
 		723823CD28A6685D00B76087 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		723823D128A6692900B76087 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		723823D328A6696800B76087 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -114,6 +134,26 @@
 		7238241928AD10A600B76087 /* ListItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsModel.swift; sourceTree = "<group>"; };
 		7238241B28AD130300B76087 /* ListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListType.swift; sourceTree = "<group>"; };
 		7238242028AD1ACD00B76087 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		7238242428AE6BA700B76087 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		7238242628AE6BD700B76087 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		7238242828AE6BFE00B76087 /* ItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemData.swift; sourceTree = "<group>"; };
+		7238242D28AE6C7700B76087 /* ItemMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMappable.swift; sourceTree = "<group>"; };
+		7238243128AE6D1C00B76087 /* Talismans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talismans.swift; sourceTree = "<group>"; };
+		7238243328AE6D2100B76087 /* Talisman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talisman.swift; sourceTree = "<group>"; };
+		7238243528AE6D2A00B76087 /* TalismanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalismanData.swift; sourceTree = "<group>"; };
+		7238243C28AE721600B76087 /* Ashes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ashes.swift; sourceTree = "<group>"; };
+		7238243E28AE722000B76087 /* Ashe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ashe.swift; sourceTree = "<group>"; };
+		7238244028AE722A00B76087 /* AsheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsheData.swift; sourceTree = "<group>"; };
+		7238244228AE737C00B76087 /* Sorceries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorceries.swift; sourceTree = "<group>"; };
+		7238244428AE738500B76087 /* Sorcery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorcery.swift; sourceTree = "<group>"; };
+		7238244628AE738D00B76087 /* SorceryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorceryData.swift; sourceTree = "<group>"; };
+		7238244828AE745F00B76087 /* Requires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requires.swift; sourceTree = "<group>"; };
+		7238244A28AEAB8D00B76087 /* Spirits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirits.swift; sourceTree = "<group>"; };
+		7238244C28AEAB9500B76087 /* Spirit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirit.swift; sourceTree = "<group>"; };
+		7238244E28AEAB9D00B76087 /* SpiritData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritData.swift; sourceTree = "<group>"; };
+		7238245128AEAD7D00B76087 /* Incantations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incantations.swift; sourceTree = "<group>"; };
+		7238245328AEAD8300B76087 /* Incantation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incantation.swift; sourceTree = "<group>"; };
+		7238245528AEAD8A00B76087 /* IncantationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncantationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +242,9 @@
 		723823C228A6685D00B76087 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				7238245028AEAD4700B76087 /* Common */,
+				7238243728AE719900B76087 /* Magic */,
+				7238242328AE6B8A00B76087 /* Items */,
 				723823EC28A7D9E100B76087 /* Equipment */,
 			);
 			path = Responses;
@@ -212,7 +255,7 @@
 			children = (
 				723823C628A6685D00B76087 /* Weapon.swift */,
 				723823C828A6685D00B76087 /* Weapons.swift */,
-				723823CA28A6685D00B76087 /* WeaponsData.swift */,
+				723823CA28A6685D00B76087 /* WeaponData.swift */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -220,6 +263,7 @@
 		723823D028A6687000B76087 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7238242C28AE6C3E00B76087 /* Common */,
 				723823E128A6AD0800B76087 /* Extensions */,
 				723823C228A6685D00B76087 /* Responses */,
 				723823CD28A6685D00B76087 /* NetworkError.swift */,
@@ -292,24 +336,12 @@
 		723823EC28A7D9E100B76087 /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
-				723823FB28A7DE8500B76087 /* Common */,
 				723823EB28A7D9AF00B76087 /* Ammos */,
 				723823EA28A7D99D00B76087 /* Shields */,
 				723823E928A7D99400B76087 /* Armors */,
 				723823C328A6685D00B76087 /* Weapons */,
 			);
 			path = Equipment;
-			sourceTree = "<group>";
-		};
-		723823FB28A7DE8500B76087 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				723823C728A6685D00B76087 /* Attack.swift */,
-				723823C428A6685D00B76087 /* Defence.swift */,
-				723823C528A6685D00B76087 /* RequiredAttributes.swift */,
-				723823C928A6685D00B76087 /* ScalesWith.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		7238240828AA69E900B76087 /* Features */ = {
@@ -358,6 +390,106 @@
 				7238240E28AA9AE300B76087 /* TabController.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		7238242328AE6B8A00B76087 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				7238243028AE6D1400B76087 /* Talismans */,
+				7238242F28AE6CF300B76087 /* Items */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		7238242C28AE6C3E00B76087 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7238242D28AE6C7700B76087 /* ItemMappable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7238242F28AE6CF300B76087 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				7238242428AE6BA700B76087 /* Items.swift */,
+				7238242628AE6BD700B76087 /* Item.swift */,
+				7238242828AE6BFE00B76087 /* ItemData.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		7238243028AE6D1400B76087 /* Talismans */ = {
+			isa = PBXGroup;
+			children = (
+				7238243128AE6D1C00B76087 /* Talismans.swift */,
+				7238243328AE6D2100B76087 /* Talisman.swift */,
+				7238243528AE6D2A00B76087 /* TalismanData.swift */,
+			);
+			path = Talismans;
+			sourceTree = "<group>";
+		};
+		7238243728AE719900B76087 /* Magic */ = {
+			isa = PBXGroup;
+			children = (
+				7238243B28AE71F800B76087 /* Ashes */,
+				7238243A28AE71F100B76087 /* Incantations */,
+				7238243928AE71EA00B76087 /* Spirits */,
+				7238243828AE71E300B76087 /* Sorceries */,
+			);
+			path = Magic;
+			sourceTree = "<group>";
+		};
+		7238243828AE71E300B76087 /* Sorceries */ = {
+			isa = PBXGroup;
+			children = (
+				7238244228AE737C00B76087 /* Sorceries.swift */,
+				7238244428AE738500B76087 /* Sorcery.swift */,
+				7238244628AE738D00B76087 /* SorceryData.swift */,
+			);
+			path = Sorceries;
+			sourceTree = "<group>";
+		};
+		7238243928AE71EA00B76087 /* Spirits */ = {
+			isa = PBXGroup;
+			children = (
+				7238244A28AEAB8D00B76087 /* Spirits.swift */,
+				7238244C28AEAB9500B76087 /* Spirit.swift */,
+				7238244E28AEAB9D00B76087 /* SpiritData.swift */,
+			);
+			path = Spirits;
+			sourceTree = "<group>";
+		};
+		7238243A28AE71F100B76087 /* Incantations */ = {
+			isa = PBXGroup;
+			children = (
+				7238245128AEAD7D00B76087 /* Incantations.swift */,
+				7238245328AEAD8300B76087 /* Incantation.swift */,
+				7238245528AEAD8A00B76087 /* IncantationData.swift */,
+			);
+			path = Incantations;
+			sourceTree = "<group>";
+		};
+		7238243B28AE71F800B76087 /* Ashes */ = {
+			isa = PBXGroup;
+			children = (
+				7238243C28AE721600B76087 /* Ashes.swift */,
+				7238243E28AE722000B76087 /* Ashe.swift */,
+				7238244028AE722A00B76087 /* AsheData.swift */,
+			);
+			path = Ashes;
+			sourceTree = "<group>";
+		};
+		7238245028AEAD4700B76087 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7238244828AE745F00B76087 /* Requires.swift */,
+				723823C728A6685D00B76087 /* Attack.swift */,
+				723823C428A6685D00B76087 /* Defence.swift */,
+				723823C528A6685D00B76087 /* RequiredAttributes.swift */,
+				723823C928A6685D00B76087 /* ScalesWith.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,6 +625,8 @@
 			files = (
 				7238241628AD101600B76087 /* ListItemsView.swift in Sources */,
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
+				7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */,
+				7238245228AEAD7D00B76087 /* Incantations.swift in Sources */,
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
@@ -500,11 +634,15 @@
 				7238240728A9598A00B76087 /* RootView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
 				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
+				7238244928AE745F00B76087 /* Requires.swift in Sources */,
 				7238240F28AA9AE300B76087 /* TabController.swift in Sources */,
 				7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */,
 				723823FD28A7DEED00B76087 /* Armors.swift in Sources */,
+				7238244128AE722A00B76087 /* AsheData.swift in Sources */,
 				723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */,
 				723823D228A6692900B76087 /* NetworkService.swift in Sources */,
+				7238244528AE738500B76087 /* Sorcery.swift in Sources */,
+				7238242728AE6BD700B76087 /* Item.swift in Sources */,
 				723823E828A6C9E800B76087 /* Defence.swift in Sources */,
 				7238241C28AD130300B76087 /* ListType.swift in Sources */,
 				7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */,
@@ -512,20 +650,34 @@
 				7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */,
 				723823E328A6C9E800B76087 /* Weapon.swift in Sources */,
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
-				723823E228A6C9E800B76087 /* WeaponsData.swift in Sources */,
+				723823E228A6C9E800B76087 /* WeaponData.swift in Sources */,
+				7238243F28AE722000B76087 /* Ashe.swift in Sources */,
 				723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */,
 				723823FF28A7DEF400B76087 /* Armor.swift in Sources */,
+				7238243628AE6D2A00B76087 /* TalismanData.swift in Sources */,
+				7238244728AE738D00B76087 /* SorceryData.swift in Sources */,
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
 				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
+				7238244328AE737C00B76087 /* Sorceries.swift in Sources */,
 				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
+				7238243228AE6D1C00B76087 /* Talismans.swift in Sources */,
 				7238241A28AD10A600B76087 /* ListItemsModel.swift in Sources */,
+				7238242E28AE6C7700B76087 /* ItemMappable.swift in Sources */,
+				7238245428AEAD8300B76087 /* Incantation.swift in Sources */,
+				7238243428AE6D2100B76087 /* Talisman.swift in Sources */,
+				7238242928AE6BFE00B76087 /* ItemData.swift in Sources */,
 				7238240B28AA6B6600B76087 /* CatalogView.swift in Sources */,
+				7238244F28AEAB9D00B76087 /* SpiritData.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
+				7238242528AE6BA700B76087 /* Items.swift in Sources */,
 				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,
+				7238244D28AEAB9500B76087 /* Spirit.swift in Sources */,
 				723823F028A7DCA100B76087 /* Ammo.swift in Sources */,
 				723823F828A7DDDD00B76087 /* Shield.swift in Sources */,
+				7238243D28AE721600B76087 /* Ashes.swift in Sources */,
+				7238244B28AEAB8D00B76087 /* Spirits.swift in Sources */,
 				723823E628A6C9E800B76087 /* Weapons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

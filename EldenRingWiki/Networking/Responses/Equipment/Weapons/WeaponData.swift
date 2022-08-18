@@ -1,5 +1,5 @@
 //
-//  WeaponsData.swift
+//  WeaponData.swift
 //  
 //
 //  Created by Dmitrii Shliugaev on 12/08/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeaponsData: ListItemMappable, Decodable {
+struct WeaponData: ItemMappable, Decodable {
     /// Id of the Weapon
     let id: String
     /// Name of the Weapon

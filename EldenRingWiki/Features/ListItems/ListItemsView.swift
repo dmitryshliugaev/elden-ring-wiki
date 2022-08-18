@@ -38,6 +38,8 @@ struct ListItemsView: View {
                     }
             }
         }
+        .listStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text(viewModel.type.title))
     }
     

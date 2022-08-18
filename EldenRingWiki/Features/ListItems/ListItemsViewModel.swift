@@ -39,17 +39,23 @@ class ListItemsViewModel: ObservableObject {
                 let ammos: Ammos = try await service.load(endpoint: .ammos(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
                 newItems = ammos.data.map { ListItemsModel(response: $0) }
             case .items:
-                break
+                let items: Items = try await service.load(endpoint: .items(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = items.data.map { ListItemsModel(response: $0) }
             case .talismans:
-                break
-            case .sorcery:
-                break
+                let talismans: Talismans = try await service.load(endpoint: .talismans(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = talismans.data.map { ListItemsModel(response: $0) }
+            case .sorceries:
+                let sorceries: Sorceries = try await service.load(endpoint: .sorceries(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = sorceries.data.map { ListItemsModel(response: $0) }
             case .spirits:
-                break
+                let spirits: Spirits = try await service.load(endpoint: .spirits(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = spirits.data.map { ListItemsModel(response: $0) }
             case .incantations:
-                break
+                let incantations: Incantations = try await service.load(endpoint: .incantations(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = incantations.data.map { ListItemsModel(response: $0) }
             case .ashes:
-                break
+                let ashes: Ashes = try await service.load(endpoint: .ashes(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = ashes.data.map { ListItemsModel(response: $0) }
             case .bosses:
                 break
             case .npcs:

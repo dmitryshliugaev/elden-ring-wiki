@@ -60,7 +60,7 @@ enum CatalogStruct: Int, Identifiable, CaseIterable {
             ]
         case .magic:
             return [
-                ListType.sorcery,
+                ListType.sorceries,
                 ListType.spirits,
                 ListType.incantations,
                 ListType.ashes,

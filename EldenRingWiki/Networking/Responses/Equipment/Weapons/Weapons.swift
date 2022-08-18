@@ -11,5 +11,5 @@ struct Weapons: Decodable {
     let success: Bool
     let count: Int
     let total: Int
-    let data: [WeaponsData]
+    let data: [WeaponData]
 }

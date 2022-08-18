@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AmmoData: ListItemMappable, Decodable {
+struct AmmoData: ItemMappable, Decodable {
     /// Id of the ammo item
     let id: String
     /// Name of the ammo item

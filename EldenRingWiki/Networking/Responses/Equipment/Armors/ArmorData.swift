@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArmorData: ListItemMappable, Decodable {
+struct ArmorData: ItemMappable, Decodable {
     /// Id of the armor piece
     let id: String
     /// Name of the armor piece

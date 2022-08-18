@@ -7,20 +7,13 @@
 
 import Foundation
 
-protocol ListItemMappable {
-    var id: String { get }
-    var name: String { get }
-    var image: String? { get }
-    var description: String? { get }
-}
-
 struct ListItemsModel {
     let id: String
     let name: String
     let imageUrl: String?
     let description: String?
     
-    init(response: ListItemMappable) {
+    init(response: ItemMappable) {
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image

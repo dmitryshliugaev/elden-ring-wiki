@@ -9,5 +9,5 @@ import Foundation
 
 struct Weapon: Decodable {
     let success: Bool
-    let data: WeaponsData
+    let data: WeaponData
 }
