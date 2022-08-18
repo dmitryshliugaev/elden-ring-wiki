@@ -65,7 +65,8 @@ class ListItemsViewModel: ObservableObject {
             case .locations:
                 break
             case .classes:
-                break
+                let characterClasses: CharacterClasses = try await service.load(endpoint: .characterClasses(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = characterClasses.data.map { ListItemsModel(response: $0) }
             }
             
             items.append(contentsOf: newItems)

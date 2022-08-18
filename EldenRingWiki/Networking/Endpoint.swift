@@ -38,6 +38,9 @@ public enum Endpoint {
     case incantations(page: Int, limit: Int, name: String?)
     case incantation(id: String)
     
+    case characterClasses(page: Int, limit: Int, name: String?)
+    case characterClass(id: String)
+    
     public func path() -> String {
         switch self {
         case .weapons(_, _, _):
@@ -89,6 +92,11 @@ public enum Endpoint {
             return "incantations"
         case let .incantation(id):
             return "incantations/\(id)"
+            
+        case .characterClasses(_, _, _):
+            return "classes"
+        case let .characterClass(id):
+            return "classes/\(id)"
         }
     }
     
@@ -105,7 +113,8 @@ public enum Endpoint {
             let .ashes(page, limit, name),
             let .sorceries(page, limit, name),
             let .spirits(page, limit, name),
-            let .incantations(page, limit, name):
+            let .incantations(page, limit, name),
+            let .characterClasses(page, limit, name):
             urlComponents?.queryItems = [
                 URLQueryItem(name: "page", value: String(page)),
                 URLQueryItem(name: "limit", value: String(limit))
@@ -124,7 +133,8 @@ public enum Endpoint {
                 .ashe(_),
                 .sorcery(_),
                 .spirit(_),
-                .incantation(_):
+                .incantation(_),
+                .characterClass(_):
             break
         }
         
