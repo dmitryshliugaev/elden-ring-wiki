@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListItemsView: View {
-    @EnvironmentObject private var tabController: TabController
+    @EnvironmentObject private var router: Router
     @StateObject var viewModel: ListItemsViewModel
     
     public init(type: ListType) {
@@ -17,15 +17,13 @@ struct ListItemsView: View {
     
     var body: some View {
         List {
-            Button {
-                tabController.open(.map)
-            } label: {
-                Text("Open map")
-            }
-            
             ForEach(viewModel.items, id: \.id) { item in
-                makeListItem(name: item.name,
-                             urlString: item.imageUrl)
+                Button {
+                    router.searchItemOnMap(item.name)
+                } label: {
+                    makeListItem(name: item.name,
+                                 urlString: item.imageUrl)
+                }
             }
             
             if !viewModel.listIsFull {

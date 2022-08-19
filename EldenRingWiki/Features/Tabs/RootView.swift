@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var tabController = TabController()
+    @StateObject private var router = Router()
     
     var body: some View {
-        TabView(selection: $tabController.activeTab) {
+        TabView(selection: $router.activeTab) {
             ForEach(Tab.allCases) { tab in
                 tab.contentView
                     .tabItem {
@@ -24,7 +24,7 @@ struct RootView: View {
                     .tag(tab)
             }
         }
-        .environmentObject(tabController)
+        .environmentObject(router)
     }
 }
 

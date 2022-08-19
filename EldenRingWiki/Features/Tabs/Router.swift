@@ -1,5 +1,5 @@
 //
-//  TabController.swift
+//  Router.swift
 //  EldenRingWiki
 //
 //  Created by Dmitrii Shliugaev on 15/08/2022.
@@ -44,17 +44,23 @@ enum Tab: Int, CaseIterable, Identifiable {
         case .catalog:
             CatalogView()
         case .map:
-            Color.brown
+            MapView()
         case .other:
             Color.yellow
         }
     }
 }
 
-class TabController: ObservableObject {
+class Router: ObservableObject {
     @Published var activeTab: Tab = .catalog
+    @Published var searchItem: String = ""
     
     func open(_ tab: Tab) {
         activeTab = tab
+    }
+    
+    func searchItemOnMap(_ itemName: String) {
+        searchItem = itemName
+        open(.map)
     }
 }

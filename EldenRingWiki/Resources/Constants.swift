@@ -13,6 +13,8 @@ struct Constants {
         static let baseUrl = "https://eldenring.fanapis.com/api/"
         /// Page limit 30
         static let pageLimit = 30
+        /// Map URL
+        static let mapUrl = "https://mapgenie.io/elden-ring/maps/the-lands-between"
     }
     
     struct UI {

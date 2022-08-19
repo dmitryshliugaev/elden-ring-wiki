@@ -42,7 +42,7 @@
 		7238240728A9598A00B76087 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240628A9598A00B76087 /* RootView.swift */; };
 		7238240B28AA6B6600B76087 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240A28AA6B6600B76087 /* CatalogView.swift */; };
 		7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240C28AA6FFC00B76087 /* CatalogViewModel.swift */; };
-		7238240F28AA9AE300B76087 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240E28AA9AE300B76087 /* TabController.swift */; };
+		7238240F28AA9AE300B76087 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238240E28AA9AE300B76087 /* Router.swift */; };
 		7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241028AAA08000B76087 /* CatalogStruct.swift */; };
 		7238241628AD101600B76087 /* ListItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241528AD101600B76087 /* ListItemsView.swift */; };
 		7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238241728AD102600B76087 /* ListItemsViewModel.swift */; };
@@ -85,6 +85,9 @@
 		7238247C28AF884700B76087 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247B28AF884700B76087 /* Locations.swift */; };
 		7238247E28AF884D00B76087 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247D28AF884D00B76087 /* Location.swift */; };
 		7238248028AF885400B76087 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247F28AF885400B76087 /* LocationData.swift */; };
+		7238248328AFBE2300B76087 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248228AFBE2300B76087 /* MapView.swift */; };
+		7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248628AFC75500B76087 /* WebViewContainer.swift */; };
+		7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248928AFC7C200B76087 /* WebViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,7 +146,7 @@
 		7238240628A9598A00B76087 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7238240A28AA6B6600B76087 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		7238240C28AA6FFC00B76087 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
-		7238240E28AA9AE300B76087 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		7238240E28AA9AE300B76087 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7238241028AAA08000B76087 /* CatalogStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStruct.swift; sourceTree = "<group>"; };
 		7238241528AD101600B76087 /* ListItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsView.swift; sourceTree = "<group>"; };
 		7238241728AD102600B76087 /* ListItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemsViewModel.swift; sourceTree = "<group>"; };
@@ -186,6 +189,9 @@
 		7238247B28AF884700B76087 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		7238247D28AF884D00B76087 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7238247F28AF885400B76087 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		7238248228AFBE2300B76087 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7238248628AFC75500B76087 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
+		7238248928AFC7C200B76087 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +387,7 @@
 		7238240828AA69E900B76087 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7238248128AFBE0900B76087 /* Map */,
 				7238242228AD1BBE00B76087 /* Tabs */,
 				7238241D28AD132200B76087 /* Common */,
 				7238241428AD0ECB00B76087 /* ListItems */,
@@ -421,7 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				7238240628A9598A00B76087 /* RootView.swift */,
-				7238240E28AA9AE300B76087 /* TabController.swift */,
+				7238240E28AA9AE300B76087 /* Router.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -588,6 +595,24 @@
 			path = CharacterClasses;
 			sourceTree = "<group>";
 		};
+		7238248128AFBE0900B76087 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7238248828AFC7B200B76087 /* WebView */,
+				7238248228AFBE2300B76087 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		7238248828AFC7B200B76087 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7238248628AFC75500B76087 /* WebViewContainer.swift */,
+				7238248928AFC7C200B76087 /* WebViewModel.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -735,7 +760,7 @@
 				7238247828AF86C300B76087 /* Creature.swift in Sources */,
 				7238246228AEB08100B76087 /* CharacterClasses.swift in Sources */,
 				7238244928AE745F00B76087 /* Requires.swift in Sources */,
-				7238240F28AA9AE300B76087 /* TabController.swift in Sources */,
+				7238240F28AA9AE300B76087 /* Router.swift in Sources */,
 				7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */,
 				7238246E28AF80DC00B76087 /* BossData.swift in Sources */,
 				723823FD28A7DEED00B76087 /* Armors.swift in Sources */,
@@ -777,6 +802,9 @@
 				7238246828AEB0CA00B76087 /* ClassStats.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
+				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
+				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
+				7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */,
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,
 				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,
 				7238244D28AEAB9500B76087 /* Spirit.swift in Sources */,
