@@ -73,6 +73,18 @@
 		7238246428AEB08800B76087 /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246328AEB08800B76087 /* CharacterClass.swift */; };
 		7238246628AEB09000B76087 /* CharacterClassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246528AEB09000B76087 /* CharacterClassData.swift */; };
 		7238246828AEB0CA00B76087 /* ClassStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246728AEB0CA00B76087 /* ClassStats.swift */; };
+		7238246A28AF80CA00B76087 /* Bosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246928AF80CA00B76087 /* Bosses.swift */; };
+		7238246C28AF80D300B76087 /* Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246B28AF80D300B76087 /* Boss.swift */; };
+		7238246E28AF80DC00B76087 /* BossData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246D28AF80DC00B76087 /* BossData.swift */; };
+		7238247028AF854C00B76087 /* NPCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238246F28AF854C00B76087 /* NPCs.swift */; };
+		7238247228AF855400B76087 /* NPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247128AF855400B76087 /* NPC.swift */; };
+		7238247428AF855E00B76087 /* NPCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247328AF855E00B76087 /* NPCData.swift */; };
+		7238247628AF86BA00B76087 /* Creatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247528AF86BA00B76087 /* Creatures.swift */; };
+		7238247828AF86C300B76087 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247728AF86C300B76087 /* Creature.swift */; };
+		7238247A28AF86CF00B76087 /* CreatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247928AF86CF00B76087 /* CreatureData.swift */; };
+		7238247C28AF884700B76087 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247B28AF884700B76087 /* Locations.swift */; };
+		7238247E28AF884D00B76087 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247D28AF884D00B76087 /* Location.swift */; };
+		7238248028AF885400B76087 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238247F28AF885400B76087 /* LocationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +174,18 @@
 		7238246328AEB08800B76087 /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
 		7238246528AEB09000B76087 /* CharacterClassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClassData.swift; sourceTree = "<group>"; };
 		7238246728AEB0CA00B76087 /* ClassStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStats.swift; sourceTree = "<group>"; };
+		7238246928AF80CA00B76087 /* Bosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bosses.swift; sourceTree = "<group>"; };
+		7238246B28AF80D300B76087 /* Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boss.swift; sourceTree = "<group>"; };
+		7238246D28AF80DC00B76087 /* BossData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossData.swift; sourceTree = "<group>"; };
+		7238246F28AF854C00B76087 /* NPCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCs.swift; sourceTree = "<group>"; };
+		7238247128AF855400B76087 /* NPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPC.swift; sourceTree = "<group>"; };
+		7238247328AF855E00B76087 /* NPCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCData.swift; sourceTree = "<group>"; };
+		7238247528AF86BA00B76087 /* Creatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creatures.swift; sourceTree = "<group>"; };
+		7238247728AF86C300B76087 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		7238247928AF86CF00B76087 /* CreatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureData.swift; sourceTree = "<group>"; };
+		7238247B28AF884700B76087 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		7238247D28AF884D00B76087 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7238247F28AF885400B76087 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +540,9 @@
 		7238245828AEAFD900B76087 /* Bosses */ = {
 			isa = PBXGroup;
 			children = (
+				7238246928AF80CA00B76087 /* Bosses.swift */,
+				7238246B28AF80D300B76087 /* Boss.swift */,
+				7238246D28AF80DC00B76087 /* BossData.swift */,
 			);
 			path = Bosses;
 			sourceTree = "<group>";
@@ -523,6 +550,9 @@
 		7238245928AEAFE000B76087 /* NPCs */ = {
 			isa = PBXGroup;
 			children = (
+				7238246F28AF854C00B76087 /* NPCs.swift */,
+				7238247128AF855400B76087 /* NPC.swift */,
+				7238247328AF855E00B76087 /* NPCData.swift */,
 			);
 			path = NPCs;
 			sourceTree = "<group>";
@@ -530,6 +560,9 @@
 		7238245A28AEAFE900B76087 /* Creatures */ = {
 			isa = PBXGroup;
 			children = (
+				7238247528AF86BA00B76087 /* Creatures.swift */,
+				7238247728AF86C300B76087 /* Creature.swift */,
+				7238247928AF86CF00B76087 /* CreatureData.swift */,
 			);
 			path = Creatures;
 			sourceTree = "<group>";
@@ -537,6 +570,9 @@
 		7238245B28AEAFF100B76087 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				7238247B28AF884700B76087 /* Locations.swift */,
+				7238247D28AF884D00B76087 /* Location.swift */,
+				7238247F28AF885400B76087 /* LocationData.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -683,6 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7238248028AF885400B76087 /* LocationData.swift in Sources */,
 				7238241628AD101600B76087 /* ListItemsView.swift in Sources */,
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
 				7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */,
@@ -693,11 +730,14 @@
 				7238242128AD1ACD00B76087 /* Dependencies.swift in Sources */,
 				7238240728A9598A00B76087 /* RootView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
+				7238246C28AF80D300B76087 /* Boss.swift in Sources */,
 				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
+				7238247828AF86C300B76087 /* Creature.swift in Sources */,
 				7238246228AEB08100B76087 /* CharacterClasses.swift in Sources */,
 				7238244928AE745F00B76087 /* Requires.swift in Sources */,
 				7238240F28AA9AE300B76087 /* TabController.swift in Sources */,
 				7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */,
+				7238246E28AF80DC00B76087 /* BossData.swift in Sources */,
 				723823FD28A7DEED00B76087 /* Armors.swift in Sources */,
 				7238244128AE722A00B76087 /* AsheData.swift in Sources */,
 				723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */,
@@ -713,10 +753,12 @@
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
 				723823E228A6C9E800B76087 /* WeaponData.swift in Sources */,
 				7238243F28AE722000B76087 /* Ashe.swift in Sources */,
+				7238247228AF855400B76087 /* NPC.swift in Sources */,
 				723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */,
 				723823FF28A7DEF400B76087 /* Armor.swift in Sources */,
 				7238243628AE6D2A00B76087 /* TalismanData.swift in Sources */,
 				7238244728AE738D00B76087 /* SorceryData.swift in Sources */,
+				7238247C28AF884700B76087 /* Locations.swift in Sources */,
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
 				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
@@ -724,6 +766,7 @@
 				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
 				7238243228AE6D1C00B76087 /* Talismans.swift in Sources */,
 				7238241A28AD10A600B76087 /* ListItemsModel.swift in Sources */,
+				7238247A28AF86CF00B76087 /* CreatureData.swift in Sources */,
 				7238242E28AE6C7700B76087 /* ItemMappable.swift in Sources */,
 				7238245428AEAD8300B76087 /* Incantation.swift in Sources */,
 				7238243428AE6D2100B76087 /* Talisman.swift in Sources */,
@@ -737,10 +780,15 @@
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,
 				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,
 				7238244D28AEAB9500B76087 /* Spirit.swift in Sources */,
+				7238247E28AF884D00B76087 /* Location.swift in Sources */,
+				7238247628AF86BA00B76087 /* Creatures.swift in Sources */,
 				7238246628AEB09000B76087 /* CharacterClassData.swift in Sources */,
+				7238247028AF854C00B76087 /* NPCs.swift in Sources */,
+				7238246A28AF80CA00B76087 /* Bosses.swift in Sources */,
 				723823F028A7DCA100B76087 /* Ammo.swift in Sources */,
 				723823F828A7DDDD00B76087 /* Shield.swift in Sources */,
 				7238243D28AE721600B76087 /* Ashes.swift in Sources */,
+				7238247428AF855E00B76087 /* NPCData.swift in Sources */,
 				7238244B28AEAB8D00B76087 /* Spirits.swift in Sources */,
 				723823E628A6C9E800B76087 /* Weapons.swift in Sources */,
 			);

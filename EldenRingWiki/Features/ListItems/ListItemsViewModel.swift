@@ -57,13 +57,17 @@ class ListItemsViewModel: ObservableObject {
                 let ashes: Ashes = try await service.load(endpoint: .ashes(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
                 newItems = ashes.data.map { ListItemsModel(response: $0) }
             case .bosses:
-                break
+                let bosses: Bosses = try await service.load(endpoint: .bosses(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = bosses.data.map { ListItemsModel(response: $0) }
             case .npcs:
-                break
+                let npcs: NPCs = try await service.load(endpoint: .npcs(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = npcs.data.map { ListItemsModel(response: $0) }
             case .creatures:
-                break
+                let creatures: Creatures = try await service.load(endpoint: .creatures(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = creatures.data.map { ListItemsModel(response: $0) }
             case .locations:
-                break
+                let locations: Locations = try await service.load(endpoint: .locations(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
+                newItems = locations.data.map { ListItemsModel(response: $0) }
             case .classes:
                 let characterClasses: CharacterClasses = try await service.load(endpoint: .characterClasses(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
                 newItems = characterClasses.data.map { ListItemsModel(response: $0) }

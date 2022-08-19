@@ -52,6 +52,7 @@ struct ListItemsView: View {
                     ProgressView()
                 }
                 .frame(width: Constants.UI.thumbnailsSize, height: Constants.UI.thumbnailsSize)
+                .cornerRadius(Constants.UI.thumbnailsSize/2)
             } else {
                 Circle()
                     .fill(.gray)

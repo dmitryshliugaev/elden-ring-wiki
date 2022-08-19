@@ -38,6 +38,18 @@ public enum Endpoint {
     case incantations(page: Int, limit: Int, name: String?)
     case incantation(id: String)
     
+    case bosses(page: Int, limit: Int, name: String?)
+    case boss(id: String)
+    
+    case npcs(page: Int, limit: Int, name: String?)
+    case npc(id: String)
+    
+    case creatures(page: Int, limit: Int, name: String?)
+    case creature(id: String)
+    
+    case locations(page: Int, limit: Int, name: String?)
+    case location(id: String)
+    
     case characterClasses(page: Int, limit: Int, name: String?)
     case characterClass(id: String)
     
@@ -93,6 +105,26 @@ public enum Endpoint {
         case let .incantation(id):
             return "incantations/\(id)"
             
+        case .bosses(_, _, _):
+            return "bosses"
+        case let .boss(id):
+            return "bosses/\(id)"
+            
+        case .npcs(_, _, _):
+            return "npcs"
+        case let .npc(id):
+            return "npcs/\(id)"
+            
+        case .creatures(_, _, _):
+            return "creatures"
+        case let .creature(id):
+            return "creatures/\(id)"
+            
+        case .locations(_, _, _):
+            return "locations"
+        case let .location(id):
+            return "locations/\(id)"
+            
         case .characterClasses(_, _, _):
             return "classes"
         case let .characterClass(id):
@@ -114,6 +146,10 @@ public enum Endpoint {
             let .sorceries(page, limit, name),
             let .spirits(page, limit, name),
             let .incantations(page, limit, name),
+            let .bosses(page, limit, name),
+            let .npcs(page, limit, name),
+            let .creatures(page, limit, name),
+            let .locations(page, limit, name),
             let .characterClasses(page, limit, name):
             urlComponents?.queryItems = [
                 URLQueryItem(name: "page", value: String(page)),
@@ -134,6 +170,10 @@ public enum Endpoint {
                 .sorcery(_),
                 .spirit(_),
                 .incantation(_),
+                .boss(_),
+                .npc(_),
+                .creature(_),
+                .location(_),
                 .characterClass(_):
             break
         }
