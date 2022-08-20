@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MapView: View {
     @StateObject var webViewModel = WebViewModel()
-    @EnvironmentObject private var router: Router
+    @EnvironmentObject private var router: TabRouter
     
     var body: some View {
         ZStack {

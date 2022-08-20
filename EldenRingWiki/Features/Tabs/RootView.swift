@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var router = Router()
+    @StateObject private var router = TabRouter()
     
     var body: some View {
         TabView(selection: $router.activeTab) {

@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  TabRouter.swift
 //  EldenRingWiki
 //
 //  Created by Dmitrii Shliugaev on 15/08/2022.
@@ -51,7 +51,7 @@ enum Tab: Int, CaseIterable, Identifiable {
     }
 }
 
-class Router: ObservableObject {
+class TabRouter: ObservableObject {
     @Published var activeTab: Tab = .catalog
     @Published var searchItem: String = ""
     

@@ -12,9 +12,11 @@ class ListItemsViewModel: ObservableObject {
     let type: ListType
     
     @Published var items: [ListItemsModel] = []
+    @Published var isShowDetailView = false
     
     var itemsPage = 0
     var listIsFull = false
+    var itemId: String = ""
     
     init(type: ListType) {
         self.type = type

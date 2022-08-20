@@ -8,37 +8,51 @@
 import SwiftUI
 
 struct ListItemsView: View {
-    @EnvironmentObject private var router: Router
+    @EnvironmentObject private var tabRouter: TabRouter
     @StateObject var viewModel: ListItemsViewModel
+    @StateObject private var router = DetailsRouter()
     
     public init(type: ListType) {
         _viewModel = StateObject(wrappedValue: .init(type: type))
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.items, id: \.id) { item in
-                Button {
-                    router.searchItemOnMap(item.name)
-                } label: {
-                    makeListItem(name: item.name,
-                                 urlString: item.imageUrl)
+        VStack {
+            NavigationLink(isActive: $viewModel.isShowDetailView) {
+                router.makeDetailView(viewModel.type,
+                                      id: viewModel.itemId)
+            } label: {
+                EmptyView()
+            }
+
+            List {
+                ForEach(viewModel.items, id: \.id) { item in
+                    Button {
+                        // tabRouter.searchItemOnMap(item.name)
+                        viewModel.isShowDetailView = true
+                        viewModel.itemId = item.id
+                    } label: {
+                        makeListItem(name: item.name,
+                                     urlString: item.imageUrl)
+                    }
+                    
+                    
+                }
+                
+                if !viewModel.listIsFull {
+                    ProgressView()
+                        .frame(width: Constants.UI.thumbnailsSize,
+                               height: Constants.UI.thumbnailsSize,
+                               alignment: .center)
+                        .task {
+                            await viewModel.load()
+                        }
                 }
             }
-            
-            if !viewModel.listIsFull {
-                ProgressView()
-                    .frame(width: Constants.UI.thumbnailsSize,
-                           height: Constants.UI.thumbnailsSize,
-                           alignment: .center)
-                    .task {
-                        await viewModel.load()
-                    }
-            }
+            .listStyle(.plain)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text(viewModel.type.title))
         }
-        .listStyle(.plain)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text(viewModel.type.title))
     }
     
     func makeListItem(name: String, urlString: String?) -> some View {
