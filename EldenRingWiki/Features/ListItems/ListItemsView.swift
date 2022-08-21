@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListItemsView: View {
-    @EnvironmentObject private var tabRouter: TabRouter
     @StateObject var viewModel: ListItemsViewModel
     @StateObject private var router = DetailsRouter()
     
@@ -19,24 +18,19 @@ struct ListItemsView: View {
     var body: some View {
         VStack {
             NavigationLink(isActive: $viewModel.isShowDetailView) {
-                router.makeDetailView(viewModel.type,
+                router.showDetailView(viewModel.type,
                                       id: viewModel.itemId)
-            } label: {
-                EmptyView()
-            }
-
+            } label: { EmptyView() }
+            
             List {
                 ForEach(viewModel.items, id: \.id) { item in
                     Button {
-                        // tabRouter.searchItemOnMap(item.name)
                         viewModel.isShowDetailView = true
                         viewModel.itemId = item.id
                     } label: {
                         makeListItem(name: item.name,
                                      urlString: item.imageUrl)
                     }
-                    
-                    
                 }
                 
                 if !viewModel.listIsFull {
@@ -57,11 +51,18 @@ struct ListItemsView: View {
     
     func makeListItem(name: String, urlString: String?) -> some View {
         return HStack {
-            if let urlString = urlString {
-                AsyncImage(url: URL(string: urlString)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
+            if let urlString = urlString, let url = URL(string: urlString) {
+                CacheAsyncImage(url: url) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image.resizable()
+                    case .failure(_):
+                        Image(systemName: "exclamationmark.icloud")
+                    @unknown default:
+                        Image(systemName: "exclamationmark.icloud")
+                    }
                 }
                 .frame(width: Constants.UI.thumbnailsSize, height: Constants.UI.thumbnailsSize)
                 .cornerRadius(Constants.UI.thumbnailsSize/2)

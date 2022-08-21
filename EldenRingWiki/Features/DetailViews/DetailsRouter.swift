@@ -9,7 +9,7 @@ import SwiftUI
 
 class DetailsRouter: ObservableObject {
     @ViewBuilder
-    func makeDetailView(_ type: ListType, id: String) -> some View {
+    func showDetailView(_ type: ListType, id: String) -> some View {
         Text("Item: \(id)")
     }
 }

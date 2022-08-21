@@ -89,6 +89,7 @@
 		7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248628AFC75500B76087 /* WebViewContainer.swift */; };
 		7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248928AFC7C200B76087 /* WebViewModel.swift */; };
 		7238248D28B14FDF00B76087 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248C28B14FDF00B76087 /* DetailsRouter.swift */; };
+		7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248F28B2636E00B76087 /* CacheAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		7238248628AFC75500B76087 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		7238248928AFC7C200B76087 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		7238248C28B14FDF00B76087 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		7238248F28B2636E00B76087 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				7238241B28AD130300B76087 /* ListType.swift */,
+				7238248F28B2636E00B76087 /* CacheAsyncImage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
 				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
+				7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */,
 				7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */,
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,
 				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,

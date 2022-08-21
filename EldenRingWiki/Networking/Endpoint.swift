@@ -181,7 +181,9 @@ public enum Endpoint {
         // TODO: - Remove print
         print(urlComponents ?? "Empty URL Components")
         if let url = urlComponents?.url {
-            return URLRequest(url: url)
+            var urlRequest = URLRequest(url: url)
+            urlRequest.cachePolicy = .returnCacheDataElseLoad
+            return urlRequest
         } else {
             preconditionFailure("Could not instantiate URL object with: \(#function)")
         }

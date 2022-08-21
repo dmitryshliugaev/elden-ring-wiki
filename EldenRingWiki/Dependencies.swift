@@ -13,6 +13,14 @@ class Dependencies {
     private init() {}
     
     public lazy var networkService: NetworkServiceProtocol = {
-        NetworkService()
+        let cache = URLCache(memoryCapacity: 10_000_000, diskCapacity: 1_000_000_000)
+        URLSession.shared.configuration.urlCache = cache
+        URLSession.shared.configuration.requestCachePolicy = .useProtocolCachePolicy
+        
+        return NetworkService()
+    }()
+    
+    public lazy var imageCache: ImageCache = {
+        ImageCache()
     }()
 }
