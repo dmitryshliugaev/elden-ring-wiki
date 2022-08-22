@@ -20,5 +20,8 @@ struct Constants {
     struct UI {
         /// 50
         static let thumbnailsSize: CGFloat = 50
+        
+        /// 200
+        static let detailImageSize: CGFloat = 200
     }
 }

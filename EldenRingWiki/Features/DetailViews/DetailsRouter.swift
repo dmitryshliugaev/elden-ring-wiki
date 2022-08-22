@@ -10,6 +10,11 @@ import SwiftUI
 class DetailsRouter: ObservableObject {
     @ViewBuilder
     func showDetailView(_ type: ListType, id: String) -> some View {
-        Text("Item: \(id)")
+        switch type {
+        case .weapons:
+            WeaponDetailView(id: id)
+        default:
+            Text("Item: \(id)")
+        }
     }
 }

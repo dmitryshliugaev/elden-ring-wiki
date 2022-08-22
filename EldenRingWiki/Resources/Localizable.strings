@@ -41,3 +41,13 @@
 "Locations" = "Locations";
 
 "Classes" = "Classes";
+
+"Description" = "Description";
+"Category" = "Category";
+"Weight" = "Weight";
+"Attack" = "Attack";
+"Defence" = "Defence";
+"RequiredAttributes" = "Required attributes";
+"ScalesWith" = "Scales with";
+
+"ShowOnMap" = "Show on map";
