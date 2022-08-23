@@ -36,28 +36,28 @@ struct CacheAsyncImage<Content>: View where Content: View {
     }
 }
 
-class ImageCache {
-    private let isolationQueue = DispatchQueue(label: "dmitryshliugaev.EldenRingWiki.concurrent-queue", attributes: .concurrent)
-    private var cache: [String: Image] = [:]
-    private let maxCount = 1000
+class StructWrapper<T>: NSObject {
+    let value: T
     
-    func setImage(_ image: Image?, key: String) {
-        isolationQueue.async(flags: .barrier) {
-            if self.cache.count > self.maxCount,
-               let firstKey = self.cache.first?.key {
-                self.cache.removeValue(forKey: firstKey)
-            }
-            self.cache[key] = image
-        }
+    init(_ _struct: T) {
+        value = _struct
+    }
+}
+
+class ImageCache {
+    private var cache: NSCache<NSString, StructWrapper<Image>>
+    
+    init() {
+        cache = NSCache<NSString, StructWrapper<Image>>()
+        cache.countLimit = 5000
+    }
+    
+    func setImage(_ image: Image, key: String) {
+        cache.setObject(StructWrapper(image), forKey: NSString(string: key))
     }
     
     func getImage(forKey key: String)  -> Image? {
-        var image: Image?
-        
-        isolationQueue.sync {
-            image = cache[key]
-        }
-        
-        return image
+        let imageWrapper = cache.object(forKey: NSString(string: key))
+        return imageWrapper?.value
     }
 }
