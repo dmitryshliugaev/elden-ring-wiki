@@ -27,7 +27,6 @@ struct CacheAsyncImage<Content>: View where Content: View {
         }
     }
     
-    
     func cacheAndRender(phase: AsyncImagePhase) -> some View {
         if case .success (let image) = phase {
             Dependencies.shared.imageCache.setImage(image, key: url.absoluteString)
@@ -49,7 +48,7 @@ class ImageCache {
     
     init() {
         cache = NSCache<NSString, StructWrapper<Image>>()
-        cache.countLimit = 5000
+        cache.countLimit = 1000
     }
     
     func setImage(_ image: Image, key: String) {

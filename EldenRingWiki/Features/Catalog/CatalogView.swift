@@ -22,7 +22,6 @@ struct CatalogView: View {
             }
             .navigationTitle(Text("Catalog"))
         }
-        
     }
     
     func sectionView(title: String, iconName: String) -> some View {
@@ -30,7 +29,7 @@ struct CatalogView: View {
             Image(systemName: iconName)
             Text(title)
         }
-        .foregroundColor(.black)
+        .foregroundColor(.white)
     }
 }
 

@@ -92,6 +92,7 @@
 		7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248F28B2636E00B76087 /* CacheAsyncImage.swift */; };
 		7238249628B3D4C700B76087 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249528B3D4C700B76087 /* WeaponDetailView.swift */; };
 		7238249828B3DD0000B76087 /* WeaponDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */; };
+		7238249A28B6358F00B76087 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249928B6358F00B76087 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		7238248F28B2636E00B76087 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		7238249528B3D4C700B76087 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
 		7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewModel.swift; sourceTree = "<group>"; };
+		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 				7238239628A5343600B76087 /* Assets.xcassets */,
 				723823DB28A69F7000B76087 /* Constants.swift */,
 				723823DD28A69F8100B76087 /* Localizable.strings */,
+				7238249928B6358F00B76087 /* Colors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				723823FF28A7DEF400B76087 /* Armor.swift in Sources */,
 				7238243628AE6D2A00B76087 /* TalismanData.swift in Sources */,
 				7238244728AE738D00B76087 /* SorceryData.swift in Sources */,
+				7238249A28B6358F00B76087 /* Colors.swift in Sources */,
 				7238247C28AF884700B76087 /* Locations.swift in Sources */,
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,

@@ -41,39 +41,38 @@ struct WeaponDetailView: View {
                     }
                     Spacer()
                 }
+                .listRowBackground(Color.black)
                 
-                HStack {
-                    Spacer()
+                Section {
                     Button {
                         router.searchItemOnMap(weaponData.name)
                     } label: {
                         HStack {
+                            Spacer()
                             Image(systemName: "mappin.circle")
                             Text("ShowOnMap".localizedString)
+                            Spacer()
                         }
+                        .foregroundColor(Color.eldenLight)
                     }
-                    Spacer()
                 }
                 
                 if let description = weaponData.description {
                     Section("Description".localizedString) {
                         Text(description)
                     }
-                    .headerProminence(.increased)
                 }
                 
                 if let category = weaponData.category {
                     Section("Category".localizedString) {
                         Text(category)
                     }
-                    .headerProminence(.increased)
                 }
                 
                 if let weight = weaponData.weight {
                     Section("Weight".localizedString) {
                         Text(String(format: "%.2f", weight))
                     }
-                    .headerProminence(.increased)
                 }
                 
                 
@@ -85,7 +84,6 @@ struct WeaponDetailView: View {
                         }
                     }
                 }
-                .headerProminence(.increased)
                 
                 Section("Defence".localizedString) {
                     ForEach(weaponData.defence, id: \.name) { row in
@@ -95,7 +93,6 @@ struct WeaponDetailView: View {
                         }
                     }
                 }
-                .headerProminence(.increased)
                 
                 
                 Section("RequiredAttributes".localizedString) {
@@ -106,7 +103,6 @@ struct WeaponDetailView: View {
                         }
                     }
                 }
-                .headerProminence(.increased)
                 
                 Section("ScalesWith".localizedString) {
                     ForEach(weaponData.scalesWith, id: \.name) { row in
@@ -116,7 +112,6 @@ struct WeaponDetailView: View {
                         }
                     }
                 }
-                .headerProminence(.increased)
                 
             } else {
                 Text("Loading...")
@@ -125,6 +120,7 @@ struct WeaponDetailView: View {
         .task {
             await viewModel.load()
         }
+        .foregroundColor(.white)
         .navigationTitle(Text(viewModel.weaponData?.name ?? "Weapon"))
     }
 }

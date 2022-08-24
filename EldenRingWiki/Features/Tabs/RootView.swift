@@ -10,6 +10,11 @@ import SwiftUI
 struct RootView: View {
     @StateObject private var router = TabRouter()
     
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(.skyDark)
+        UITabBar.appearance().barTintColor = UIColor(.skyDark)
+    }
+    
     var body: some View {
         TabView(selection: $router.activeTab) {
             ForEach(Tab.allCases) { tab in
@@ -24,6 +29,7 @@ struct RootView: View {
                     .tag(tab)
             }
         }
+        .accentColor(.eldenLight)
         .environmentObject(router)
     }
 }
