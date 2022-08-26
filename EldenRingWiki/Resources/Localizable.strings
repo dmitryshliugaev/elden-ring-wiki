@@ -49,5 +49,7 @@
 "Defence" = "Defence";
 "RequiredAttributes" = "Required attributes";
 "ScalesWith" = "Scales with";
+"DmgNegation" = "Damage negation";
+"Resistance" = "Resistance";
 
 "ShowOnMap" = "Show on map";

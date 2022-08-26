@@ -22,6 +22,6 @@ struct ArmorData: ItemMappable, Decodable {
     let weight: Double?
     /// How much damage this armor piece negates
     let dmgNegation: [DmgNegation]
-    /// How much damage this armor piece negates
+    /// How much resistance wearing this armor piece provides.
     let resistance: [Resistance]
 }

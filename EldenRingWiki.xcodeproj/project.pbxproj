@@ -93,6 +93,8 @@
 		7238249628B3D4C700B76087 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249528B3D4C700B76087 /* WeaponDetailView.swift */; };
 		7238249828B3DD0000B76087 /* WeaponDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */; };
 		7238249A28B6358F00B76087 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249928B6358F00B76087 /* Colors.swift */; };
+		723824DB28B930EE00B76087 /* ArmorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DA28B930EE00B76087 /* ArmorDetailView.swift */; };
+		723824DD28B9310300B76087 /* ArmorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +204,8 @@
 		7238249528B3D4C700B76087 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
 		7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewModel.swift; sourceTree = "<group>"; };
 		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		723824DA28B930EE00B76087 /* ArmorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailView.swift; sourceTree = "<group>"; };
+		723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				7238240828AA69E900B76087 /* Features */,
+				723824D728B7E48400B76087 /* Repository */,
 				723823D028A6687000B76087 /* Networking */,
 				7238239228A5343500B76087 /* EldenRingWikiApp.swift */,
 				7238242028AD1ACD00B76087 /* Dependencies.swift */,
@@ -638,10 +643,35 @@
 		7238249128B3D48C00B76087 /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
+				723824D928B930DE00B76087 /* Armor */,
+				723824D828B930CB00B76087 /* Weapon */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		723824D728B7E48400B76087 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		723824D828B930CB00B76087 /* Weapon */ = {
+			isa = PBXGroup;
+			children = (
 				7238249528B3D4C700B76087 /* WeaponDetailView.swift */,
 				7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */,
 			);
-			path = Equipment;
+			path = Weapon;
+			sourceTree = "<group>";
+		};
+		723824D928B930DE00B76087 /* Armor */ = {
+			isa = PBXGroup;
+			children = (
+				723824DA28B930EE00B76087 /* ArmorDetailView.swift */,
+				723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */,
+			);
+			path = Armor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -806,6 +836,7 @@
 				7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */,
 				7238239328A5343500B76087 /* EldenRingWikiApp.swift in Sources */,
 				7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */,
+				723824DD28B9310300B76087 /* ArmorDetailViewModel.swift in Sources */,
 				723823E328A6C9E800B76087 /* Weapon.swift in Sources */,
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
 				723823E228A6C9E800B76087 /* WeaponData.swift in Sources */,
@@ -834,6 +865,7 @@
 				7238240B28AA6B6600B76087 /* CatalogView.swift in Sources */,
 				7238244F28AEAB9D00B76087 /* SpiritData.swift in Sources */,
 				7238246828AEB0CA00B76087 /* ClassStats.swift in Sources */,
+				723824DB28B930EE00B76087 /* ArmorDetailView.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,

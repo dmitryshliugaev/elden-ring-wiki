@@ -34,10 +34,12 @@ struct WeaponDetailView: View {
                                 Image(systemName: "exclamationmark.icloud")
                             }
                         }
-                        .frame(width: Constants.UI.detailImageSize, height: Constants.UI.detailImageSize)
+                        .frame(width: Constants.UI.detailImageSize,
+                               height: Constants.UI.detailImageSize)
                     } else {
                         Image(systemName: "exclamationmark.icloud")
-                            .frame(width: Constants.UI.detailImageSize, height: Constants.UI.detailImageSize)
+                            .frame(width: Constants.UI.detailImageSize,
+                                   height: Constants.UI.detailImageSize)
                     }
                     Spacer()
                 }
@@ -71,16 +73,15 @@ struct WeaponDetailView: View {
                 
                 if let weight = weaponData.weight {
                     Section("Weight".localizedString) {
-                        Text(String(format: "%.2f", weight))
+                        Text(String(format: "%g", weight))
                     }
                 }
-                
                 
                 Section("Attack".localizedString) {
                     ForEach(weaponData.attack, id: \.name) { row in
                         HStack {
                             Text(row.name)
-                            Text(String(format: "%.2f", row.amount ?? 0))
+                            Text(String(format: "%g", row.amount ?? 0))
                         }
                     }
                 }
@@ -89,17 +90,16 @@ struct WeaponDetailView: View {
                     ForEach(weaponData.defence, id: \.name) { row in
                         HStack {
                             Text(row.name)
-                            Text(String(format: "%.2f", row.amount ?? 0))
+                            Text(String(format: "%g", row.amount ?? 0))
                         }
                     }
                 }
-                
                 
                 Section("RequiredAttributes".localizedString) {
                     ForEach(weaponData.requiredAttributes, id: \.name) { row in
                         HStack {
                             Text(row.name)
-                            Text(String(format: "%.2f", row.amount ?? 0))
+                            Text(String(format: "%g", row.amount ?? 0))
                         }
                     }
                 }

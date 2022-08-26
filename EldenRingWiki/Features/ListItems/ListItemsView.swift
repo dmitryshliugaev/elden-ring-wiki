@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ListItemsView: View {
-    @StateObject var viewModel: ListItemsViewModel
     @StateObject private var router = DetailsRouter()
+    @StateObject var viewModel: ListItemsViewModel
     
     public init(type: ListType) {
         _viewModel = StateObject(wrappedValue: .init(type: type))

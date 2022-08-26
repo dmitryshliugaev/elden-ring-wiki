@@ -13,6 +13,8 @@ class DetailsRouter: ObservableObject {
         switch type {
         case .weapons:
             WeaponDetailView(id: id)
+        case .armors:
+            ArmorDetailView(id: id)
         default:
             Text("Item: \(id)")
         }
