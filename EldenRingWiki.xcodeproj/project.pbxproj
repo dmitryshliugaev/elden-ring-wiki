@@ -95,6 +95,8 @@
 		7238249A28B6358F00B76087 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249928B6358F00B76087 /* Colors.swift */; };
 		723824DB28B930EE00B76087 /* ArmorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DA28B930EE00B76087 /* ArmorDetailView.swift */; };
 		723824DD28B9310300B76087 /* ArmorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */; };
+		723824E028BA867700B76087 /* ShieldDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DF28BA867700B76087 /* ShieldDetailView.swift */; };
+		723824E228BA868300B76087 /* ShieldDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E128BA868300B76087 /* ShieldDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,8 @@
 		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		723824DA28B930EE00B76087 /* ArmorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailView.swift; sourceTree = "<group>"; };
 		723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailViewModel.swift; sourceTree = "<group>"; };
+		723824DF28BA867700B76087 /* ShieldDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldDetailView.swift; sourceTree = "<group>"; };
+		723824E128BA868300B76087 /* ShieldDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +647,7 @@
 		7238249128B3D48C00B76087 /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
+				723824DE28BA866200B76087 /* Shield */,
 				723824D928B930DE00B76087 /* Armor */,
 				723824D828B930CB00B76087 /* Weapon */,
 			);
@@ -672,6 +677,15 @@
 				723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */,
 			);
 			path = Armor;
+			sourceTree = "<group>";
+		};
+		723824DE28BA866200B76087 /* Shield */ = {
+			isa = PBXGroup;
+			children = (
+				723824DF28BA867700B76087 /* ShieldDetailView.swift */,
+				723824E128BA868300B76087 /* ShieldDetailViewModel.swift */,
+			);
+			path = Shield;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -852,6 +866,7 @@
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
 				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
+				723824E028BA867700B76087 /* ShieldDetailView.swift in Sources */,
 				7238244328AE737C00B76087 /* Sorceries.swift in Sources */,
 				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
 				7238243228AE6D1C00B76087 /* Talismans.swift in Sources */,
@@ -878,6 +893,7 @@
 				7238244D28AEAB9500B76087 /* Spirit.swift in Sources */,
 				7238247E28AF884D00B76087 /* Location.swift in Sources */,
 				7238247628AF86BA00B76087 /* Creatures.swift in Sources */,
+				723824E228BA868300B76087 /* ShieldDetailViewModel.swift in Sources */,
 				7238246628AEB09000B76087 /* CharacterClassData.swift in Sources */,
 				7238247028AF854C00B76087 /* NPCs.swift in Sources */,
 				7238246A28AF80CA00B76087 /* Bosses.swift in Sources */,

@@ -1,15 +1,15 @@
 //
-//  WeaponDetailView.swift
+//  ShieldDetailView.swift
 //  EldenRingWiki
 //
-//  Created by Dmitrii Shliugaev on 22/08/2022.
+//  Created by Dmitrii Shliugaev on 27/08/2022.
 //
 
 import SwiftUI
 
-struct WeaponDetailView: View {
+struct ShieldDetailView: View {
     @EnvironmentObject private var router: TabRouter
-    @StateObject private var viewModel: WeaponDetailViewModel
+    @StateObject private var viewModel: ShieldDetailViewModel
     
     public init(id: String) {
         _viewModel = StateObject(wrappedValue: .init(id: id))
@@ -17,10 +17,10 @@ struct WeaponDetailView: View {
     
     var body: some View {
         List {
-            if let weaponData = viewModel.weaponData {
+            if let shieldData = viewModel.shieldData {
                 HStack {
                     Spacer()
-                    if let urlString = weaponData.image, let url = URL(string: urlString) {
+                    if let urlString = shieldData.image, let url = URL(string: urlString) {
                         CacheAsyncImage(url: url) { phase in
                             switch phase {
                             case .empty:
@@ -47,7 +47,7 @@ struct WeaponDetailView: View {
                 
                 Section {
                     Button {
-                        router.searchItemOnMap(weaponData.name)
+                        router.searchItemOnMap(shieldData.name)
                     } label: {
                         HStack {
                             Spacer()
@@ -59,19 +59,19 @@ struct WeaponDetailView: View {
                     }
                 }
                 
-                if let description = weaponData.description {
+                if let description = shieldData.description {
                     Section("Description".localizedString) {
                         Text(description)
                     }
                 }
                 
-                if let category = weaponData.category {
+                if let category = shieldData.category {
                     Section("Category".localizedString) {
                         Text(category)
                     }
                 }
                 
-                if let weight = weaponData.weight {
+                if let weight = shieldData.weight {
                     Section("Weight".localizedString) {
                         Text(String(format: "%g", weight))
                     }
@@ -83,7 +83,7 @@ struct WeaponDetailView: View {
                             Text("Attack".localizedString)
                                 .font(.headline)
                             Spacer().frame(height: 8)
-                            ForEach(weaponData.attack, id: \.name) { row in
+                            ForEach(shieldData.attack, id: \.name) { row in
                                 HStack {
                                     Text(row.name)
                                     Spacer()
@@ -97,7 +97,7 @@ struct WeaponDetailView: View {
                             Text("Defence".localizedString)
                                 .font(.headline)
                             Spacer().frame(height: 8)
-                            ForEach(weaponData.defence, id: \.name) { row in
+                            ForEach(shieldData.defence, id: \.name) { row in
                                 HStack {
                                     Text(row.name)
                                     Spacer()
@@ -114,7 +114,7 @@ struct WeaponDetailView: View {
                             Text("RequiredAttributes".localizedString)
                                 .font(.headline)
                             Spacer().frame(height: 8)
-                            ForEach(weaponData.requiredAttributes, id: \.name) { row in
+                            ForEach(shieldData.requiredAttributes, id: \.name) { row in
                                 HStack {
                                     Text(row.name)
                                     Spacer()
@@ -128,7 +128,7 @@ struct WeaponDetailView: View {
                             Text("ScalesWith".localizedString)
                                 .font(.headline)
                             Spacer().frame(height: 8)
-                            ForEach(weaponData.scalesWith, id: \.name) { row in
+                            ForEach(shieldData.scalesWith, id: \.name) { row in
                                 HStack {
                                     Text(row.name)
                                     Spacer()
@@ -147,12 +147,12 @@ struct WeaponDetailView: View {
             await viewModel.load()
         }
         .foregroundColor(.white)
-        .navigationTitle(Text(viewModel.weaponData?.name ?? "Weapon"))
+        .navigationTitle(Text(viewModel.shieldData?.name ?? "Shield"))
     }
 }
 
-struct WeaponDetailView_Previews: PreviewProvider {
+struct ShieldDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        WeaponDetailView(id: "")
+        ShieldDetailView(id: "")
     }
 }
