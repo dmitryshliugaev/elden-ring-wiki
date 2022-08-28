@@ -17,6 +17,8 @@ class DetailsRouter: ObservableObject {
             ArmorDetailView(id: id)
         case .shields:
             ShieldDetailView(id: id)
+        case .ammos:
+            AmmoDetailView(id: id)
         default:
             Text("Item: \(id)")
         }

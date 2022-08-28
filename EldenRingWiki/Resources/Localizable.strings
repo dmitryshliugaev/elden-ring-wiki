@@ -51,5 +51,8 @@
 "ScalesWith" = "Scales with";
 "DmgNegation" = "Damage negation";
 "Resistance" = "Resistance";
+"Type" = "Type";
+"Passive" = "Passive effect";
+"AttackPower" = "Attack power";
 
 "ShowOnMap" = "Show on map";

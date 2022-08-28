@@ -64,12 +64,13 @@ struct ListItemsView: View {
                         Image(systemName: "exclamationmark.icloud")
                     }
                 }
-                .frame(width: Constants.UI.thumbnailsSize, height: Constants.UI.thumbnailsSize)
+                .frame(width: Constants.UI.thumbnailsSize,
+                       height: Constants.UI.thumbnailsSize)
                 .cornerRadius(Constants.UI.thumbnailsSize/2)
             } else {
-                Circle()
-                    .fill(.gray)
-                    .frame(width: Constants.UI.thumbnailsSize, height: Constants.UI.thumbnailsSize)
+                Image(systemName: "exclamationmark.icloud")
+                    .frame(width: Constants.UI.thumbnailsSize,
+                           height: Constants.UI.thumbnailsSize)
             }
             
             Text(name)
