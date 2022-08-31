@@ -269,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				7238240828AA69E900B76087 /* Features */,
-				723824D728B7E48400B76087 /* Repository */,
+				723824D728B7E48400B76087 /* Models */,
 				723823D028A6687000B76087 /* Networking */,
 				7238239228A5343500B76087 /* EldenRingWikiApp.swift */,
 				7238242028AD1ACD00B76087 /* Dependencies.swift */,
@@ -440,7 +440,6 @@
 			children = (
 				7238241528AD101600B76087 /* ListItemsView.swift */,
 				7238241728AD102600B76087 /* ListItemsViewModel.swift */,
-				7238241928AD10A600B76087 /* ListItemsModel.swift */,
 			);
 			path = ListItems;
 			sourceTree = "<group>";
@@ -664,11 +663,12 @@
 			path = Equipment;
 			sourceTree = "<group>";
 		};
-		723824D728B7E48400B76087 /* Repository */ = {
+		723824D728B7E48400B76087 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7238241928AD10A600B76087 /* ListItemsModel.swift */,
 			);
-			path = Repository;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		723824D828B930CB00B76087 /* Weapon */ = {
