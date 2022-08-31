@@ -99,6 +99,8 @@
 		723824E228BA868300B76087 /* ShieldDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E128BA868300B76087 /* ShieldDetailViewModel.swift */; };
 		723824E528BBDDDA00B76087 /* AmmoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E428BBDDDA00B76087 /* AmmoDetailView.swift */; };
 		723824E728BBDDEB00B76087 /* AmmoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */; };
+		727C338728BFC250009E015E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338628BFC250009E015E /* ItemDetailView.swift */; };
+		727C338928BFC26C009E015E /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338828BFC26C009E015E /* ItemDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +216,8 @@
 		723824E128BA868300B76087 /* ShieldDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldDetailViewModel.swift; sourceTree = "<group>"; };
 		723824E428BBDDDA00B76087 /* AmmoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoDetailView.swift; sourceTree = "<group>"; };
 		723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoDetailViewModel.swift; sourceTree = "<group>"; };
+		727C338628BFC250009E015E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		727C338828BFC26C009E015E /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,6 +646,7 @@
 		7238248B28B14CC700B76087 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
+				727C338428BFC21E009E015E /* Items */,
 				7238249128B3D48C00B76087 /* Equipment */,
 				7238248C28B14FDF00B76087 /* DetailsRouter.swift */,
 			);
@@ -700,6 +705,23 @@
 				723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */,
 			);
 			path = Ammo;
+			sourceTree = "<group>";
+		};
+		727C338428BFC21E009E015E /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				727C338528BFC22B009E015E /* Items */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		727C338528BFC22B009E015E /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				727C338628BFC250009E015E /* ItemDetailView.swift */,
+				727C338828BFC26C009E015E /* ItemDetailViewModel.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -837,6 +859,7 @@
 				7238241628AD101600B76087 /* ListItemsView.swift in Sources */,
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
 				7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */,
+				727C338728BFC250009E015E /* ItemDetailView.swift in Sources */,
 				7238245228AEAD7D00B76087 /* Incantations.swift in Sources */,
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
@@ -902,6 +925,7 @@
 				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
 				7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */,
 				7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */,
+				727C338928BFC26C009E015E /* ItemDetailViewModel.swift in Sources */,
 				7238249628B3D4C700B76087 /* WeaponDetailView.swift in Sources */,
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,
 				723824E728BBDDEB00B76087 /* AmmoDetailViewModel.swift in Sources */,

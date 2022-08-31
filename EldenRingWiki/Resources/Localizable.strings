@@ -54,5 +54,6 @@
 "Type" = "Type";
 "Passive" = "Passive effect";
 "AttackPower" = "Attack power";
+"Effect" = "Effect";
 
 "ShowOnMap" = "Show on map";
