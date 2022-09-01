@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListItemsView: View {
-    @StateObject private var router = DetailsRouter()
     @StateObject var viewModel: ListItemsViewModel
     
     public init(type: ListType) {
@@ -18,15 +17,16 @@ struct ListItemsView: View {
     var body: some View {
         VStack {
             NavigationLink(isActive: $viewModel.isShowDetailView) {
-                router.showDetailView(viewModel.type,
-                                      id: viewModel.itemId)
+                if let selectedItem = viewModel.selectedItem {
+                    DetailView(listItemsModel: selectedItem)
+                }
             } label: { EmptyView() }
             
             List {
                 ForEach(viewModel.items, id: \.id) { item in
                     Button {
                         viewModel.isShowDetailView = true
-                        viewModel.itemId = item.id
+                        viewModel.selectedItem = item
                     } label: {
                         makeListItem(name: item.name,
                                      urlString: item.imageUrl)

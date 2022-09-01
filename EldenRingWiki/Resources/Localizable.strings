@@ -54,6 +54,31 @@
 "Type" = "Type";
 "Passive" = "Passive effect";
 "AttackPower" = "Attack power";
-"Effect" = "Effect";
+"Effect" = "What happens when we equip this";
+"Affinity" = "Affinity of an Ash of War";
+"Skill" = "Skill activated when this Ash of War is equipped in a weapon";
+"Cost" = "Cost in FP to cast this once";
+"Slots" = "How many skill slots equipping this consumes";
+"Effects" = "Effects";
+"FPCost" = "Cost in FP to summon this spirit once";
+"HPCost" = "Cost in HP to summon this spirit once";
+"Location" = "Location";
+"Quote" = "Iconic quote from that NPC";
+"Role" = "NPC role";
+"HealthPoints" = "How much HP this boss has";
+"Stats" = "Initial stats of the class";
+
+"Stats.level" = "Level";
+"Stats.vigor" = "Vigor";
+"Stats.mind" = "Mind";
+"Stats.endurance" = "Endurance";
+"Stats.strength" = "Strength";
+"Stats.dexterity" = "Dexterity";
+"Stats.intelligence" = "Intelligence";
+"Stats.faith" = "Faith";
+"Stats.arcane" = "Arcane";
+
+"Drops" = "What items and resources drops";
+"Requires" = "What attributes and what amount is required to cast this";
 
 "ShowOnMap" = "Show on map";

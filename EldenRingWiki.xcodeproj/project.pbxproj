@@ -88,19 +88,9 @@
 		7238248328AFBE2300B76087 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248228AFBE2300B76087 /* MapView.swift */; };
 		7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248628AFC75500B76087 /* WebViewContainer.swift */; };
 		7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248928AFC7C200B76087 /* WebViewModel.swift */; };
-		7238248D28B14FDF00B76087 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248C28B14FDF00B76087 /* DetailsRouter.swift */; };
 		7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248F28B2636E00B76087 /* CacheAsyncImage.swift */; };
-		7238249628B3D4C700B76087 /* WeaponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249528B3D4C700B76087 /* WeaponDetailView.swift */; };
-		7238249828B3DD0000B76087 /* WeaponDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */; };
 		7238249A28B6358F00B76087 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249928B6358F00B76087 /* Colors.swift */; };
-		723824DB28B930EE00B76087 /* ArmorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DA28B930EE00B76087 /* ArmorDetailView.swift */; };
-		723824DD28B9310300B76087 /* ArmorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */; };
-		723824E028BA867700B76087 /* ShieldDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824DF28BA867700B76087 /* ShieldDetailView.swift */; };
-		723824E228BA868300B76087 /* ShieldDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E128BA868300B76087 /* ShieldDetailViewModel.swift */; };
-		723824E528BBDDDA00B76087 /* AmmoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E428BBDDDA00B76087 /* AmmoDetailView.swift */; };
-		723824E728BBDDEB00B76087 /* AmmoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */; };
-		727C338728BFC250009E015E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338628BFC250009E015E /* ItemDetailView.swift */; };
-		727C338928BFC26C009E015E /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338828BFC26C009E015E /* ItemDetailViewModel.swift */; };
+		727C338B28C11ECE009E015E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338A28C11ECE009E015E /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,19 +195,9 @@
 		7238248228AFBE2300B76087 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		7238248628AFC75500B76087 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		7238248928AFC7C200B76087 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
-		7238248C28B14FDF00B76087 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 		7238248F28B2636E00B76087 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
-		7238249528B3D4C700B76087 /* WeaponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailView.swift; sourceTree = "<group>"; };
-		7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewModel.swift; sourceTree = "<group>"; };
 		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		723824DA28B930EE00B76087 /* ArmorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailView.swift; sourceTree = "<group>"; };
-		723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDetailViewModel.swift; sourceTree = "<group>"; };
-		723824DF28BA867700B76087 /* ShieldDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldDetailView.swift; sourceTree = "<group>"; };
-		723824E128BA868300B76087 /* ShieldDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldDetailViewModel.swift; sourceTree = "<group>"; };
-		723824E428BBDDDA00B76087 /* AmmoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoDetailView.swift; sourceTree = "<group>"; };
-		723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmmoDetailViewModel.swift; sourceTree = "<group>"; };
-		727C338628BFC250009E015E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
-		727C338828BFC26C009E015E /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,7 +395,7 @@
 		7238240828AA69E900B76087 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				7238248B28B14CC700B76087 /* DetailViews */,
+				7238248B28B14CC700B76087 /* DetailView */,
 				7238248128AFBE0900B76087 /* Map */,
 				7238242228AD1BBE00B76087 /* Tabs */,
 				7238241D28AD132200B76087 /* Common */,
@@ -642,25 +622,12 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		7238248B28B14CC700B76087 /* DetailViews */ = {
+		7238248B28B14CC700B76087 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				727C338428BFC21E009E015E /* Items */,
-				7238249128B3D48C00B76087 /* Equipment */,
-				7238248C28B14FDF00B76087 /* DetailsRouter.swift */,
+				727C338A28C11ECE009E015E /* DetailView.swift */,
 			);
-			path = DetailViews;
-			sourceTree = "<group>";
-		};
-		7238249128B3D48C00B76087 /* Equipment */ = {
-			isa = PBXGroup;
-			children = (
-				723824E328BBDDBF00B76087 /* Ammo */,
-				723824DE28BA866200B76087 /* Shield */,
-				723824D928B930DE00B76087 /* Armor */,
-				723824D828B930CB00B76087 /* Weapon */,
-			);
-			path = Equipment;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		723824D728B7E48400B76087 /* Models */ = {
@@ -669,59 +636,6 @@
 				7238241928AD10A600B76087 /* ListItemsModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		723824D828B930CB00B76087 /* Weapon */ = {
-			isa = PBXGroup;
-			children = (
-				7238249528B3D4C700B76087 /* WeaponDetailView.swift */,
-				7238249728B3DD0000B76087 /* WeaponDetailViewModel.swift */,
-			);
-			path = Weapon;
-			sourceTree = "<group>";
-		};
-		723824D928B930DE00B76087 /* Armor */ = {
-			isa = PBXGroup;
-			children = (
-				723824DA28B930EE00B76087 /* ArmorDetailView.swift */,
-				723824DC28B9310300B76087 /* ArmorDetailViewModel.swift */,
-			);
-			path = Armor;
-			sourceTree = "<group>";
-		};
-		723824DE28BA866200B76087 /* Shield */ = {
-			isa = PBXGroup;
-			children = (
-				723824DF28BA867700B76087 /* ShieldDetailView.swift */,
-				723824E128BA868300B76087 /* ShieldDetailViewModel.swift */,
-			);
-			path = Shield;
-			sourceTree = "<group>";
-		};
-		723824E328BBDDBF00B76087 /* Ammo */ = {
-			isa = PBXGroup;
-			children = (
-				723824E428BBDDDA00B76087 /* AmmoDetailView.swift */,
-				723824E628BBDDEB00B76087 /* AmmoDetailViewModel.swift */,
-			);
-			path = Ammo;
-			sourceTree = "<group>";
-		};
-		727C338428BFC21E009E015E /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				727C338528BFC22B009E015E /* Items */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
-		727C338528BFC22B009E015E /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				727C338628BFC250009E015E /* ItemDetailView.swift */,
-				727C338828BFC26C009E015E /* ItemDetailViewModel.swift */,
-			);
-			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -859,13 +773,11 @@
 				7238241628AD101600B76087 /* ListItemsView.swift in Sources */,
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
 				7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */,
-				727C338728BFC250009E015E /* ItemDetailView.swift in Sources */,
 				7238245228AEAD7D00B76087 /* Incantations.swift in Sources */,
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
 				7238242128AD1ACD00B76087 /* Dependencies.swift in Sources */,
-				723824E528BBDDDA00B76087 /* AmmoDetailView.swift in Sources */,
 				7238240728A9598A00B76087 /* RootView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
 				7238246C28AF80D300B76087 /* Boss.swift in Sources */,
@@ -881,18 +793,15 @@
 				723823D928A69F1800B76087 /* HTTPURLResponse+.swift in Sources */,
 				723823D228A6692900B76087 /* NetworkService.swift in Sources */,
 				7238244528AE738500B76087 /* Sorcery.swift in Sources */,
-				7238249828B3DD0000B76087 /* WeaponDetailViewModel.swift in Sources */,
 				7238242728AE6BD700B76087 /* Item.swift in Sources */,
 				723823E828A6C9E800B76087 /* Defence.swift in Sources */,
 				7238241C28AD130300B76087 /* ListType.swift in Sources */,
 				7238241128AAA08000B76087 /* CatalogStruct.swift in Sources */,
 				7238239328A5343500B76087 /* EldenRingWikiApp.swift in Sources */,
 				7238241828AD102600B76087 /* ListItemsViewModel.swift in Sources */,
-				723824DD28B9310300B76087 /* ArmorDetailViewModel.swift in Sources */,
 				723823E328A6C9E800B76087 /* Weapon.swift in Sources */,
 				723823D728A69EC100B76087 /* String+.swift in Sources */,
 				723823E228A6C9E800B76087 /* WeaponData.swift in Sources */,
-				7238248D28B14FDF00B76087 /* DetailsRouter.swift in Sources */,
 				7238243F28AE722000B76087 /* Ashe.swift in Sources */,
 				7238247228AF855400B76087 /* NPC.swift in Sources */,
 				723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */,
@@ -904,7 +813,6 @@
 				723823D428A6696800B76087 /* Endpoint.swift in Sources */,
 				723823DC28A69F7000B76087 /* Constants.swift in Sources */,
 				7238240528A7DFA000B76087 /* Resistance.swift in Sources */,
-				723824E028BA867700B76087 /* ShieldDetailView.swift in Sources */,
 				7238244328AE737C00B76087 /* Sorceries.swift in Sources */,
 				7238240128A7DF0100B76087 /* ArmorData.swift in Sources */,
 				7238243228AE6D1C00B76087 /* Talismans.swift in Sources */,
@@ -918,22 +826,18 @@
 				7238240B28AA6B6600B76087 /* CatalogView.swift in Sources */,
 				7238244F28AEAB9D00B76087 /* SpiritData.swift in Sources */,
 				7238246828AEB0CA00B76087 /* ClassStats.swift in Sources */,
-				723824DB28B930EE00B76087 /* ArmorDetailView.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
+				727C338B28C11ECE009E015E /* DetailView.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
 				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
 				7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */,
 				7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */,
-				727C338928BFC26C009E015E /* ItemDetailViewModel.swift in Sources */,
-				7238249628B3D4C700B76087 /* WeaponDetailView.swift in Sources */,
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,
-				723824E728BBDDEB00B76087 /* AmmoDetailViewModel.swift in Sources */,
 				723823F228A7DCE000B76087 /* AmmoData.swift in Sources */,
 				7238244D28AEAB9500B76087 /* Spirit.swift in Sources */,
 				7238247E28AF884D00B76087 /* Location.swift in Sources */,
 				7238247628AF86BA00B76087 /* Creatures.swift in Sources */,
-				723824E228BA868300B76087 /* ShieldDetailViewModel.swift in Sources */,
 				7238246628AEB09000B76087 /* CharacterClassData.swift in Sources */,
 				7238247028AF854C00B76087 /* NPCs.swift in Sources */,
 				7238246A28AF80CA00B76087 /* Bosses.swift in Sources */,

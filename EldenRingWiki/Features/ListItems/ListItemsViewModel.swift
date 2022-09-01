@@ -16,7 +16,7 @@ class ListItemsViewModel: ObservableObject {
     
     var itemsPage = 0
     var listIsFull = false
-    var itemId: String = ""
+    var selectedItem: ListItemsModel?
     
     init(type: ListType) {
         self.type = type
