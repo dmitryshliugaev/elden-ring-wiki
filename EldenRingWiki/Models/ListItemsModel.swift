@@ -8,6 +8,7 @@
 import Foundation
 
 struct ListItemsModel {
+    var listType: ListType
     var id: String
     var name: String
     var imageUrl: String?
@@ -40,6 +41,7 @@ struct ListItemsModel {
     var resistance: [Resistance] = []
     
     init(_ response: AmmoData) {
+        self.listType = .ammos
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -50,6 +52,7 @@ struct ListItemsModel {
     }
     
     init(_ response: ShieldData) {
+        self.listType = .shields
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -63,6 +66,7 @@ struct ListItemsModel {
     }
     
     init(_ response: ArmorData) {
+        self.listType = .armors
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -74,6 +78,7 @@ struct ListItemsModel {
     }
     
     init(_ response: WeaponData) {
+        self.listType = .weapons
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -87,6 +92,7 @@ struct ListItemsModel {
     }
     
     init(_ response: TalismanData) {
+        self.listType = .talismans
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -95,6 +101,7 @@ struct ListItemsModel {
     }
     
     init(_ response: ItemData) {
+        self.listType = .items
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -104,6 +111,7 @@ struct ListItemsModel {
     }
     
     init(_ response: AsheData) {
+        self.listType = .ashes
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -113,6 +121,7 @@ struct ListItemsModel {
     }
     
     init(_ response: IncantationData) {
+        self.listType = .incantations
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -125,6 +134,7 @@ struct ListItemsModel {
     }
     
     init(_ response: SpiritData) {
+        self.listType = .spirits
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -135,6 +145,7 @@ struct ListItemsModel {
     }
     
     init(_ response: SorceryData) {
+        self.listType = .sorceries
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -147,6 +158,7 @@ struct ListItemsModel {
     }
     
     init(_ response: LocationData) {
+        self.listType = .locations
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -154,6 +166,7 @@ struct ListItemsModel {
     }
     
     init(_ response: CreatureData) {
+        self.listType = .creatures
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -163,6 +176,7 @@ struct ListItemsModel {
     }
     
     init(_ response: NPCData) {
+        self.listType = .npcs
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -173,6 +187,7 @@ struct ListItemsModel {
     }
     
     init(_ response: BossData) {
+        self.listType = .bosses
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
@@ -183,6 +198,7 @@ struct ListItemsModel {
     }
     
     init(_ response: CharacterClassData) {
+        self.listType = .classes
         self.id = response.id
         self.name = response.name
         self.imageUrl = response.image
