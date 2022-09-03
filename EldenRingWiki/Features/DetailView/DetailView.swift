@@ -285,11 +285,6 @@ struct DetailView: View {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        Text("Attack".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.attack, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -304,11 +299,6 @@ struct DetailView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text("Defence".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.defence, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -322,6 +312,16 @@ struct DetailView: View {
                         }
                     }
                 }
+            } header: {
+                HStack {
+                    Text("Attack".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
+                    
+                    Text("Defence".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
+                }
             }
         }
     }
@@ -333,11 +333,6 @@ struct DetailView: View {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        Text("RequiredAttributes".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.requiredAttributes, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -351,13 +346,7 @@ struct DetailView: View {
                         }
                     }
                     
-                    
                     VStack(alignment: .leading) {
-                        Text("ScalesWith".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.scalesWith, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -370,6 +359,16 @@ struct DetailView: View {
                             }
                         }
                     }
+                }
+            } header: {
+                HStack {
+                    Text("RequiredAttributes".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
+                    
+                    Text("ScalesWith".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
                 }
             }
         }
@@ -397,11 +396,6 @@ struct DetailView: View {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        Text("DmgNegation".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.dmgNegation, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -415,13 +409,7 @@ struct DetailView: View {
                         }
                     }
                     
-                    
                     VStack(alignment: .leading) {
-                        Text("Resistance".localizedString)
-                            .font(.headline)
-                        
-                        Spacer().frame(height: 8)
-                        
                         ForEach(listItemsModel.resistance, id: \.name) { row in
                             HStack {
                                 Text(row.name)
@@ -434,6 +422,16 @@ struct DetailView: View {
                             }
                         }
                     }
+                }
+            } header: {
+                HStack {
+                    Text("DmgNegation".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
+                    
+                    Text("Resistance".localizedString)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(1)
                 }
             }
         }
