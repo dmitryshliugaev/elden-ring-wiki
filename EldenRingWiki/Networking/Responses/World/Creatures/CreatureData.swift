@@ -19,5 +19,5 @@ struct CreatureData: ItemMappable, Decodable {
     /// Where this creature can be found
     let location: String?
     /// What items and resources this creature drops
-    let drops: [String]
+    let drops: [String]?
 }

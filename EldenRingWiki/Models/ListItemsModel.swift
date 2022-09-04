@@ -172,7 +172,7 @@ struct ListItemsModel {
         self.imageUrl = response.image
         self.description = response.description
         self.location = response.location
-        self.drops = response.drops
+        self.drops = response.drops ?? []
     }
     
     init(_ response: NPCData) {
