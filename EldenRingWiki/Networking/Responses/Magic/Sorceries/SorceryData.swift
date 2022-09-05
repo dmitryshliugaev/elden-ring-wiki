@@ -25,5 +25,5 @@ struct SorceryData: ItemMappable, Decodable {
     /// Skill activated when this Ash of War is equipped in a weapon
     let effects: String?
     /// What attributes and what amount is required to cast this sorcery
-    let requires: [Requires]
+    let requires: [Requires]?
 }

@@ -12,18 +12,29 @@ struct CatalogView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                switch viewModel.state {
-                case .catalog:
-                    catalogStateView
-                case let .searchData(items):
-                    makeSearchResultsList(items: items)
-                case .error:
-                    errorView
+            VStack {
+                NavigationLink(isActive: $viewModel.isShowDetailView) {
+                    if let selectedItem = viewModel.selectedItem {
+                        DetailView(listItemsModel: selectedItem)
+                    }
+                } label: { EmptyView() }
+                
+                List {
+                    switch viewModel.state {
+                    case .catalog:
+                        catalogStateView
+                    case let .searchData(items):
+                        makeSearchResultsList(items: items)
+                    case .error:
+                        errorView
+                    }
                 }
+                .searchable(text: $viewModel.searchText,
+                            placement: .navigationBarDrawer(displayMode: .always),
+                            prompt: "Search.Prompt".localizedString)
+                .navigationTitle(Text("Catalog"))
+                .listStyle(.insetGrouped)
             }
-            .searchable(text: $viewModel.searchText, prompt: "Search for an item")
-            .navigationTitle(Text("Catalog"))
         }
     }
     
@@ -40,30 +51,35 @@ struct CatalogView: View {
     
     func makeSearchResultsList(items: [ListItemsModel]) -> some View {
         ForEach(items, id: \.id) { item in
-            HStack {
-                if let urlString = item.imageUrl, let url = URL(string: urlString) {
-                    CacheAsyncImage(url: url) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                        case .success(let image):
-                            image.resizable()
-                        case .failure(_):
-                            Image(systemName: "exclamationmark.icloud")
-                        @unknown default:
-                            Image(systemName: "exclamationmark.icloud")
+            Button {
+                viewModel.isShowDetailView = true
+                viewModel.selectedItem = item
+            } label: {
+                HStack {
+                    if let urlString = item.imageUrl, let url = URL(string: urlString) {
+                        CacheAsyncImage(url: url) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                            case .success(let image):
+                                image.resizable()
+                            case .failure(_):
+                                Image(systemName: "exclamationmark.icloud")
+                            @unknown default:
+                                Image(systemName: "exclamationmark.icloud")
+                            }
                         }
-                    }
-                    .frame(width: Constants.UI.thumbnailsSize,
-                           height: Constants.UI.thumbnailsSize)
-                    .cornerRadius(Constants.UI.thumbnailsSize/2)
-                } else {
-                    Image(systemName: "exclamationmark.icloud")
                         .frame(width: Constants.UI.thumbnailsSize,
                                height: Constants.UI.thumbnailsSize)
+                        .cornerRadius(Constants.UI.thumbnailsSize/2)
+                    } else {
+                        Image(systemName: "exclamationmark.icloud")
+                            .frame(width: Constants.UI.thumbnailsSize,
+                                   height: Constants.UI.thumbnailsSize)
+                    }
+                    
+                    Text(item.name)
                 }
-                
-                Text(item.name)
             }
         }
     }

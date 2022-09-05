@@ -16,6 +16,9 @@ class CatalogViewModel: ObservableObject {
     
     @Published var state: State = .catalog
     @Published var searchText: String = ""
+    @Published var isShowDetailView = false
+    
+    var selectedItem: ListItemsModel?
     
     private var cancellableSet: Set<AnyCancellable> = Set()
     
@@ -29,6 +32,8 @@ class CatalogViewModel: ObservableObject {
                     Task {
                         await self.fetchSearchItem(query: search)
                     }
+                } else {
+                    self.state = .catalog
                 }
             }
             .store(in: &cancellableSet)
@@ -86,7 +91,6 @@ class CatalogViewModel: ObservableObject {
             
             state = .searchData(items: searchItems)
         } catch {
-            print(error)
             state = .error
         }
     }

@@ -25,5 +25,5 @@ struct IncantationData: ItemMappable, Decodable {
     /// Skill activated when this Ash of War is equipped in a weapon
     let effects: String?
     /// What attributes and what amount is required to cast this incantation
-    let requires: [Requires]
+    let requires: [Requires]?
 }

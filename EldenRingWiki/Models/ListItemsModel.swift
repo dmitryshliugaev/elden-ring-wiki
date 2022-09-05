@@ -130,7 +130,7 @@ struct ListItemsModel {
         self.cost = response.cost
         self.slots = response.slots
         self.effects = response.effects
-        self.requires = response.requires
+        self.requires = response.requires ?? []
     }
     
     init(_ response: SpiritData) {
@@ -154,7 +154,7 @@ struct ListItemsModel {
         self.cost = response.cost
         self.slots = response.slots
         self.effects = response.effects
-        self.requires = response.requires
+        self.requires = response.requires ?? []
     }
     
     init(_ response: LocationData) {

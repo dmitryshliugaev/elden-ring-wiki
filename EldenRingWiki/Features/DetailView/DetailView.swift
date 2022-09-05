@@ -35,6 +35,7 @@ struct DetailView: View {
             dmgNegationAndResistance
         }
         .foregroundColor(.white)
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text(listItemsModel.name))
     }
     
