@@ -90,6 +90,8 @@
 		7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248928AFC7C200B76087 /* WebViewModel.swift */; };
 		7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238248F28B2636E00B76087 /* CacheAsyncImage.swift */; };
 		7238249A28B6358F00B76087 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238249928B6358F00B76087 /* Colors.swift */; };
+		7261FD2E28C7C28A0073DDFA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261FD2D28C7C28A0073DDFA /* Repository.swift */; };
+		7261FD3128C7C6FA0073DDFA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */; };
 		727C338B28C11ECE009E015E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338A28C11ECE009E015E /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		7238248928AFC7C200B76087 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		7238248F28B2636E00B76087 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7261FD2D28C7C28A0073DDFA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +252,7 @@
 		7238239128A5343500B76087 /* EldenRingWiki */ = {
 			isa = PBXGroup;
 			children = (
+				7261FD2F28C7C2970073DDFA /* Repository */,
 				7238240828AA69E900B76087 /* Features */,
 				723824D728B7E48400B76087 /* Models */,
 				723823D028A6687000B76087 /* Networking */,
@@ -626,6 +631,7 @@
 			isa = PBXGroup;
 			children = (
 				727C338A28C11ECE009E015E /* DetailView.swift */,
+				7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -636,6 +642,14 @@
 				7238241928AD10A600B76087 /* ListItemsModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7261FD2F28C7C2970073DDFA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7261FD2D28C7C28A0073DDFA /* Repository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -785,6 +799,7 @@
 				7238247828AF86C300B76087 /* Creature.swift in Sources */,
 				7238246228AEB08100B76087 /* CharacterClasses.swift in Sources */,
 				7238244928AE745F00B76087 /* Requires.swift in Sources */,
+				7261FD2E28C7C28A0073DDFA /* Repository.swift in Sources */,
 				7238240F28AA9AE300B76087 /* TabRouter.swift in Sources */,
 				7238240D28AA6FFC00B76087 /* CatalogViewModel.swift in Sources */,
 				7238246E28AF80DC00B76087 /* BossData.swift in Sources */,
@@ -831,6 +846,7 @@
 				727C338B28C11ECE009E015E /* DetailView.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
 				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
+				7261FD3128C7C6FA0073DDFA /* DetailViewModel.swift in Sources */,
 				7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */,
 				7238248728AFC75500B76087 /* WebViewContainer.swift in Sources */,
 				7238242528AE6BA700B76087 /* Items.swift in Sources */,

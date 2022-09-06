@@ -9,8 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject private var router: TabRouter
+    @StateObject var viewModel: DetailViewModel
     
-    let listItemsModel: ListItemsModel
+    init(listItemsModel: ListItemsModel) {
+        _viewModel = StateObject(wrappedValue: .init(listItemsModel: listItemsModel,
+                                                     repository: Dependencies.shared.repository))
+    }
     
     var body: some View {
         List {
@@ -19,8 +23,6 @@ struct DetailView: View {
             groupOne
             
             groupTwo
-            
-            stats
             
             drops
             
@@ -33,10 +35,12 @@ struct DetailView: View {
             attackPower
             
             dmgNegationAndResistance
+            
+            markItem
         }
         .foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text(listItemsModel.name))
+        .navigationTitle(Text(viewModel.listItemsModel.name))
     }
     
     @ViewBuilder
@@ -44,7 +48,7 @@ struct DetailView: View {
         Group {
             HStack {
                 Spacer()
-                if let urlString = listItemsModel.imageUrl, let url = URL(string: urlString) {
+                if let urlString = viewModel.listItemsModel.imageUrl, let url = URL(string: urlString) {
                     CacheAsyncImage(url: url) { phase in
                         switch phase {
                         case .empty:
@@ -69,10 +73,10 @@ struct DetailView: View {
             }
             .listRowBackground(Color.black)
             
-            if listItemsModel.listType != .classes {
+            if viewModel.listItemsModel.listType != .classes {
                 Section {
                     Button {
-                        router.searchItemOnMap(listItemsModel.name)
+                        router.searchItemOnMap(viewModel.listItemsModel.name)
                     } label: {
                         HStack {
                             Spacer()
@@ -85,7 +89,7 @@ struct DetailView: View {
                 }
             }
             
-            if let description = listItemsModel.description {
+            if let description = viewModel.listItemsModel.description {
                 Section("Description".localizedString) {
                     Text(description)
                 }
@@ -96,61 +100,61 @@ struct DetailView: View {
     @ViewBuilder
     var groupOne: some View {
         Group {
-            if let type = listItemsModel.type {
+            if let type = viewModel.listItemsModel.type {
                 Section("Type".localizedString) {
                     Text(type)
                 }
             }
             
-            if let passive = listItemsModel.passive {
+            if let passive = viewModel.listItemsModel.passive {
                 Section("Passive".localizedString) {
                     Text(passive)
                 }
             }
             
-            if let category = listItemsModel.category {
+            if let category = viewModel.listItemsModel.category {
                 Section("Category".localizedString) {
                     Text(category)
                 }
             }
             
-            if let weight = listItemsModel.weight {
+            if let weight = viewModel.listItemsModel.weight {
                 Section("Weight".localizedString) {
                     Text(String(format: "%g", weight))
                 }
             }
             
-            if let effect = listItemsModel.effect {
+            if let effect = viewModel.listItemsModel.effect {
                 Section("Effect".localizedString) {
                     Text(effect)
                 }
             }
             
-            if let affinity = listItemsModel.affinity {
+            if let affinity = viewModel.listItemsModel.affinity {
                 Section("Affinity".localizedString) {
                     Text(affinity)
                 }
             }
             
-            if let skill = listItemsModel.skill {
+            if let skill = viewModel.listItemsModel.skill {
                 Section("Skill".localizedString) {
                     Text(skill)
                 }
             }
             
-            if let cost = listItemsModel.cost {
+            if let cost = viewModel.listItemsModel.cost {
                 Section("Cost".localizedString) {
                     Text(String(format: "%g", cost))
                 }
             }
             
-            if let slots = listItemsModel.slots {
+            if let slots = viewModel.listItemsModel.slots {
                 Section("Slots".localizedString) {
                     Text(String(format: "%g", slots))
                 }
             }
             
-            if let effects = listItemsModel.effects {
+            if let effects = viewModel.listItemsModel.effects {
                 Section("Effects".localizedString) {
                     Text(effects)
                 }
@@ -161,47 +165,49 @@ struct DetailView: View {
     @ViewBuilder
     var groupTwo: some View {
         Group {
-            if let fpCost = listItemsModel.fpCost {
+            if let fpCost = viewModel.listItemsModel.fpCost {
                 Section("FPCost".localizedString) {
                     Text(fpCost)
                 }
             }
             
-            if let hpCost = listItemsModel.hpCost {
+            if let hpCost = viewModel.listItemsModel.hpCost {
                 Section("HPCost".localizedString) {
                     Text(hpCost)
                 }
             }
             
-            if let location = listItemsModel.location {
+            if let location = viewModel.listItemsModel.location {
                 Section("Location".localizedString) {
                     Text(location)
                 }
             }
             
-            if let quote = listItemsModel.quote {
+            if let quote = viewModel.listItemsModel.quote {
                 Section("Quote".localizedString) {
                     Text(quote)
                 }
             }
             
-            if let role = listItemsModel.role {
+            if let role = viewModel.listItemsModel.role {
                 Section("Role".localizedString) {
                     Text(role)
                 }
             }
             
-            if let healthPoints = listItemsModel.healthPoints {
+            if let healthPoints = viewModel.listItemsModel.healthPoints {
                 Section("HealthPoints".localizedString) {
                     Text(healthPoints)
                 }
             }
+            
+            stats
         }
     }
     
     @ViewBuilder
     var stats: some View {
-        if let stats = listItemsModel.stats {
+        if let stats = viewModel.listItemsModel.stats {
             Section("Stats".localizedString) {
                 HStack {
                     Text("Stats.level".localizedString)
@@ -255,9 +261,9 @@ struct DetailView: View {
     
     @ViewBuilder
     var drops: some View {
-        if !listItemsModel.drops.isEmpty {
+        if !viewModel.listItemsModel.drops.isEmpty {
             Section("Drops".localizedString) {
-                ForEach(listItemsModel.drops, id: \.self) { dropName in
+                ForEach(viewModel.listItemsModel.drops, id: \.self) { dropName in
                     Text(dropName)
                 }
             }
@@ -266,9 +272,9 @@ struct DetailView: View {
     
     @ViewBuilder
     var requires: some View {
-        if !listItemsModel.requires.isEmpty {
+        if !viewModel.listItemsModel.requires.isEmpty {
             Section("Requires".localizedString) {
-                ForEach(listItemsModel.requires, id: \.name) { require in
+                ForEach(viewModel.listItemsModel.requires, id: \.name) { require in
                     HStack {
                         Text(require.name)
                         Spacer()
@@ -281,33 +287,33 @@ struct DetailView: View {
     
     @ViewBuilder
     var attackAndDefence: some View {
-        if !listItemsModel.attack.isEmpty,
-           !listItemsModel.defence.isEmpty {
+        if !viewModel.listItemsModel.attack.isEmpty,
+           !viewModel.listItemsModel.defence.isEmpty {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.attack, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.attack, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
                             
-                            if listItemsModel.attack.last?.name != row.name {
+                            if viewModel.listItemsModel.attack.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
                     
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.defence, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.defence, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
                             
-                            if listItemsModel.defence.last?.name != row.name {
+                            if viewModel.listItemsModel.defence.last?.name != row.name {
                                 Divider()
                             }
                         }
@@ -329,33 +335,33 @@ struct DetailView: View {
     
     @ViewBuilder
     var requiredAttributesAndScalesWith: some View {
-        if !listItemsModel.requiredAttributes.isEmpty,
-           !listItemsModel.scalesWith.isEmpty {
+        if !viewModel.listItemsModel.requiredAttributes.isEmpty,
+           !viewModel.listItemsModel.scalesWith.isEmpty {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.requiredAttributes, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.requiredAttributes, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
                             
-                            if listItemsModel.requiredAttributes.last?.name != row.name {
+                            if viewModel.listItemsModel.requiredAttributes.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
                     
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.scalesWith, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.scalesWith, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(row.scaling ?? "-")
                             }
                             
-                            if listItemsModel.scalesWith.last?.name != row.name {
+                            if viewModel.listItemsModel.scalesWith.last?.name != row.name {
                                 Divider()
                             }
                         }
@@ -377,9 +383,9 @@ struct DetailView: View {
     
     @ViewBuilder
     var attackPower: some View {
-        if !listItemsModel.attackPower.isEmpty {
+        if !viewModel.listItemsModel.attackPower.isEmpty {
             Section("AttackPower".localizedString) {
-                ForEach(listItemsModel.attackPower, id: \.name) { row in
+                ForEach(viewModel.listItemsModel.attackPower, id: \.name) { row in
                     HStack {
                         Text(row.name)
                         Spacer()
@@ -392,33 +398,33 @@ struct DetailView: View {
     
     @ViewBuilder
     var dmgNegationAndResistance: some View {
-        if !listItemsModel.dmgNegation.isEmpty,
-           !listItemsModel.resistance.isEmpty {
+        if !viewModel.listItemsModel.dmgNegation.isEmpty,
+           !viewModel.listItemsModel.resistance.isEmpty {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.dmgNegation, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.dmgNegation, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
                             
-                            if listItemsModel.dmgNegation.last?.name != row.name {
+                            if viewModel.listItemsModel.dmgNegation.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
                     
                     VStack(alignment: .leading) {
-                        ForEach(listItemsModel.resistance, id: \.name) { row in
+                        ForEach(viewModel.listItemsModel.resistance, id: \.name) { row in
                             HStack {
                                 Text(row.name)
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
                             
-                            if listItemsModel.resistance.last?.name != row.name {
+                            if viewModel.listItemsModel.resistance.last?.name != row.name {
                                 Divider()
                             }
                         }
@@ -434,6 +440,30 @@ struct DetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
                 }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var markItem: some View {
+        if viewModel.isMarked() {
+            HStack {
+                Spacer()
+                Image(systemName: "checkmark.circle")
+                Text("Is marked")
+                Spacer()
+            }
+        } else {
+            Button {
+                viewModel.mark()
+            } label: {
+                HStack {
+                    Spacer()
+                    Image(systemName: "checkmark.circle")
+                    Text("Mark")
+                    Spacer()
+                }
+                .foregroundColor(Color.eldenLight)
             }
         }
     }
