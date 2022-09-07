@@ -13,6 +13,7 @@ enum RepositoryError: Error {
 
 protocol RepositoryProtocol {
     func markItem(id: String) throws
+    func unmarkItem(id: String) throws
     func isItemMarked(id: String) -> Bool
     func getAllMarkedItems() throws -> [String]
 }
@@ -29,6 +30,18 @@ final class Repository: RepositoryProtocol {
         let encoder = JSONEncoder()
         
         let data = try encoder.encode(markItems)
+        UserDefaults.standard.set(data, forKey: markItemsKey)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func unmarkItem(id: String) throws {
+        guard var items = try? getAllMarkedItems() else {
+            return
+        }
+        items = items.filter { $0 != id }
+        let encoder = JSONEncoder()
+        
+        let data = try encoder.encode(items)
         UserDefaults.standard.set(data, forKey: markItemsKey)
         UserDefaults.standard.synchronize()
     }

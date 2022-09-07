@@ -24,6 +24,8 @@ struct DetailView: View {
             
             groupTwo
             
+            stats
+            
             drops
             
             requires
@@ -36,7 +38,6 @@ struct DetailView: View {
             
             dmgNegationAndResistance
             
-            markItem
         }
         .foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
@@ -86,6 +87,8 @@ struct DetailView: View {
                         }
                         .foregroundColor(Color.eldenLight)
                     }
+                    
+                    markItem
                 }
             }
             
@@ -200,8 +203,6 @@ struct DetailView: View {
                     Text(healthPoints)
                 }
             }
-            
-            stats
         }
     }
     
@@ -446,12 +447,19 @@ struct DetailView: View {
     
     @ViewBuilder
     var markItem: some View {
-        if viewModel.isMarked() {
-            HStack {
-                Spacer()
-                Image(systemName: "checkmark.circle")
-                Text("Is marked")
-                Spacer()
+        if viewModel.isMark {
+            VStack {
+                Button {
+                    viewModel.unmark()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "xmark.circle")
+                        Text("Unmark")
+                        Spacer()
+                    }
+                    .foregroundColor(Color.eldenLight)
+                }
             }
         } else {
             Button {

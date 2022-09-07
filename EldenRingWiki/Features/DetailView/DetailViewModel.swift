@@ -8,6 +8,8 @@
 import Foundation
 
 class DetailViewModel: ObservableObject {
+    @Published var isMark: Bool
+    
     private let repository: RepositoryProtocol
     
     let listItemsModel: ListItemsModel
@@ -16,17 +18,24 @@ class DetailViewModel: ObservableObject {
          repository: RepositoryProtocol) {
         self.listItemsModel = listItemsModel
         self.repository = repository
+        self.isMark = repository.isItemMarked(id: listItemsModel.id)
     }
     
     func mark() {
         do {
             try repository.markItem(id: listItemsModel.id)
+            isMark = true
         } catch {
             print(error)
         }
     }
     
-    func isMarked() -> Bool {
-        return repository.isItemMarked(id: listItemsModel.id)
+    func unmark() {
+        do {
+            try repository.unmarkItem(id: listItemsModel.id)
+            isMark = false
+        } catch {
+            print(error)
+        }
     }
 }
