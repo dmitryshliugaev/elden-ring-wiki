@@ -454,8 +454,8 @@ struct DetailView: View {
                 } label: {
                     HStack {
                         Spacer()
-                        Image(systemName: "xmark.circle")
-                        Text("Unmark")
+                        Image(systemName: "checkmark.square")
+                        Text("MarkUnchecked".localizedString)
                         Spacer()
                     }
                     .foregroundColor(Color.eldenLight)
@@ -467,8 +467,8 @@ struct DetailView: View {
             } label: {
                 HStack {
                     Spacer()
-                    Image(systemName: "checkmark.circle")
-                    Text("Mark")
+                    Image(systemName: "square")
+                    Text("MarkChecked".localizedString)
                     Spacer()
                 }
                 .foregroundColor(Color.eldenLight)

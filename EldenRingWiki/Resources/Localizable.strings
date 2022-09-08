@@ -84,3 +84,6 @@
 "ShowOnMap" = "Show on map";
 
 "Search.Prompt" = "Search for an item";
+
+"MarkUnchecked" = "Mark unchecked";
+"MarkChecked" = "Mark checked";

@@ -32,7 +32,7 @@ struct CatalogView: View {
                 .searchable(text: $viewModel.searchText,
                             placement: .navigationBarDrawer(displayMode: .always),
                             prompt: "Search.Prompt".localizedString)
-                .navigationTitle(Text("Catalog"))
+                .navigationTitle(Text("Catalog".localizedString))
                 .listStyle(.insetGrouped)
             }
         }
