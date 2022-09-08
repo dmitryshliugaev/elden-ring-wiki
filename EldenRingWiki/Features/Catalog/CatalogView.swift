@@ -12,29 +12,28 @@ struct CatalogView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            List {
+                switch viewModel.state {
+                case .catalog:
+                    catalogStateView
+                case let .searchData(items):
+                    makeSearchResultsList(items: items)
+                case .error:
+                    errorView
+                }
+            }
+            .searchable(text: $viewModel.searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search.Prompt".localizedString)
+            .navigationTitle(Text("Catalog".localizedString))
+            .listStyle(.insetGrouped)
+            .background(
                 NavigationLink(isActive: $viewModel.isShowDetailView) {
                     if let selectedItem = viewModel.selectedItem {
                         DetailView(listItemsModel: selectedItem)
                     }
                 } label: { EmptyView() }
-                
-                List {
-                    switch viewModel.state {
-                    case .catalog:
-                        catalogStateView
-                    case let .searchData(items):
-                        makeSearchResultsList(items: items)
-                    case .error:
-                        errorView
-                    }
-                }
-                .searchable(text: $viewModel.searchText,
-                            placement: .navigationBarDrawer(displayMode: .always),
-                            prompt: "Search.Prompt".localizedString)
-                .navigationTitle(Text("Catalog".localizedString))
-                .listStyle(.insetGrouped)
-            }
+            )
         }
     }
     

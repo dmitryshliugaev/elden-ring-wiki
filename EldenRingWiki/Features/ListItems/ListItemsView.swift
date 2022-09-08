@@ -15,38 +15,37 @@ struct ListItemsView: View {
     }
     
     var body: some View {
-        VStack {
+        List {
+            ForEach(viewModel.items, id: \.id) { item in
+                Button {
+                    viewModel.isShowDetailView = true
+                    viewModel.selectedItem = item
+                } label: {
+                    makeListItem(name: item.name,
+                                 urlString: item.imageUrl)
+                }
+            }
+            
+            if !viewModel.listIsFull {
+                ProgressView()
+                    .frame(width: Constants.UI.thumbnailsSize,
+                           height: Constants.UI.thumbnailsSize,
+                           alignment: .center)
+                    .task {
+                        await viewModel.load()
+                    }
+            }
+        }
+        .listStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Text(viewModel.type.title))
+        .background(
             NavigationLink(isActive: $viewModel.isShowDetailView) {
                 if let selectedItem = viewModel.selectedItem {
                     DetailView(listItemsModel: selectedItem)
                 }
             } label: { EmptyView() }
-            
-            List {
-                ForEach(viewModel.items, id: \.id) { item in
-                    Button {
-                        viewModel.isShowDetailView = true
-                        viewModel.selectedItem = item
-                    } label: {
-                        makeListItem(name: item.name,
-                                     urlString: item.imageUrl)
-                    }
-                }
-                
-                if !viewModel.listIsFull {
-                    ProgressView()
-                        .frame(width: Constants.UI.thumbnailsSize,
-                               height: Constants.UI.thumbnailsSize,
-                               alignment: .center)
-                        .task {
-                            await viewModel.load()
-                        }
-                }
-            }
-            .listStyle(.plain)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(Text(viewModel.type.title))
-        }
+        )
     }
     
     func makeListItem(name: String, urlString: String?) -> some View {
