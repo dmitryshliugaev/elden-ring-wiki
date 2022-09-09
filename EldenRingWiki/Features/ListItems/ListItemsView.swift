@@ -11,7 +11,8 @@ struct ListItemsView: View {
     @StateObject var viewModel: ListItemsViewModel
     
     public init(type: ListType) {
-        _viewModel = StateObject(wrappedValue: .init(type: type))
+        _viewModel = StateObject(wrappedValue: .init(type: type,
+                                                     repository: Dependencies.shared.repository))
     }
     
     var body: some View {
@@ -21,7 +22,8 @@ struct ListItemsView: View {
                     viewModel.isShowDetailView = true
                     viewModel.selectedItem = item
                 } label: {
-                    makeListItem(name: item.name,
+                    makeListItem(id: item.id,
+                                 name: item.name,
                                  urlString: item.imageUrl)
                 }
             }
@@ -32,6 +34,7 @@ struct ListItemsView: View {
                            height: Constants.UI.thumbnailsSize,
                            alignment: .center)
                     .task {
+                        viewModel.getMarkedList()
                         await viewModel.load()
                     }
             }
@@ -48,7 +51,7 @@ struct ListItemsView: View {
         )
     }
     
-    func makeListItem(name: String, urlString: String?) -> some View {
+    func makeListItem(id: String, name: String, urlString: String?) -> some View {
         return HStack {
             if let urlString = urlString, let url = URL(string: urlString) {
                 CacheAsyncImage(url: url) { phase in
@@ -73,6 +76,12 @@ struct ListItemsView: View {
             }
             
             Text(name)
+            
+            Spacer()
+            
+            if viewModel.markedList.contains(id) {
+                Image(systemName: "checkmark.square")
+            }
         }
     }
 }

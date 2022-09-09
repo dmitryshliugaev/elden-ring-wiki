@@ -9,6 +9,8 @@ import Foundation
 
 @MainActor
 class ListItemsViewModel: ObservableObject {
+    private let repository: RepositoryProtocol
+    
     let type: ListType
     
     @Published var items: [ListItemsModel] = []
@@ -18,8 +20,20 @@ class ListItemsViewModel: ObservableObject {
     var listIsFull = false
     var selectedItem: ListItemsModel?
     
-    init(type: ListType) {
+    var markedList: [String] = []
+    
+    init(type: ListType,
+         repository: RepositoryProtocol) {
         self.type = type
+        self.repository = repository
+    }
+    
+    func getMarkedList() {
+        do {
+            markedList = try repository.getAllMarkedItems()
+        } catch {
+            print(error)
+        }
     }
     
     func load() async {
