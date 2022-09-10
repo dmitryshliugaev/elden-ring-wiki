@@ -5,16 +5,18 @@
 //  Created by Dmitrii Shliugaev on 17/08/2022.
 //
 
-import Foundation
+import Combine
 
 @MainActor
 class ListItemsViewModel: ObservableObject {
     private let repository: RepositoryProtocol
+    private var items: [ListItemsModel] = []
     
     let type: ListType
     
-    @Published var items: [ListItemsModel] = []
+    @Published var filteredItems: [ListItemsModel] = []
     @Published var isShowDetailView = false
+    @Published var filterType: FilterType = .all
     
     var itemsPage = 0
     var listIsFull = false
@@ -22,10 +24,17 @@ class ListItemsViewModel: ObservableObject {
     
     var markedList: [String] = []
     
+    private var cancellable: AnyCancellable?
+    
     init(type: ListType,
          repository: RepositoryProtocol) {
         self.type = type
         self.repository = repository
+        
+        cancellable = $filterType
+            .sink(receiveValue: { [unowned self] filterType in
+                self.applyFilter(type: filterType)
+            })
     }
     
     func getMarkedList() {
@@ -34,6 +43,19 @@ class ListItemsViewModel: ObservableObject {
         } catch {
             print(error)
         }
+    }
+    
+    func applyFilter(type: FilterType) {
+        switch type {
+        case .all:
+            filteredItems = items
+        case .checked:
+            filteredItems = items.filter { markedList.contains($0.id) }
+        case .unchecked:
+            filteredItems = items.filter { !markedList.contains($0.id) }
+        }
+        print(type)
+        print(filteredItems.count)
     }
     
     func load() async {
@@ -94,6 +116,8 @@ class ListItemsViewModel: ObservableObject {
             if newItems.count < Constants.API.pageLimit {
                 listIsFull = true
             }
+            
+            applyFilter(type: self.filterType)
         } catch {
             print(error)
         }

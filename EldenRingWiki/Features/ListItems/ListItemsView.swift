@@ -16,39 +16,47 @@ struct ListItemsView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.items, id: \.id) { item in
-                Button {
-                    viewModel.isShowDetailView = true
-                    viewModel.selectedItem = item
-                } label: {
-                    makeListItem(id: item.id,
-                                 name: item.name,
-                                 urlString: item.imageUrl)
+        VStack {
+            Picker(viewModel.filterType.title, selection: $viewModel.filterType) {
+                ForEach(FilterType.allCases, id: \.self) {
+                    Text($0.title).tag($0)
                 }
             }
             
-            if !viewModel.listIsFull {
-                ProgressView()
-                    .frame(width: Constants.UI.thumbnailsSize,
-                           height: Constants.UI.thumbnailsSize,
-                           alignment: .center)
-                    .task {
-                        viewModel.getMarkedList()
-                        await viewModel.load()
+            List {
+                ForEach(viewModel.filteredItems, id: \.id) { item in
+                    Button {
+                        viewModel.isShowDetailView = true
+                        viewModel.selectedItem = item
+                    } label: {
+                        makeListItem(id: item.id,
+                                     name: item.name,
+                                     urlString: item.imageUrl)
                     }
-            }
-        }
-        .listStyle(.plain)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text(viewModel.type.title))
-        .background(
-            NavigationLink(isActive: $viewModel.isShowDetailView) {
-                if let selectedItem = viewModel.selectedItem {
-                    DetailView(listItemsModel: selectedItem)
                 }
-            } label: { EmptyView() }
-        )
+                
+                if !viewModel.listIsFull, viewModel.filterType == .all {
+                    ProgressView()
+                        .frame(width: Constants.UI.thumbnailsSize,
+                               height: Constants.UI.thumbnailsSize,
+                               alignment: .center)
+                        .task {
+                            viewModel.getMarkedList()
+                            await viewModel.load()
+                        }
+                }
+            }
+            .listStyle(.plain)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text(viewModel.type.title))
+            .background(
+                NavigationLink(isActive: $viewModel.isShowDetailView) {
+                    if let selectedItem = viewModel.selectedItem {
+                        DetailView(listItemsModel: selectedItem)
+                    }
+                } label: { EmptyView() }
+            )
+        }
     }
     
     func makeListItem(id: String, name: String, urlString: String?) -> some View {

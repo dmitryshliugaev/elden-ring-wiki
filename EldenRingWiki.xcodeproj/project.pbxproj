@@ -93,6 +93,7 @@
 		7261FD2E28C7C28A0073DDFA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261FD2D28C7C28A0073DDFA /* Repository.swift */; };
 		7261FD3128C7C6FA0073DDFA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */; };
 		727C338B28C11ECE009E015E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338A28C11ECE009E015E /* DetailView.swift */; };
+		72CD729D28CD0D9F006DF6EC /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD729C28CD0D9F006DF6EC /* FilterType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 		7261FD2D28C7C28A0073DDFA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		72CD729C28CD0D9F006DF6EC /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +427,7 @@
 			children = (
 				7238241528AD101600B76087 /* ListItemsView.swift */,
 				7238241728AD102600B76087 /* ListItemsViewModel.swift */,
+				72CD729C28CD0D9F006DF6EC /* FilterType.swift */,
 			);
 			path = ListItems;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
 				727C338B28C11ECE009E015E /* DetailView.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
+				72CD729D28CD0D9F006DF6EC /* FilterType.swift in Sources */,
 				7238248328AFBE2300B76087 /* MapView.swift in Sources */,
 				7261FD3128C7C6FA0073DDFA /* DetailViewModel.swift in Sources */,
 				7238249028B2636E00B76087 /* CacheAsyncImage.swift in Sources */,

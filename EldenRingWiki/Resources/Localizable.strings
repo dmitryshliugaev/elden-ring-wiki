@@ -87,3 +87,6 @@
 
 "MarkUnchecked" = "Mark unchecked";
 "MarkChecked" = "Mark checked";
+"All" = "All";
+"Checked" = "Checked";
+"Unchecked" = "Unchecked";
