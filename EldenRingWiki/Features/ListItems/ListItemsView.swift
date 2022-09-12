@@ -21,7 +21,7 @@ struct ListItemsView: View {
                 ForEach(FilterType.allCases, id: \.self) {
                     Text($0.title).tag($0)
                 }
-            }
+            }.pickerStyle(.segmented)
             
             List {
                 ForEach(viewModel.filteredItems, id: \.id) { item in
@@ -35,13 +35,12 @@ struct ListItemsView: View {
                     }
                 }
                 
-                if !viewModel.listIsFull, viewModel.filterType == .all {
+                if !viewModel.listIsFull { 
                     ProgressView()
                         .frame(width: Constants.UI.thumbnailsSize,
                                height: Constants.UI.thumbnailsSize,
                                alignment: .center)
                         .task {
-                            viewModel.getMarkedList()
                             await viewModel.load()
                         }
                 }
@@ -56,6 +55,9 @@ struct ListItemsView: View {
                     }
                 } label: { EmptyView() }
             )
+            .task {
+                viewModel.getMarkedList()
+            }
         }
     }
     

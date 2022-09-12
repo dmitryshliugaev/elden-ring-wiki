@@ -17,12 +17,11 @@ class ListItemsViewModel: ObservableObject {
     @Published var filteredItems: [ListItemsModel] = []
     @Published var isShowDetailView = false
     @Published var filterType: FilterType = .all
+    @Published var markedList: [String] = []
     
     var itemsPage = 0
     var listIsFull = false
     var selectedItem: ListItemsModel?
-    
-    var markedList: [String] = []
     
     private var cancellable: AnyCancellable?
     
