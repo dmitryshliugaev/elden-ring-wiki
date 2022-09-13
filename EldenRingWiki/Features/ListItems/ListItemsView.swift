@@ -35,14 +35,18 @@ struct ListItemsView: View {
                     }
                 }
                 
-                if !viewModel.listIsFull { 
-                    ProgressView()
-                        .frame(width: Constants.UI.thumbnailsSize,
-                               height: Constants.UI.thumbnailsSize,
-                               alignment: .center)
-                        .task {
-                            await viewModel.load()
-                        }
+                if !viewModel.listIsFull {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        ProgressView()
+                            .frame(width: Constants.UI.thumbnailsSize,
+                                   height: Constants.UI.thumbnailsSize,
+                                   alignment: .center)
+                            .task {
+                                await viewModel.load()
+                            }
+                        Spacer()
+                    }
                 }
             }
             .listStyle(.plain)
