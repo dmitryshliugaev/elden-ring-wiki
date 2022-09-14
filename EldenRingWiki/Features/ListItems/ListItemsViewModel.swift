@@ -57,6 +57,11 @@ class ListItemsViewModel: ObservableObject {
         print(filteredItems.count)
     }
     
+    func showDetailView(with item: ListItemsModel) {
+        selectedItem = item
+        isShowDetailView = true
+    }
+    
     func load() async {
         do {
             var newItems: [ListItemsModel] = []

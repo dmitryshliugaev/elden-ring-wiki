@@ -11,7 +11,7 @@ import Combine
 @MainActor
 class CatalogViewModel: ObservableObject {
     enum State {
-        case catalog, searchData(items: [ListItemsModel]), error
+        case catalog, loading, searchData(items: [ListItemsModel]), error
     }
     
     @Published var state: State = .catalog
@@ -39,7 +39,14 @@ class CatalogViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     
+    func showDetailView(with item: ListItemsModel) {
+        selectedItem = item
+        isShowDetailView = true
+    }
+    
     func fetchSearchItem(query: String) async {
+        state = .loading
+        
         do {
             var searchItems: [ListItemsModel] = []
             let service = Dependencies.shared.networkService

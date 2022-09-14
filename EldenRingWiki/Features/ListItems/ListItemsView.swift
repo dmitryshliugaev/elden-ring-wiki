@@ -26,8 +26,7 @@ struct ListItemsView: View {
             List {
                 ForEach(viewModel.filteredItems, id: \.id) { item in
                     Button {
-                        viewModel.isShowDetailView = true
-                        viewModel.selectedItem = item
+                        viewModel.showDetailView(with: item)
                     } label: {
                         makeListItem(id: item.id,
                                      name: item.name,

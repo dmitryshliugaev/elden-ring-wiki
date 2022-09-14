@@ -20,6 +20,8 @@ struct CatalogView: View {
                     makeSearchResultsList(items: items)
                 case .error:
                     errorView
+                case .loading:
+                    loadingView
                 }
             }
             .searchable(text: $viewModel.searchText,
@@ -51,8 +53,7 @@ struct CatalogView: View {
     func makeSearchResultsList(items: [ListItemsModel]) -> some View {
         ForEach(items, id: \.id) { item in
             Button {
-                viewModel.isShowDetailView = true
-                viewModel.selectedItem = item
+                viewModel.showDetailView(with: item)
             } label: {
                 HStack {
                     if let urlString = item.imageUrl, let url = URL(string: urlString) {
@@ -93,6 +94,18 @@ struct CatalogView: View {
     
     private var errorView: some View {
         Text("Error...")
+    }
+    
+    private var loadingView: some View {
+        HStack {
+            Spacer()
+            ProgressView()
+                .frame(width: Constants.UI.thumbnailsSize,
+                       height: Constants.UI.thumbnailsSize,
+                       alignment: .center)
+            Spacer()
+        }
+        .listRowBackground(Color.black)
     }
 }
 
