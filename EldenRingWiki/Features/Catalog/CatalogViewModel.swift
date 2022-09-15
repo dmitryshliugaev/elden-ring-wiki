@@ -14,15 +14,20 @@ class CatalogViewModel: ObservableObject {
         case catalog, loading, searchData(items: [ListItemsModel]), error
     }
     
+    private let repository: RepositoryProtocol
+    
     @Published var state: State = .catalog
     @Published var searchText: String = ""
     @Published var isShowDetailView = false
+    @Published var markedList: [String] = []
     
     var selectedItem: ListItemsModel?
     
     private var cancellableSet: Set<AnyCancellable> = Set()
     
-    init() {
+    init(repository: RepositoryProtocol) {
+        self.repository = repository
+        
         _searchText
             .projectedValue
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
@@ -37,6 +42,14 @@ class CatalogViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellableSet)
+    }
+    
+    func getMarkedList() {
+        do {
+            markedList = try repository.getAllMarkedItems()
+        } catch {
+            print(error)
+        }
     }
     
     func showDetailView(with item: ListItemsModel) {

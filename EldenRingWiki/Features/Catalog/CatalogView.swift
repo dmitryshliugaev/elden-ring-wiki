@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct CatalogView: View {
-    @StateObject var viewModel = CatalogViewModel()
+    @StateObject var viewModel: CatalogViewModel
+    
+    public init() {
+        _viewModel = StateObject(wrappedValue: .init(repository: Dependencies.shared.repository))
+    }
     
     var body: some View {
         NavigationView {
@@ -79,8 +83,17 @@ struct CatalogView: View {
                     }
                     
                     Text(item.name)
+                    
+                    Spacer()
+                    
+                    if viewModel.markedList.contains(item.id) {
+                        Image(systemName: "checkmark.square")
+                    }
                 }
             }
+        }
+        .task {
+            viewModel.getMarkedList()
         }
     }
     
