@@ -54,46 +54,56 @@ struct CatalogView: View {
         }
     }
     
+    @ViewBuilder
     func makeSearchResultsList(items: [ListItemsModel]) -> some View {
-        ForEach(items, id: \.id) { item in
-            Button {
-                viewModel.showDetailView(with: item)
-            } label: {
-                HStack {
-                    if let urlString = item.imageUrl, let url = URL(string: urlString) {
-                        CacheAsyncImage(url: url) { phase in
-                            switch phase {
-                            case .empty:
-                                ProgressView()
-                            case .success(let image):
-                                image.resizable()
-                            case .failure(_):
-                                Image(systemName: "exclamationmark.icloud")
-                            @unknown default:
-                                Image(systemName: "exclamationmark.icloud")
+        if items.isEmpty {
+            HStack {
+                Spacer()
+                Text("No results")
+                Spacer()
+            }
+            .listRowBackground(Color.black)
+        } else {
+            ForEach(items, id: \.id) { item in
+                Button {
+                    viewModel.showDetailView(with: item)
+                } label: {
+                    HStack {
+                        if let urlString = item.imageUrl, let url = URL(string: urlString) {
+                            CacheAsyncImage(url: url) { phase in
+                                switch phase {
+                                case .empty:
+                                    ProgressView()
+                                case .success(let image):
+                                    image.resizable()
+                                case .failure(_):
+                                    Image(systemName: "exclamationmark.icloud")
+                                @unknown default:
+                                    Image(systemName: "exclamationmark.icloud")
+                                }
                             }
-                        }
-                        .frame(width: Constants.UI.thumbnailsSize,
-                               height: Constants.UI.thumbnailsSize)
-                        .cornerRadius(Constants.UI.thumbnailsSize/2)
-                    } else {
-                        Image(systemName: "exclamationmark.icloud")
                             .frame(width: Constants.UI.thumbnailsSize,
                                    height: Constants.UI.thumbnailsSize)
-                    }
-                    
-                    Text(item.name)
-                    
-                    Spacer()
-                    
-                    if viewModel.markedList.contains(item.id) {
-                        Image(systemName: "checkmark.square")
+                            .cornerRadius(Constants.UI.thumbnailsSize/2)
+                        } else {
+                            Image(systemName: "exclamationmark.icloud")
+                                .frame(width: Constants.UI.thumbnailsSize,
+                                       height: Constants.UI.thumbnailsSize)
+                        }
+                        
+                        Text(item.name)
+                        
+                        Spacer()
+                        
+                        if viewModel.markedList.contains(item.id) {
+                            Image(systemName: "checkmark.square")
+                        }
                     }
                 }
             }
-        }
-        .task {
-            viewModel.getMarkedList()
+            .task {
+                viewModel.getMarkedList()
+            }
         }
     }
     

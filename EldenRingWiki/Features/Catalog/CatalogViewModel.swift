@@ -30,7 +30,7 @@ class CatalogViewModel: ObservableObject {
         
         _searchText
             .projectedValue
-            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+            .debounce(for: .seconds(0.7), scheduler: RunLoop.main)
             .sink { [weak self] search in
                 guard let self = self else { return }
                 if !search.isEmpty {
