@@ -74,8 +74,8 @@ struct DetailView: View {
             }
             .listRowBackground(Color.black)
             
-            if viewModel.listItemsModel.listType != .classes {
-                Section {
+            Section {
+                if viewModel.listItemsModel.listType != .classes {
                     Button {
                         router.searchItemOnMap(viewModel.listItemsModel.name)
                     } label: {
@@ -87,9 +87,9 @@ struct DetailView: View {
                         }
                         .foregroundColor(Color.eldenLight)
                     }
-                    
-                    markItem
                 }
+                
+                markItem
             }
             
             if let description = viewModel.listItemsModel.description {

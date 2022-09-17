@@ -34,6 +34,8 @@ class CatalogViewModel: ObservableObject {
             .sink { [weak self] search in
                 guard let self = self else { return }
                 if !search.isEmpty {
+                    self.state = .loading
+                    
                     Task {
                         await self.fetchSearchItem(query: search)
                     }
@@ -48,7 +50,7 @@ class CatalogViewModel: ObservableObject {
         do {
             markedList = try repository.getAllMarkedItems()
         } catch {
-            print(error)
+            state = .error
         }
     }
     
@@ -58,8 +60,6 @@ class CatalogViewModel: ObservableObject {
     }
     
     func fetchSearchItem(query: String) async {
-        state = .loading
-        
         do {
             var searchItems: [ListItemsModel] = []
             let service = Dependencies.shared.networkService

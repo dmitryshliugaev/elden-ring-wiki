@@ -122,10 +122,7 @@ struct CatalogView: View {
     private var loadingView: some View {
         HStack {
             Spacer()
-            ProgressView()
-                .frame(width: Constants.UI.thumbnailsSize,
-                       height: Constants.UI.thumbnailsSize,
-                       alignment: .center)
+            Text("Loading...")
             Spacer()
         }
         .listRowBackground(Color.black)

@@ -53,8 +53,6 @@ class ListItemsViewModel: ObservableObject {
         case .unchecked:
             filteredItems = items.filter { !markedList.contains($0.id) }
         }
-        print(type)
-        print(filteredItems.count)
     }
     
     func showDetailView(with item: ListItemsModel) {
