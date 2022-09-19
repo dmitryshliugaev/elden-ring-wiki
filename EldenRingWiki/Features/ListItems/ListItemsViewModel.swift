@@ -37,11 +37,7 @@ class ListItemsViewModel: ObservableObject {
     }
     
     func getMarkedList() {
-        do {
-            markedList = try repository.getAllMarkedItems()
-        } catch {
-            print(error)
-        }
+        markedList = repository.getAllMarkedItems()
     }
     
     func applyFilter(type: FilterType) {

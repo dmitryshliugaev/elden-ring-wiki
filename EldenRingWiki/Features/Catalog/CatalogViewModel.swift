@@ -47,11 +47,7 @@ class CatalogViewModel: ObservableObject {
     }
     
     func getMarkedList() {
-        do {
-            markedList = try repository.getAllMarkedItems()
-        } catch {
-            state = .error
-        }
+        markedList = repository.getAllMarkedItems()
     }
     
     func showDetailView(with item: ListItemsModel) {
@@ -141,6 +137,7 @@ class CatalogViewModel: ObservableObject {
             
             state = .searchData(items: searchItems)
         } catch {
+            print(error)
             state = .error
         }
     }

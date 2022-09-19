@@ -200,6 +200,7 @@
 		7238248928AFC7C200B76087 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		7238248F28B2636E00B76087 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		7238249928B6358F00B76087 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		72463E1228D89C180071F4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7261FD2D28C7C28A0073DDFA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -254,6 +255,7 @@
 		7238239128A5343500B76087 /* EldenRingWiki */ = {
 			isa = PBXGroup;
 			children = (
+				72463E1228D89C180071F4FA /* Info.plist */,
 				7261FD2F28C7C2970073DDFA /* Repository */,
 				7238240828AA69E900B76087 /* Features */,
 				723824D728B7E48400B76087 /* Models */,
@@ -1028,6 +1030,8 @@
 				DEVELOPMENT_TEAM = 4AW3ZWSN4J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EldenRingWiki/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Elden Wiki";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1057,6 +1061,8 @@
 				DEVELOPMENT_TEAM = 4AW3ZWSN4J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EldenRingWiki/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Elden Wiki";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

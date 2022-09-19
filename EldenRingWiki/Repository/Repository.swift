@@ -15,17 +15,14 @@ protocol RepositoryProtocol {
     func markItem(id: String) throws
     func unmarkItem(id: String) throws
     func isItemMarked(id: String) -> Bool
-    func getAllMarkedItems() throws -> [String]
+    func getAllMarkedItems() -> [String]
 }
 
 final class Repository: RepositoryProtocol {
     private let markItemsKey = "mark_items_key"
     
     func markItem(id: String) throws {
-        var markItems = [String]()
-        if let items = try? getAllMarkedItems() {
-            markItems = items
-        }
+        var markItems = getAllMarkedItems()
         markItems.append(id)
         let encoder = JSONEncoder()
         
@@ -35,10 +32,7 @@ final class Repository: RepositoryProtocol {
     }
     
     func unmarkItem(id: String) throws {
-        guard var items = try? getAllMarkedItems() else {
-            return
-        }
-        items = items.filter { $0 != id }
+        let items = getAllMarkedItems().filter { $0 != id }
         let encoder = JSONEncoder()
         
         let data = try encoder.encode(items)
@@ -47,20 +41,17 @@ final class Repository: RepositoryProtocol {
     }
     
     func isItemMarked(id: String) -> Bool {
-        if let items = try? getAllMarkedItems() {
-            return items.contains(id)
-        } else {
-            return false
-        }
+        return getAllMarkedItems().contains(id)
     }
     
-    func getAllMarkedItems() throws -> [String] {
-        if let data = UserDefaults.standard.object(forKey: markItemsKey) as? Data {
-            let decoder = JSONDecoder()
-            let items = try decoder.decode([String].self, from: data)
+    func getAllMarkedItems() -> [String] {
+        let decoder = JSONDecoder()
+        
+        if let data = UserDefaults.standard.object(forKey: markItemsKey) as? Data,
+           let items = try? decoder.decode([String].self, from: data) {
             return items
         } else {
-            throw RepositoryError.userDefaultsGetItems
+            return []
         }
     }
 }
