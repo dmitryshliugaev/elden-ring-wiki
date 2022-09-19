@@ -37,7 +37,6 @@ struct DetailView: View {
             attackPower
             
             dmgNegationAndResistance
-            
         }
         .foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)

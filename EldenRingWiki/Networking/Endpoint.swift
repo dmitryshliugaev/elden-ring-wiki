@@ -178,6 +178,7 @@ public enum Endpoint {
             break
         }
         
+        print(urlComponents?.url ?? "--")
         if let url = urlComponents?.url {
             var urlRequest = URLRequest(url: url)
             urlRequest.cachePolicy = .returnCacheDataElseLoad
