@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71BE019F28D9A8EF009E7A33 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BE019E28D9A8EF009E7A33 /* SettingsView.swift */; };
 		7238239328A5343500B76087 /* EldenRingWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238239228A5343500B76087 /* EldenRingWikiApp.swift */; };
 		7238239728A5343600B76087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238239628A5343600B76087 /* Assets.xcassets */; };
 		7238239A28A5343600B76087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7238239928A5343600B76087 /* Preview Assets.xcassets */; };
@@ -114,6 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71BE019E28D9A8EF009E7A33 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7238238F28A5343500B76087 /* EldenRingWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EldenRingWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7238239228A5343500B76087 /* EldenRingWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EldenRingWikiApp.swift; sourceTree = "<group>"; };
 		7238239628A5343600B76087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71BE019D28D9A8CB009E7A33 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				71BE019E28D9A8EF009E7A33 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		7238238628A5343500B76087 = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +269,7 @@
 				7261FD2F28C7C2970073DDFA /* Repository */,
 				7238240828AA69E900B76087 /* Features */,
 				723824D728B7E48400B76087 /* Models */,
-				723823D028A6687000B76087 /* Networking */,
+				723823D028A6687000B76087 /* Network */,
 				7238239228A5343500B76087 /* EldenRingWikiApp.swift */,
 				7238242028AD1ACD00B76087 /* Dependencies.swift */,
 				723823DA28A69F6000B76087 /* Resources */,
@@ -316,7 +326,7 @@
 			path = Weapons;
 			sourceTree = "<group>";
 		};
-		723823D028A6687000B76087 /* Networking */ = {
+		723823D028A6687000B76087 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				7238242C28AE6C3E00B76087 /* Common */,
@@ -326,7 +336,7 @@
 				723823D128A6692900B76087 /* NetworkService.swift */,
 				723823D328A6696800B76087 /* Endpoint.swift */,
 			);
-			path = Networking;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		723823D528A69EAB00B76087 /* Extensions */ = {
@@ -404,6 +414,7 @@
 		7238240828AA69E900B76087 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				71BE019D28D9A8CB009E7A33 /* Settings */,
 				7238248B28B14CC700B76087 /* DetailView */,
 				7238248128AFBE0900B76087 /* Map */,
 				7238242228AD1BBE00B76087 /* Tabs */,
@@ -793,6 +804,7 @@
 				723823FA28A7DDE600B76087 /* ShieldData.swift in Sources */,
 				7238245628AEAD8A00B76087 /* IncantationData.swift in Sources */,
 				7238245228AEAD7D00B76087 /* Incantations.swift in Sources */,
+				71BE019F28D9A8EF009E7A33 /* SettingsView.swift in Sources */,
 				723823F628A7DDD300B76087 /* Shields.swift in Sources */,
 				723823E728A6C9E800B76087 /* ScalesWith.swift in Sources */,
 				723823CE28A6685D00B76087 /* NetworkError.swift in Sources */,
