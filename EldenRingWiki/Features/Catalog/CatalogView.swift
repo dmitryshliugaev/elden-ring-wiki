@@ -22,8 +22,8 @@ struct CatalogView: View {
                     catalogStateView
                 case let .searchData(items):
                     makeSearchResultsList(items: items)
-                case .error:
-                    errorView
+                case let .error(description):
+                    errorView(description)
                 case .loading:
                     loadingView
                 }
@@ -108,15 +108,21 @@ struct CatalogView: View {
     }
     
     private func sectionView(title: String, iconName: String) -> some View {
-        return HStack {
+        HStack {
             Image(systemName: iconName)
             Text(title)
         }
         .foregroundColor(.white)
     }
     
-    private var errorView: some View {
-        Text("Error...")
+    private func errorView(_ description: String) -> some View {
+        HStack {
+            Spacer()
+            Image(systemName: "exclamationmark.triangle")
+            Text(description)
+            Spacer()
+        }
+        .listRowBackground(Color.black)
     }
     
     private var loadingView: some View {

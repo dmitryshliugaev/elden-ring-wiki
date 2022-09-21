@@ -11,7 +11,7 @@ import Combine
 @MainActor
 class CatalogViewModel: ObservableObject {
     enum State {
-        case catalog, loading, searchData(items: [ListItemsModel]), error
+        case catalog, loading, searchData(items: [ListItemsModel]), error(_ description: String)
     }
     
     private let repository: RepositoryProtocol
@@ -137,8 +137,7 @@ class CatalogViewModel: ObservableObject {
             
             state = .searchData(items: searchItems)
         } catch {
-            print(error)
-            state = .error
+            state = .error(error.localizedDescription)
         }
     }
 }
