@@ -9,10 +9,13 @@ import Foundation
 
 class DetailViewModel: ObservableObject {
     @Published var isMark: Bool
+    @Published var isShowError = false
     
     private let repository: RepositoryProtocol
     
     let listItemsModel: ListItemsModel
+    
+    var errorDescription: String = ""
     
     init(listItemsModel: ListItemsModel,
          repository: RepositoryProtocol) {
@@ -26,7 +29,7 @@ class DetailViewModel: ObservableObject {
             try repository.markItem(id: listItemsModel.id)
             isMark = true
         } catch {
-            print(error)
+            showError(error.localizedDescription)
         }
     }
     
@@ -35,7 +38,12 @@ class DetailViewModel: ObservableObject {
             try repository.unmarkItem(id: listItemsModel.id)
             isMark = false
         } catch {
-            print(error)
+            showError(error.localizedDescription)
         }
+    }
+    
+    func showError(_ description: String) {
+        errorDescription = description
+        isShowError = true
     }
 }

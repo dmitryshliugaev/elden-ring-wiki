@@ -18,10 +18,12 @@ class ListItemsViewModel: ObservableObject {
     @Published var isShowDetailView = false
     @Published var filterType: FilterType = .all
     @Published var markedList: [String] = []
+    @Published var isShowError = false
     
     var itemsPage = 0
     var listIsFull = false
     var selectedItem: ListItemsModel?
+    var errorDescription: String = ""
     
     private var cancellable: AnyCancellable?
     
@@ -117,7 +119,12 @@ class ListItemsViewModel: ObservableObject {
             
             applyFilter(type: self.filterType)
         } catch {
-            print(error)
+            showError(error.localizedDescription)
         }
+    }
+    
+    func showError(_ description: String) {
+        errorDescription = description
+        isShowError = true
     }
 }

@@ -41,6 +41,9 @@ struct DetailView: View {
         .foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text(viewModel.listItemsModel.name))
+        .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
+            Button("OK", role: .cancel) { }
+        }
     }
     
     @ViewBuilder
