@@ -62,7 +62,13 @@ struct ListItemsView: View {
                 viewModel.getMarkedList()
             }
             .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
-                Button("OK", role: .cancel) { }
+                Button("Try again") {
+                    Task {
+                        await viewModel.load()
+                    }
+                }
+                
+                Button("Cancel") { }
             }
         }
     }
