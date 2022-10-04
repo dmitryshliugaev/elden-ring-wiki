@@ -60,6 +60,7 @@ struct ListItemsView: View {
             )
             .task {
                 viewModel.getMarkedList()
+                viewModel.applyFilter(type: viewModel.filterType)
             }
             .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
                 Button("Try again") {
