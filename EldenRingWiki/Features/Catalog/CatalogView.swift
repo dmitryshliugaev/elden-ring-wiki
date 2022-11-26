@@ -41,6 +41,7 @@ struct CatalogView: View {
                 } label: { EmptyView() }
             )
         }
+        .navigationViewStyle(.stack)
     }
     
     private var catalogStateView: some View {
