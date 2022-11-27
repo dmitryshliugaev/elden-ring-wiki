@@ -40,6 +40,10 @@ extension WebViewContainer {
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             webViewModel.isLoading = false
+            
+            webView.evaluateJavaScript("document.getElementsByClassName('left-arrow')[0].click()")
+            webView.evaluateJavaScript("document.getElementsByClassName('right-arrow')[0].click()")
+            
             webView.evaluateJavaScript("document.getElementsByClassName('result')[0].click()")
         }
         
