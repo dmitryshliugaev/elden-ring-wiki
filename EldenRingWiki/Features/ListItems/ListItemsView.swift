@@ -34,7 +34,9 @@ struct ListItemsView: View {
                     }
                 }
                 
-                if !viewModel.listIsFull {
+                if !viewModel.listIsFull,
+                   !viewModel.filteredItems.isEmpty,
+                   viewModel.filterType == .all {
                     HStack(alignment: .center) {
                         Spacer()
                         ProgressView()
@@ -61,6 +63,7 @@ struct ListItemsView: View {
             .task {
                 viewModel.getMarkedList()
                 viewModel.applyFilter(type: viewModel.filterType)
+                await viewModel.load()
             }
             .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
                 Button("Try again") {
