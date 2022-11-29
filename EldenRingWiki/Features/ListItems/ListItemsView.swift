@@ -66,13 +66,13 @@ struct ListItemsView: View {
                 await viewModel.load()
             }
             .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
-                Button("Try again") {
+                Button("TryAgain".localizedString) {
                     Task {
                         await viewModel.load()
                     }
                 }
                 
-                Button("Cancel") { }
+                Button("Cancel".localizedString) { }
             }
         }
     }

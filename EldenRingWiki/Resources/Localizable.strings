@@ -90,3 +90,6 @@
 "All" = "All";
 "Checked" = "Checked";
 "Unchecked" = "Unchecked";
+
+"TryAgain" = "Try again";
+"Cancel" = "Cancel";
