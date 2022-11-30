@@ -9,7 +9,7 @@ import Combine
 
 @MainActor
 class ListItemsViewModel: ObservableObject {
-    private let repository: RepositoryProtocol
+    private let repository: MarkRepositoryProtocol
     private var items: [ListItemsModel] = []
     
     let type: ListType
@@ -28,7 +28,7 @@ class ListItemsViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     init(type: ListType,
-         repository: RepositoryProtocol) {
+         repository: MarkRepositoryProtocol) {
         self.type = type
         self.repository = repository
         

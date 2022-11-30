@@ -14,7 +14,7 @@ class CatalogViewModel: ObservableObject {
         case catalog, loading, searchData(items: [ListItemsModel]), error(_ description: String)
     }
     
-    private let repository: RepositoryProtocol
+    private let repository: MarkRepositoryProtocol
     
     @Published var state: State = .catalog
     @Published var searchText: String = ""
@@ -25,7 +25,7 @@ class CatalogViewModel: ObservableObject {
     
     private var cancellableSet: Set<AnyCancellable> = Set()
     
-    init(repository: RepositoryProtocol) {
+    init(repository: MarkRepositoryProtocol) {
         self.repository = repository
         
         _searchText

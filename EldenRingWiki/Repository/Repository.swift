@@ -11,15 +11,23 @@ enum RepositoryError: Error {
     case userDefaultsGetItems
 }
 
-protocol RepositoryProtocol {
+protocol MarkRepositoryProtocol {
     func markItem(id: String) throws
     func unmarkItem(id: String) throws
     func isItemMarked(id: String) -> Bool
     func getAllMarkedItems() -> [String]
 }
 
-final class Repository: RepositoryProtocol {
+protocol DeathRepositoryProtocol {
+    func saveDeathCount(_ count: Int)
+    func getDeathCount() -> Int
+}
+
+final class Repository: MarkRepositoryProtocol, DeathRepositoryProtocol {
     private let markItemsKey = "mark_items_key"
+    private let deathCountKey = "death_count_key"
+    
+    // MARK: - MarkRepositoryProtocol
     
     func markItem(id: String) throws {
         var markItems = getAllMarkedItems()
@@ -53,5 +61,16 @@ final class Repository: RepositoryProtocol {
         } else {
             return []
         }
+    }
+    
+    // MARK: - DeathRepositoryProtocol
+    
+    func saveDeathCount(_ count: Int) {
+        UserDefaults.standard.set(count, forKey: deathCountKey)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getDeathCount() -> Int {
+        return UserDefaults.standard.integer(forKey: deathCountKey)
     }
 }

@@ -95,6 +95,9 @@
 		7261FD3128C7C6FA0073DDFA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */; };
 		727C338B28C11ECE009E015E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C338A28C11ECE009E015E /* DetailView.swift */; };
 		72CD729D28CD0D9F006DF6EC /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD729C28CD0D9F006DF6EC /* FilterType.swift */; };
+		72E886182939FF33005A8E49 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E886172939FF33005A8E49 /* SettingsViewModel.swift */; };
+		72E8861B293A03D6005A8E49 /* DeathCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E8861A293A03D6005A8E49 /* DeathCountView.swift */; };
+		72E8861D293A04F6005A8E49 /* DeathCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E8861C293A04F6005A8E49 /* DeathCountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +210,9 @@
 		7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		72CD729C28CD0D9F006DF6EC /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		72E886172939FF33005A8E49 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		72E8861A293A03D6005A8E49 /* DeathCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathCountView.swift; sourceTree = "<group>"; };
+		72E8861C293A04F6005A8E49 /* DeathCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathCountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				71BE019E28D9A8EF009E7A33 /* SettingsView.swift */,
+				72E886172939FF33005A8E49 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -414,6 +421,7 @@
 		7238240828AA69E900B76087 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				72E88619293A03B3005A8E49 /* DeathCount */,
 				71BE019D28D9A8CB009E7A33 /* Settings */,
 				7238248B28B14CC700B76087 /* DetailView */,
 				7238248128AFBE0900B76087 /* Map */,
@@ -668,6 +676,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		72E88619293A03B3005A8E49 /* DeathCount */ = {
+			isa = PBXGroup;
+			children = (
+				72E8861A293A03D6005A8E49 /* DeathCountView.swift */,
+				72E8861C293A04F6005A8E49 /* DeathCountViewModel.swift */,
+			);
+			path = DeathCount;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -812,6 +829,7 @@
 				7238240728A9598A00B76087 /* RootView.swift in Sources */,
 				7238240328A7DF7B00B76087 /* DmgNegation.swift in Sources */,
 				7238246C28AF80D300B76087 /* Boss.swift in Sources */,
+				72E8861B293A03D6005A8E49 /* DeathCountView.swift in Sources */,
 				723823EE28A7DC9300B76087 /* Ammos.swift in Sources */,
 				7238247828AF86C300B76087 /* Creature.swift in Sources */,
 				7238246228AEB08100B76087 /* CharacterClasses.swift in Sources */,
@@ -838,6 +856,7 @@
 				7238247228AF855400B76087 /* NPC.swift in Sources */,
 				723823E428A6C9E800B76087 /* RequiredAttributes.swift in Sources */,
 				723823FF28A7DEF400B76087 /* Armor.swift in Sources */,
+				72E886182939FF33005A8E49 /* SettingsViewModel.swift in Sources */,
 				7238243628AE6D2A00B76087 /* TalismanData.swift in Sources */,
 				7238244728AE738D00B76087 /* SorceryData.swift in Sources */,
 				7238249A28B6358F00B76087 /* Colors.swift in Sources */,
@@ -860,6 +879,7 @@
 				7238246828AEB0CA00B76087 /* ClassStats.swift in Sources */,
 				723823E528A6C9E800B76087 /* Attack.swift in Sources */,
 				723823F428A7DD4000B76087 /* AttackPower.swift in Sources */,
+				72E8861D293A04F6005A8E49 /* DeathCountViewModel.swift in Sources */,
 				727C338B28C11ECE009E015E /* DetailView.swift in Sources */,
 				7238248A28AFC7C200B76087 /* WebViewModel.swift in Sources */,
 				72CD729D28CD0D9F006DF6EC /* FilterType.swift in Sources */,

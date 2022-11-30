@@ -24,7 +24,7 @@ class Dependencies {
         ImageCache()
     }()
     
-    public lazy var repository: RepositoryProtocol = {
+    public lazy var repository: MarkRepositoryProtocol = {
         Repository()
     }()
 }

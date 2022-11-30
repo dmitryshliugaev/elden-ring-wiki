@@ -10,7 +10,7 @@ import SwiftUI
 enum Tab: Int, CaseIterable, Identifiable {
     case catalog
     case map
-    case settings
+    case deathCount
     
     var id: Int {
         self.rawValue
@@ -22,8 +22,8 @@ enum Tab: Int, CaseIterable, Identifiable {
             return "Catalog".localizedString
         case .map:
             return "Map".localizedString
-        case .settings:
-            return "Settings".localizedString
+        case .deathCount:
+            return "DeathCount".localizedString
         }
     }
     
@@ -33,8 +33,8 @@ enum Tab: Int, CaseIterable, Identifiable {
             return "books.vertical"
         case .map:
             return "globe.europe.africa"
-        case .settings:
-            return "gear"
+        case .deathCount:
+            return "heart.slash.fill"
         }
     }
     
@@ -45,8 +45,8 @@ enum Tab: Int, CaseIterable, Identifiable {
             CatalogView()
         case .map:
             MapView()
-        case .settings:
-            SettingsView()
+        case .deathCount:
+            DeathCountView()
         }
     }
 }
