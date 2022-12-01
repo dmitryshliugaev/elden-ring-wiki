@@ -23,5 +23,17 @@ struct Constants {
         
         /// 200
         static let detailImageSize: CGFloat = 200
+        
+        /// 50
+        static let buttonSmall: CGFloat = 50
+        
+        struct Padding {
+            /// 5
+            static let small: CGFloat = 5
+            /// 10
+            static let medium: CGFloat = 10
+            /// 20
+            static let large: CGFloat = 20
+        }
     }
 }

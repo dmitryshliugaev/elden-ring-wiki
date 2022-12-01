@@ -11,7 +11,7 @@ struct CatalogView: View {
     @StateObject var viewModel: CatalogViewModel
     
     public init() {
-        _viewModel = StateObject(wrappedValue: .init(repository: Dependencies.shared.repository))
+        _viewModel = StateObject(wrappedValue: .init(repository: Dependencies.shared.markRepository))
     }
     
     var body: some View {

@@ -12,7 +12,7 @@ struct ListItemsView: View {
     
     public init(type: ListType) {
         _viewModel = StateObject(wrappedValue: .init(type: type,
-                                                     repository: Dependencies.shared.repository))
+                                                     repository: Dependencies.shared.markRepository))
     }
     
     var body: some View {

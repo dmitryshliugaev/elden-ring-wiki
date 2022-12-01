@@ -13,7 +13,7 @@ struct DetailView: View {
     
     init(listItemsModel: ListItemsModel) {
         _viewModel = StateObject(wrappedValue: .init(listItemsModel: listItemsModel,
-                                                     repository: Dependencies.shared.repository))
+                                                     repository: Dependencies.shared.markRepository))
     }
     
     var body: some View {

@@ -8,5 +8,12 @@
 import Combine
 
 class DeathCountViewModel: ObservableObject {
+    private let repository: DeathRepositoryProtocol
     
+    @Published var deathCount: Int
+    
+    init(repository: DeathRepositoryProtocol) {
+        self.repository = repository
+        deathCount = repository.getDeathCount()
+    }
 }
