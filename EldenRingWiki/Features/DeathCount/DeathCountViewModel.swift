@@ -19,7 +19,6 @@ class DeathCountViewModel: ObservableObject {
         deathCount = repository.getDeathCount()
         
         cancellable = $deathCount
-            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.global(qos: .background))
             .sink { count in
                 repository.saveDeathCount(count)
             }
