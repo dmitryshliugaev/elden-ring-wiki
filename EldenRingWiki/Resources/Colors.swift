@@ -8,15 +8,19 @@
 import SwiftUI
 
 extension Color {
-  public static var eldenLight: Color {
-    .init("EldenLight", bundle: nil)
-  }
-  
-  public static var skyDark: Color {
-    .init("SkyDark", bundle: nil)
-  }
-  
-  public static var skyLight: Color {
-    .init("SkyLight", bundle: nil)
-  }
+    public static var eldenLight: Color {
+        .init("EldenLight", bundle: nil)
+    }
+    
+    public static var skyDark: Color {
+        .init("SkyDark", bundle: nil)
+    }
+    
+    public static var skyLight: Color {
+        .init("SkyLight", bundle: nil)
+    }
+    
+    public static var DSRed: Color {
+        .init("DSRed", bundle: nil)
+    }
 }

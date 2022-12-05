@@ -98,6 +98,7 @@
 		72E886182939FF33005A8E49 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E886172939FF33005A8E49 /* SettingsViewModel.swift */; };
 		72E8861B293A03D6005A8E49 /* DeathCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E8861A293A03D6005A8E49 /* DeathCountView.swift */; };
 		72E8861D293A04F6005A8E49 /* DeathCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E8861C293A04F6005A8E49 /* DeathCountViewModel.swift */; };
+		72E8862B293FCEA1005A8E49 /* MantiniaRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72E8862A293FCE85005A8E49 /* MantiniaRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 		72E886172939FF33005A8E49 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		72E8861A293A03D6005A8E49 /* DeathCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathCountView.swift; sourceTree = "<group>"; };
 		72E8861C293A04F6005A8E49 /* DeathCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathCountViewModel.swift; sourceTree = "<group>"; };
+		72E8862A293FCE85005A8E49 /* MantiniaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MantiniaRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +359,7 @@
 		723823DA28A69F6000B76087 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72E8862A293FCE85005A8E49 /* MantiniaRegular.otf */,
 				723823D528A69EAB00B76087 /* Extensions */,
 				7238239628A5343600B76087 /* Assets.xcassets */,
 				723823DB28A69F7000B76087 /* Constants.swift */,
@@ -790,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7238239A28A5343600B76087 /* Preview Assets.xcassets in Resources */,
+				72E8862B293FCEA1005A8E49 /* MantiniaRegular.otf in Resources */,
 				723823DE28A69F8100B76087 /* Localizable.strings in Resources */,
 				7238239728A5343600B76087 /* Assets.xcassets in Resources */,
 			);
@@ -1064,6 +1068,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EldenRingWiki/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Elden Wiki";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1095,6 +1100,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EldenRingWiki/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Elden Wiki";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

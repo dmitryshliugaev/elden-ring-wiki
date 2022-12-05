@@ -17,16 +17,23 @@ struct DeathCountView: View {
         VStack {
             Spacer()
             Text("\(viewModel.deathCount)")
-                .font(.title)
+                .font(Font.custom("Mantinia", fixedSize: 40))
+                .foregroundColor(.DSRed)
+            Text("YouDied".localizedString)
+                .font(Font.custom("Mantinia", fixedSize: 36))
+                .foregroundColor(.DSRed)
             Spacer()
             Button(action: {
                 viewModel.deathCount += 1
             }) {
-                Image(systemName: "plus.circle")
+                Image(systemName: "plus")
                     .resizable()
                     .frame(width: Constants.UI.buttonSmall, height: Constants.UI.buttonSmall)
-                    .cornerRadius(Constants.UI.buttonSmall / 2)
+                    
             }
+            .frame(width: Constants.UI.buttonMedium, height: Constants.UI.buttonMedium)
+            .background(.gray.opacity(0.5))
+            .cornerRadius(Constants.UI.buttonMedium / 2)
             Spacer()
                 .frame(height: Constants.UI.Padding.large * 2)
         }

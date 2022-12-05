@@ -6,5 +6,9 @@
 	<false/>
 	<key>LSMinimumSystemVersion</key>
 	<string>13.0</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MantiniaRegular.otf</string>
+	</array>
 </dict>
 </plist>
