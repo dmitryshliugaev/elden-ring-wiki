@@ -9,11 +9,11 @@ import SwiftUI
 
 enum CatalogStruct: Int, Identifiable, CaseIterable {
     case equipment, items, magic, world, classes
-    
+
     var id: Int {
-        self.rawValue
+        rawValue
     }
-    
+
     var title: String {
         switch self {
         case .equipment:
@@ -28,7 +28,7 @@ enum CatalogStruct: Int, Identifiable, CaseIterable {
             return "Classes".localizedString
         }
     }
-    
+
     var iconName: String {
         switch self {
         case .equipment:
@@ -43,7 +43,7 @@ enum CatalogStruct: Int, Identifiable, CaseIterable {
             return "person.3.sequence"
         }
     }
-    
+
     var items: [ListType] {
         switch self {
         case .equipment:
@@ -79,4 +79,3 @@ enum CatalogStruct: Int, Identifiable, CaseIterable {
         }
     }
 }
-

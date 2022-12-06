@@ -7,6 +7,4 @@
 
 import Foundation
 
-class SettingsViewModel: ObservableObject {
-
-}
+class SettingsViewModel: ObservableObject {}

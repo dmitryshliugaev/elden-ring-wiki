@@ -8,7 +8,6 @@
 import XCTest
 
 class EldenRingWikiUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

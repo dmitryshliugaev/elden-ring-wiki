@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CatalogView: View {
     @StateObject var viewModel: CatalogViewModel
-    
+
     public init() {
         _viewModel = StateObject(wrappedValue: .init(repository: Dependencies.shared.markRepository))
     }
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -43,7 +43,7 @@ struct CatalogView: View {
         }
         .navigationViewStyle(.stack)
     }
-    
+
     private var catalogStateView: some View {
         ForEach(CatalogStruct.allCases) { catalogSection in
             Section(header: sectionView(title: catalogSection.title,
@@ -54,7 +54,7 @@ struct CatalogView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     func makeSearchResultsList(items: [ListItemsModel]) -> some View {
         if items.isEmpty {
@@ -75,9 +75,9 @@ struct CatalogView: View {
                                 switch phase {
                                 case .empty:
                                     ProgressView()
-                                case .success(let image):
+                                case let .success(image):
                                     image.resizable()
-                                case .failure(_):
+                                case .failure:
                                     Image(systemName: "exclamationmark.icloud")
                                 @unknown default:
                                     Image(systemName: "exclamationmark.icloud")
@@ -85,17 +85,17 @@ struct CatalogView: View {
                             }
                             .frame(width: Constants.UI.thumbnailsSize,
                                    height: Constants.UI.thumbnailsSize)
-                            .cornerRadius(Constants.UI.thumbnailsSize/2)
+                            .cornerRadius(Constants.UI.thumbnailsSize / 2)
                         } else {
                             Image(systemName: "exclamationmark.icloud")
                                 .frame(width: Constants.UI.thumbnailsSize,
                                        height: Constants.UI.thumbnailsSize)
                         }
-                        
+
                         Text(item.name)
-                        
+
                         Spacer()
-                        
+
                         if viewModel.markedList.contains(item.id) {
                             Image(systemName: "checkmark.square")
                         }
@@ -107,7 +107,7 @@ struct CatalogView: View {
             }
         }
     }
-    
+
     private func sectionView(title: String, iconName: String) -> some View {
         HStack {
             Image(systemName: iconName)
@@ -115,7 +115,7 @@ struct CatalogView: View {
         }
         .foregroundColor(.white)
     }
-    
+
     private func errorView(_ description: String) -> some View {
         HStack {
             Spacer()
@@ -125,7 +125,7 @@ struct CatalogView: View {
         }
         .listRowBackground(Color.black)
     }
-    
+
     private var loadingView: some View {
         HStack {
             Spacer()

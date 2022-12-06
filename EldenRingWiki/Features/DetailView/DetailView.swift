@@ -10,42 +10,42 @@ import SwiftUI
 struct DetailView: View {
     @EnvironmentObject private var router: TabRouter
     @StateObject var viewModel: DetailViewModel
-    
+
     init(listItemsModel: ListItemsModel) {
         _viewModel = StateObject(wrappedValue: .init(listItemsModel: listItemsModel,
                                                      repository: Dependencies.shared.markRepository))
     }
-    
+
     var body: some View {
         List {
             mainInfo
-            
+
             groupOne
-            
+
             groupTwo
-            
+
             stats
-            
+
             drops
-            
+
             requires
-            
+
             attackAndDefence
-            
+
             requiredAttributesAndScalesWith
-            
+
             attackPower
-            
+
             dmgNegationAndResistance
         }
         .foregroundColor(.white)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(Text(viewModel.listItemsModel.name))
         .alert(viewModel.errorDescription, isPresented: $viewModel.isShowError) {
-            Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) {}
         }
     }
-    
+
     @ViewBuilder
     var mainInfo: some View {
         Group {
@@ -56,11 +56,11 @@ struct DetailView: View {
                         switch phase {
                         case .empty:
                             ProgressView()
-                        case .success(let image):
+                        case let .success(image):
                             image
                                 .resizable()
                                 .scaledToFit()
-                        case .failure(_):
+                        case .failure:
                             Image(systemName: "exclamationmark.icloud")
                         @unknown default:
                             Image(systemName: "exclamationmark.icloud")
@@ -75,7 +75,7 @@ struct DetailView: View {
                 Spacer()
             }
             .listRowBackground(Color.black)
-            
+
             Section {
                 if viewModel.listItemsModel.listType != .classes {
                     Button {
@@ -90,10 +90,10 @@ struct DetailView: View {
                         .foregroundColor(Color.eldenLight)
                     }
                 }
-                
+
                 markItem
             }
-            
+
             if let description = viewModel.listItemsModel.description {
                 Section("Description".localizedString) {
                     Text(description)
@@ -101,7 +101,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var groupOne: some View {
         Group {
@@ -110,55 +110,55 @@ struct DetailView: View {
                     Text(type)
                 }
             }
-            
+
             if let passive = viewModel.listItemsModel.passive {
                 Section("Passive".localizedString) {
                     Text(passive)
                 }
             }
-            
+
             if let category = viewModel.listItemsModel.category {
                 Section("Category".localizedString) {
                     Text(category)
                 }
             }
-            
+
             if let weight = viewModel.listItemsModel.weight {
                 Section("Weight".localizedString) {
                     Text(String(format: "%g", weight))
                 }
             }
-            
+
             if let effect = viewModel.listItemsModel.effect {
                 Section("Effect".localizedString) {
                     Text(effect)
                 }
             }
-            
+
             if let affinity = viewModel.listItemsModel.affinity {
                 Section("Affinity".localizedString) {
                     Text(affinity)
                 }
             }
-            
+
             if let skill = viewModel.listItemsModel.skill {
                 Section("Skill".localizedString) {
                     Text(skill)
                 }
             }
-            
+
             if let cost = viewModel.listItemsModel.cost {
                 Section("Cost".localizedString) {
                     Text(String(format: "%g", cost))
                 }
             }
-            
+
             if let slots = viewModel.listItemsModel.slots {
                 Section("Slots".localizedString) {
                     Text(String(format: "%g", slots))
                 }
             }
-            
+
             if let effects = viewModel.listItemsModel.effects {
                 Section("Effects".localizedString) {
                     Text(effects)
@@ -166,7 +166,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var groupTwo: some View {
         Group {
@@ -175,31 +175,31 @@ struct DetailView: View {
                     Text(fpCost)
                 }
             }
-            
+
             if let hpCost = viewModel.listItemsModel.hpCost {
                 Section("HPCost".localizedString) {
                     Text(hpCost)
                 }
             }
-            
+
             if let location = viewModel.listItemsModel.location {
                 Section("Location".localizedString) {
                     Text(location)
                 }
             }
-            
+
             if let quote = viewModel.listItemsModel.quote {
                 Section("Quote".localizedString) {
                     Text(quote)
                 }
             }
-            
+
             if let role = viewModel.listItemsModel.role {
                 Section("Role".localizedString) {
                     Text(role)
                 }
             }
-            
+
             if let healthPoints = viewModel.listItemsModel.healthPoints {
                 Section("HealthPoints".localizedString) {
                     Text(healthPoints)
@@ -207,7 +207,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var stats: some View {
         if let stats = viewModel.listItemsModel.stats {
@@ -257,11 +257,10 @@ struct DetailView: View {
                     Spacer()
                     Text(stats.arcane)
                 }
-                
             }
         }
     }
-    
+
     @ViewBuilder
     var drops: some View {
         if !viewModel.listItemsModel.drops.isEmpty {
@@ -272,7 +271,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var requires: some View {
         if !viewModel.listItemsModel.requires.isEmpty {
@@ -287,11 +286,12 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var attackAndDefence: some View {
         if !viewModel.listItemsModel.attack.isEmpty,
-           !viewModel.listItemsModel.defence.isEmpty {
+           !viewModel.listItemsModel.defence.isEmpty
+        {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
@@ -301,13 +301,13 @@ struct DetailView: View {
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
-                            
+
                             if viewModel.listItemsModel.attack.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
-                    
+
                     VStack(alignment: .leading) {
                         ForEach(viewModel.listItemsModel.defence, id: \.name) { row in
                             HStack {
@@ -315,7 +315,7 @@ struct DetailView: View {
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
-                            
+
                             if viewModel.listItemsModel.defence.last?.name != row.name {
                                 Divider()
                             }
@@ -327,7 +327,7 @@ struct DetailView: View {
                     Text("Attack".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
-                    
+
                     Text("Defence".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
@@ -335,11 +335,12 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var requiredAttributesAndScalesWith: some View {
         if !viewModel.listItemsModel.requiredAttributes.isEmpty,
-           !viewModel.listItemsModel.scalesWith.isEmpty {
+           !viewModel.listItemsModel.scalesWith.isEmpty
+        {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
@@ -349,13 +350,13 @@ struct DetailView: View {
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
-                            
+
                             if viewModel.listItemsModel.requiredAttributes.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
-                    
+
                     VStack(alignment: .leading) {
                         ForEach(viewModel.listItemsModel.scalesWith, id: \.name) { row in
                             HStack {
@@ -363,7 +364,7 @@ struct DetailView: View {
                                 Spacer()
                                 Text(row.scaling ?? "-")
                             }
-                            
+
                             if viewModel.listItemsModel.scalesWith.last?.name != row.name {
                                 Divider()
                             }
@@ -375,7 +376,7 @@ struct DetailView: View {
                     Text("RequiredAttributes".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
-                    
+
                     Text("ScalesWith".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
@@ -383,7 +384,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var attackPower: some View {
         if !viewModel.listItemsModel.attackPower.isEmpty {
@@ -398,11 +399,12 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var dmgNegationAndResistance: some View {
         if !viewModel.listItemsModel.dmgNegation.isEmpty,
-           !viewModel.listItemsModel.resistance.isEmpty {
+           !viewModel.listItemsModel.resistance.isEmpty
+        {
             Section {
                 HStack(alignment: .top, spacing: 20) {
                     VStack(alignment: .leading) {
@@ -412,13 +414,13 @@ struct DetailView: View {
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
-                            
+
                             if viewModel.listItemsModel.dmgNegation.last?.name != row.name {
                                 Divider()
                             }
                         }
                     }
-                    
+
                     VStack(alignment: .leading) {
                         ForEach(viewModel.listItemsModel.resistance, id: \.name) { row in
                             HStack {
@@ -426,7 +428,7 @@ struct DetailView: View {
                                 Spacer()
                                 Text(String(format: "%g", row.amount ?? 0))
                             }
-                            
+
                             if viewModel.listItemsModel.resistance.last?.name != row.name {
                                 Divider()
                             }
@@ -438,7 +440,7 @@ struct DetailView: View {
                     Text("DmgNegation".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
-                    
+
                     Text("Resistance".localizedString)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .layoutPriority(1)
@@ -446,7 +448,7 @@ struct DetailView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var markItem: some View {
         if viewModel.isMark {

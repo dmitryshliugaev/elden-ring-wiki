@@ -27,5 +27,5 @@ struct ShieldData: ItemMappable, Decodable {
     /// What are the required attribute amount in order to properly use this shield.
     let requiredAttributes: [RequiredAttributes]
     /// How much the shield scales and with what attributes.
-    let scalesWith : [ScalesWith]
+    let scalesWith: [ScalesWith]
 }

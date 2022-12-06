@@ -11,37 +11,38 @@ import Combine
 class ListItemsViewModel: ObservableObject {
     private let repository: MarkRepositoryProtocol
     private var items: [ListItemsModel] = []
-    
+
     let type: ListType
-    
+
     @Published var filteredItems: [ListItemsModel] = []
     @Published var isShowDetailView = false
     @Published var filterType: FilterType = .all
     @Published var markedList: [String] = []
     @Published var isShowError = false
-    
+
     var itemsPage = 0
     var listIsFull = false
     var selectedItem: ListItemsModel?
     var errorDescription: String = ""
-    
+
     private var cancellable: AnyCancellable?
-    
+
     init(type: ListType,
-         repository: MarkRepositoryProtocol) {
+         repository: MarkRepositoryProtocol)
+    {
         self.type = type
         self.repository = repository
-        
+
         cancellable = $filterType
             .sink(receiveValue: { [unowned self] filterType in
                 self.applyFilter(type: filterType)
             })
     }
-    
+
     func getMarkedList() {
         markedList = repository.getAllMarkedItems()
     }
-    
+
     func applyFilter(type: FilterType) {
         switch type {
         case .all:
@@ -52,17 +53,17 @@ class ListItemsViewModel: ObservableObject {
             filteredItems = items.filter { !markedList.contains($0.id) }
         }
     }
-    
+
     func showDetailView(with item: ListItemsModel) {
         selectedItem = item
         isShowDetailView = true
     }
-    
+
     func load() async {
         do {
             var newItems: [ListItemsModel] = []
             let service = Dependencies.shared.networkService
-            
+
             switch type {
             case .weapons:
                 let weapons: Weapons = try await service.load(endpoint: .weapons(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
@@ -110,19 +111,19 @@ class ListItemsViewModel: ObservableObject {
                 let characterClasses: CharacterClasses = try await service.load(endpoint: .characterClasses(page: itemsPage, limit: Constants.API.pageLimit, name: nil))
                 newItems = characterClasses.data.map { ListItemsModel($0) }
             }
-            
+
             items.append(contentsOf: newItems)
             itemsPage += 1
             if newItems.count < Constants.API.pageLimit {
                 listIsFull = true
             }
-            
-            applyFilter(type: self.filterType)
+
+            applyFilter(type: filterType)
         } catch {
             showError(error.localizedDescription)
         }
     }
-    
+
     func showError(_ description: String) {
         errorDescription = description
         isShowError = true

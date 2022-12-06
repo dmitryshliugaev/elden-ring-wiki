@@ -209,6 +209,8 @@
 		72463E1228D89C180071F4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7261FD2D28C7C28A0073DDFA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		7261FD3028C7C6FA0073DDFA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		7273187529479E2A008560C3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7273187729479E38008560C3 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		727C338A28C11ECE009E015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		72CD729C28CD0D9F006DF6EC /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		72E886172939FF33005A8E49 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		7238238628A5343500B76087 = {
 			isa = PBXGroup;
 			children = (
+				7273187429479E1C008560C3 /* BuildTools */,
 				7238239128A5343500B76087 /* EldenRingWiki */,
 				723823A228A5343700B76087 /* EldenRingWikiTests */,
 				723823AC28A5343700B76087 /* EldenRingWikiUITests */,
@@ -679,6 +682,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		7273187429479E1C008560C3 /* BuildTools */ = {
+			isa = PBXGroup;
+			children = (
+				7273187529479E2A008560C3 /* Package.swift */,
+				7273187729479E38008560C3 /* Empty.swift */,
+			);
+			path = BuildTools;
+			sourceTree = "<group>";
+		};
 		72E88619293A03B3005A8E49 /* DeathCount */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +707,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 723823B328A5343700B76087 /* Build configuration list for PBXNativeTarget "EldenRingWiki" */;
 			buildPhases = (
+				7273187929479E76008560C3 /* ShellScript */,
 				7238238B28A5343500B76087 /* Sources */,
 				7238238C28A5343500B76087 /* Frameworks */,
 				7238238D28A5343500B76087 /* Resources */,
@@ -814,6 +827,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7273187929479E76008560C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat --swiftversion 5.7 \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7238238B28A5343500B76087 /* Sources */ = {

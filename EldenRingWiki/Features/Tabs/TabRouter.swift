@@ -11,11 +11,11 @@ enum Tab: Int, CaseIterable, Identifiable {
     case catalog
     case map
     case deathCount
-    
+
     var id: Int {
-        self.rawValue
+        rawValue
     }
-    
+
     var title: String {
         switch self {
         case .catalog:
@@ -26,7 +26,7 @@ enum Tab: Int, CaseIterable, Identifiable {
             return "DeathCount".localizedString
         }
     }
-    
+
     var iconName: String {
         switch self {
         case .catalog:
@@ -37,7 +37,7 @@ enum Tab: Int, CaseIterable, Identifiable {
             return "heart.slash.fill"
         }
     }
-    
+
     @ViewBuilder
     var contentView: some View {
         switch self {
@@ -54,11 +54,11 @@ enum Tab: Int, CaseIterable, Identifiable {
 class TabRouter: ObservableObject {
     @Published var activeTab: Tab = .catalog
     @Published var searchItem: String = ""
-    
+
     func open(_ tab: Tab) {
         activeTab = tab
     }
-    
+
     func searchItemOnMap(_ itemName: String) {
         searchItem = itemName
         open(.map)

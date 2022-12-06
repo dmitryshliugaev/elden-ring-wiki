@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Constants {
-    struct API {
+    enum API {
         /// Base URL https://eldenring.fanapis.com/api/
         static let baseUrl = "https://eldenring.fanapis.com/api/"
         /// Page limit 30
@@ -16,21 +16,21 @@ struct Constants {
         /// Map URL
         static let mapUrl = "https://mapgenie.io/elden-ring/maps/the-lands-between"
     }
-    
-    struct UI {
+
+    enum UI {
         /// 50
         static let thumbnailsSize: CGFloat = 50
-        
+
         /// 200
         static let detailImageSize: CGFloat = 200
-        
+
         /// 50
         static let buttonSmall: CGFloat = 30
-        
+
         /// 50
         static let buttonMedium: CGFloat = 60
-        
-        struct Padding {
+
+        enum Padding {
             /// 5
             static let small: CGFloat = 5
             /// 10

@@ -1,6 +1,6 @@
 //
 //  WeaponData.swift
-//  
+//
 //
 //  Created by Dmitrii Shliugaev on 12/08/2022.
 //
@@ -27,5 +27,5 @@ struct WeaponData: ItemMappable, Decodable {
     /// What are the required attribute amount in order to properly use this Weapon.
     let requiredAttributes: [RequiredAttributes]
     /// How much the Weapon scales and with what attributes.
-    let scalesWith : [ScalesWith]
+    let scalesWith: [ScalesWith]
 }

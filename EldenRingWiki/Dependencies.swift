@@ -9,26 +9,20 @@ import Foundation
 
 class Dependencies {
     public static let shared = Dependencies()
-    
+
     private init() {}
-    
+
     public lazy var networkService: NetworkServiceProtocol = {
         let cache = URLCache(memoryCapacity: 10_000_000, diskCapacity: 1_000_000_000)
         URLSession.shared.configuration.urlCache = cache
         URLSession.shared.configuration.requestCachePolicy = .useProtocolCachePolicy
-        
+
         return NetworkService()
     }()
-    
-    public lazy var imageCache: ImageCache = {
-        ImageCache()
-    }()
-    
-    public lazy var markRepository: MarkRepositoryProtocol = {
-        Repository()
-    }()
-    
-    public lazy var deathRepository: DeathRepositoryProtocol = {
-        Repository()
-    }()
+
+    public lazy var imageCache: ImageCache = .init()
+
+    public lazy var markRepository: MarkRepositoryProtocol = Repository()
+
+    public lazy var deathRepository: DeathRepositoryProtocol = Repository()
 }

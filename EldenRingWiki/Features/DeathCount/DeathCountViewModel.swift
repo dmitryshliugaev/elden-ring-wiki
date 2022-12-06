@@ -11,13 +11,13 @@ import Foundation
 class DeathCountViewModel: ObservableObject {
     private let repository: DeathRepositoryProtocol
     private var cancellable: AnyCancellable?
-    
+
     @Published var deathCount: Int
-    
+
     init(repository: DeathRepositoryProtocol) {
         self.repository = repository
         deathCount = repository.getDeathCount()
-        
+
         cancellable = $deathCount
             .sink { count in
                 repository.saveDeathCount(count)

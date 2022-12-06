@@ -10,13 +10,13 @@ import SwiftUI
 struct MapView: View {
     @EnvironmentObject private var router: TabRouter
     @StateObject var webViewModel = WebViewModel()
-    
+
     var body: some View {
         ZStack {
             WebViewContainer(webViewModel: webViewModel)
             if webViewModel.isLoading {
                 Color.black
-                
+
                 ProgressView()
                     .frame(width: Constants.UI.thumbnailsSize,
                            height: Constants.UI.thumbnailsSize,

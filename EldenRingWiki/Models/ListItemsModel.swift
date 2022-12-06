@@ -35,174 +35,174 @@ struct ListItemsModel {
     var attack: [Attack] = []
     var defence: [Defence] = []
     var requiredAttributes: [RequiredAttributes] = []
-    var scalesWith : [ScalesWith] = []
+    var scalesWith: [ScalesWith] = []
     var attackPower: [AttackPower] = []
     var dmgNegation: [DmgNegation] = []
     var resistance: [Resistance] = []
-    
+
     init(_ response: AmmoData) {
-        self.listType = .ammos
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.type = response.type
-        self.passive = response.passive
-        self.attackPower = response.attackPower
+        listType = .ammos
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        type = response.type
+        passive = response.passive
+        attackPower = response.attackPower
     }
-    
+
     init(_ response: ShieldData) {
-        self.listType = .shields
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.category = response.category
-        self.weight = response.weight
-        self.attack = response.attack
-        self.defence = response.defence
-        self.requiredAttributes = response.requiredAttributes
-        self.scalesWith = response.scalesWith
+        listType = .shields
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        category = response.category
+        weight = response.weight
+        attack = response.attack
+        defence = response.defence
+        requiredAttributes = response.requiredAttributes
+        scalesWith = response.scalesWith
     }
-    
+
     init(_ response: ArmorData) {
-        self.listType = .armors
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.category = response.category
-        self.weight = response.weight
-        self.dmgNegation = response.dmgNegation
-        self.resistance = response.resistance
+        listType = .armors
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        category = response.category
+        weight = response.weight
+        dmgNegation = response.dmgNegation
+        resistance = response.resistance
     }
-    
+
     init(_ response: WeaponData) {
-        self.listType = .weapons
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.category = response.category
-        self.weight = response.weight
-        self.attack = response.attack
-        self.defence = response.defence
-        self.requiredAttributes = response.requiredAttributes
-        self.scalesWith = response.scalesWith
+        listType = .weapons
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        category = response.category
+        weight = response.weight
+        attack = response.attack
+        defence = response.defence
+        requiredAttributes = response.requiredAttributes
+        scalesWith = response.scalesWith
     }
-    
+
     init(_ response: TalismanData) {
-        self.listType = .talismans
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.effect = response.effect
+        listType = .talismans
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        effect = response.effect
     }
-    
+
     init(_ response: ItemData) {
-        self.listType = .items
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.type = response.type
-        self.effect = response.effect
+        listType = .items
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        type = response.type
+        effect = response.effect
     }
-    
+
     init(_ response: AsheData) {
-        self.listType = .ashes
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.affinity = response.affinity
-        self.skill = response.skill
+        listType = .ashes
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        affinity = response.affinity
+        skill = response.skill
     }
-    
+
     init(_ response: IncantationData) {
-        self.listType = .incantations
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.type = response.type
-        self.cost = response.cost
-        self.slots = response.slots
-        self.effects = response.effects
-        self.requires = response.requires ?? []
+        listType = .incantations
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        type = response.type
+        cost = response.cost
+        slots = response.slots
+        effects = response.effects
+        requires = response.requires ?? []
     }
-    
+
     init(_ response: SpiritData) {
-        self.listType = .spirits
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.fpCost = response.fpCost
-        self.hpCost = response.hpCost
-        self.effects = response.effects
+        listType = .spirits
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        fpCost = response.fpCost
+        hpCost = response.hpCost
+        effects = response.effects
     }
-    
+
     init(_ response: SorceryData) {
-        self.listType = .sorceries
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.type = response.type
-        self.cost = response.cost
-        self.slots = response.slots
-        self.effects = response.effects
-        self.requires = response.requires ?? []
+        listType = .sorceries
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        type = response.type
+        cost = response.cost
+        slots = response.slots
+        effects = response.effects
+        requires = response.requires ?? []
     }
-    
+
     init(_ response: LocationData) {
-        self.listType = .locations
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
+        listType = .locations
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
     }
-    
+
     init(_ response: CreatureData) {
-        self.listType = .creatures
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.location = response.location
-        self.drops = response.drops ?? []
+        listType = .creatures
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        location = response.location
+        drops = response.drops ?? []
     }
-    
+
     init(_ response: NPCData) {
-        self.listType = .npcs
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.location = response.location
-        self.quote = response.quote
-        self.role = response.role
+        listType = .npcs
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        location = response.location
+        quote = response.quote
+        role = response.role
     }
-    
+
     init(_ response: BossData) {
-        self.listType = .bosses
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.location = response.location
-        self.drops = response.drops
-        self.healthPoints = response.healthPoints
+        listType = .bosses
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        location = response.location
+        drops = response.drops
+        healthPoints = response.healthPoints
     }
-    
+
     init(_ response: CharacterClassData) {
-        self.listType = .classes
-        self.id = response.id
-        self.name = response.name
-        self.imageUrl = response.image
-        self.description = response.description
-        self.stats = response.stats
+        listType = .classes
+        id = response.id
+        name = response.name
+        imageUrl = response.image
+        description = response.description
+        stats = response.stats
     }
 }

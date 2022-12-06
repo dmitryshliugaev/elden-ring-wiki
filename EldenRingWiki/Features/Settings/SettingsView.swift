@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var viewModel: SettingsViewModel = SettingsViewModel()
-    
+    @StateObject var viewModel: SettingsViewModel = .init()
+
     var body: some View {
         Text("Settings")
     }

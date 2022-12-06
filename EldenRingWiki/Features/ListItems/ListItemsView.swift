@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ListItemsView: View {
     @StateObject var viewModel: ListItemsViewModel
-    
+
     public init(type: ListType) {
         _viewModel = StateObject(wrappedValue: .init(type: type,
                                                      repository: Dependencies.shared.markRepository))
     }
-    
+
     var body: some View {
         VStack {
             Picker(viewModel.filterType.title, selection: $viewModel.filterType) {
@@ -22,7 +22,7 @@ struct ListItemsView: View {
                     Text($0.title).tag($0)
                 }
             }.pickerStyle(.segmented)
-            
+
             List {
                 ForEach(viewModel.filteredItems, id: \.id) { item in
                     Button {
@@ -33,10 +33,11 @@ struct ListItemsView: View {
                                      urlString: item.imageUrl)
                     }
                 }
-                
+
                 if !viewModel.listIsFull,
                    !viewModel.filteredItems.isEmpty,
-                   viewModel.filterType == .all {
+                   viewModel.filterType == .all
+                {
                     HStack(alignment: .center) {
                         Spacer()
                         ProgressView()
@@ -71,22 +72,22 @@ struct ListItemsView: View {
                         await viewModel.load()
                     }
                 }
-                
-                Button("Cancel".localizedString) { }
+
+                Button("Cancel".localizedString) {}
             }
         }
     }
-    
+
     func makeListItem(id: String, name: String, urlString: String?) -> some View {
-        return HStack {
-            if let urlString = urlString, let url = URL(string: urlString) {
+        HStack {
+            if let urlString, let url = URL(string: urlString) {
                 CacheAsyncImage(url: url) { phase in
                     switch phase {
                     case .empty:
                         ProgressView()
-                    case .success(let image):
+                    case let .success(image):
                         image.resizable()
-                    case .failure(_):
+                    case .failure:
                         Image(systemName: "exclamationmark.icloud")
                     @unknown default:
                         Image(systemName: "exclamationmark.icloud")
@@ -94,17 +95,17 @@ struct ListItemsView: View {
                 }
                 .frame(width: Constants.UI.thumbnailsSize,
                        height: Constants.UI.thumbnailsSize)
-                .cornerRadius(Constants.UI.thumbnailsSize/2)
+                .cornerRadius(Constants.UI.thumbnailsSize / 2)
             } else {
                 Image(systemName: "exclamationmark.icloud")
                     .frame(width: Constants.UI.thumbnailsSize,
                            height: Constants.UI.thumbnailsSize)
             }
-            
+
             Text(name)
-            
+
             Spacer()
-            
+
             if viewModel.markedList.contains(id) {
                 Image(systemName: "checkmark.square")
             }

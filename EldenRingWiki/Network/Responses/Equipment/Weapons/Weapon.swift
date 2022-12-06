@@ -1,6 +1,6 @@
 //
 //  Weapon.swift
-//  
+//
 //
 //  Created by Dmitrii Shliugaev on 12/08/2022.
 //

@@ -11,11 +11,11 @@ enum FilterType: Int, Identifiable, CaseIterable {
     case all
     case checked
     case unchecked
-    
+
     var id: Int {
-        self.rawValue
+        rawValue
     }
-    
+
     var title: String {
         switch self {
         case .all:

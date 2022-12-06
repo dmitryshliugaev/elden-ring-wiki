@@ -1,6 +1,6 @@
 //
 //  NetworkError.swift
-//  
+//
 //
 //  Created by Dmitrii Shliugaev on 12/08/2022.
 //
@@ -22,19 +22,19 @@ extension NetworkError: LocalizedError {
         case .noInternet: return "NetworkError.NoInternet".localizedString
         case .invalidResponse: return "NetworkError.InvalidResponse".localizedString
         case .unauthenticated: return "NetworkError.UnauthenticatedUser".localizedString
-        case .parsing(let error): return "NetworkError.ParsingError".localizedString + error.localizedDescription
-        case .custom(_, let errorDescription): return errorDescription
-        case .unknown(let error): return "NetworkError.UnknownError".localizedString + (error?.localizedDescription ?? "")
+        case let .parsing(error): return "NetworkError.ParsingError".localizedString + error.localizedDescription
+        case let .custom(_, errorDescription): return errorDescription
+        case let .unknown(error): return "NetworkError.UnknownError".localizedString + (error?.localizedDescription ?? "")
         }
     }
-    
+
     var errorCode: Int? {
         switch self {
         case .noInternet: return nil
         case .invalidResponse: return nil
         case .unauthenticated: return nil
         case .parsing: return nil
-        case .custom(let errorCode, _): return errorCode
+        case let .custom(errorCode, _): return errorCode
         case .unknown: return nil
         }
     }

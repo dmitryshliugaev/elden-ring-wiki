@@ -10,17 +10,17 @@ import WebKit
 
 class WebViewModel: ObservableObject {
     @Published var isLoading: Bool = false
-    
+
     let webView: WKWebView
-    
+
     init() {
         webView = WKWebView(frame: .zero)
     }
-    
+
     func searchByName(_ searchItem: String) {
         var urlComponents = URLComponents(string: Constants.API.mapUrl)
         urlComponents?.queryItems = [URLQueryItem(name: "search", value: searchItem)]
-        
+
         guard let url = urlComponents?.url else {
             return
         }

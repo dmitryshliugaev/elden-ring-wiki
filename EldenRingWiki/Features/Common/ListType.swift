@@ -9,11 +9,11 @@ import SwiftUI
 
 enum ListType: Int, Identifiable, CaseIterable {
     case weapons, armors, shields, ammos, items, talismans, sorceries, spirits, incantations, ashes, bosses, npcs, creatures, locations, classes
-    
+
     var id: Int {
-        self.rawValue
+        rawValue
     }
-    
+
     var title: String {
         switch self {
         case .weapons:
@@ -48,7 +48,7 @@ enum ListType: Int, Identifiable, CaseIterable {
             return "Classes".localizedString
         }
     }
-    
+
     @ViewBuilder
     var contentView: some View {
         ListItemsView(type: self)
