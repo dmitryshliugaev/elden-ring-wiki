@@ -15,32 +15,43 @@ struct DeathCountView: View {
     }
 
     var body: some View {
-        VStack {
-            Spacer()
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
 
-            Text("\(viewModel.deathCount)")
-                .font(Font.custom("Mantinia", fixedSize: 40))
-                .foregroundColor(.DSRed)
+                VStack {
+                    Text("\(viewModel.deathCount)")
+                        .font(Font.custom("Mantinia", fixedSize: 40))
+                        .foregroundColor(.DSRed)
 
-            Text("YouDied".localizedString)
-                .font(Font.custom("Mantinia", fixedSize: 36))
-                .foregroundColor(.DSRed)
+                    Text("YouDied".localizedString)
+                        .font(Font.custom("Mantinia", fixedSize: 36))
+                        .foregroundColor(.DSRed)
+                }
+                .padding()
+                .frame(width: geometry.size.width)
+                .background {
+                    Color.black
+                        .blur(radius: 20)
+                }
 
-            Spacer()
+                Spacer()
 
-            Button(action: {
-                viewModel.deathCount += 1
-            }) {
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: Constants.UI.buttonSmall, height: Constants.UI.buttonSmall)
+                Button(action: {
+                    viewModel.deathCount += 1
+                }) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: Constants.UI.buttonSmall, height: Constants.UI.buttonSmall)
+                }
+                .frame(width: Constants.UI.buttonMedium, height: Constants.UI.buttonMedium)
+                .background(.gray.opacity(0.5))
+                .cornerRadius(Constants.UI.buttonMedium / 2)
+
+                Spacer()
+                    .frame(height: Constants.UI.Padding.large * 2)
             }
-            .frame(width: Constants.UI.buttonMedium, height: Constants.UI.buttonMedium)
-            .background(.gray.opacity(0.5))
-            .cornerRadius(Constants.UI.buttonMedium / 2)
-
-            Spacer()
-                .frame(height: Constants.UI.Padding.large * 2)
+            .background(Image("eldenringlogo"))
         }
     }
 }
